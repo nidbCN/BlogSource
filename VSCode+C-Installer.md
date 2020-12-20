@@ -1,13 +1,12 @@
 title: 'VSCode 一键配置 C/C++环境程序'
 author: Gaein nidb
 categories:
-
-- 电脑软件
-  tags:
-- 软件介绍
-- 软件教程
-  cover: 'https://s1.ax1x.com/2020/09/19/wIDpMd.md.png'
-  date: 2020-09-18 15:17:26
+  - 电脑软件
+tags:
+  - 软件介绍
+  - 软件教程
+cover: 'https://s1.ax1x.com/2020/09/19/wIDpMd.md.png'
+date: 2020-09-18 15:17:26
 
 ---
 
