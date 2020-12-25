@@ -1,14 +1,13 @@
 title: 'OpenGL GLFW 窗口前端显示'
 author: Gaein nidb
 categories:
-
-- 代码如诗
-  cover: "https://s1.ax1x.com/2020/11/10/BbBr8A.md.png"
-  tags:
-- 笔记
-- C 语言
-- OpenGL
-  date: 2020-12-26 1:27:00
+  - 代码如诗
+cover: "https://s3.ax1x.com/2020/12/26/rfwPXQ.md.png"
+tags:
+  - 笔记
+  - C 语言
+  - OpenGL
+date: 2020-12-26 1:27:00
 
 ---
 
