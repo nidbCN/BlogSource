@@ -4,7 +4,6 @@ categories:
   - 代码如诗
 cover: "https://s1.ax1x.com/2020/11/10/BbBr8A.md.png"
 tags:
-  - 算法
   - 笔记
   - C语言
   - OpenGL
