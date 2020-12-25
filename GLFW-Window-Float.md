@@ -77,7 +77,7 @@ glfwSetWindowAttrib(window, GLFW_FLOATING, GLFW_FALSE);
 # 参考
 
 [GLFW 文档](https://www.glfw.org/documentation.html)  
-[GLFW 文档-窗口参考](https://www.glfw.org/docs/latest/group__window.html)  
-[GLFW 文档-窗口参考:glfwSetWindowAttrib](https://www.glfw.org/docs/latest/group__window.html#gace2afda29b4116ec012e410a6819033e)  
-[GLFW 文档-窗口导览:窗口属性](https://www.glfw.org/docs/latest/window_guide.html#window_attribs)  
-[GLFW 文档-窗口导览:窗口属性->GLFW_FLOATING](https://www.glfw.org/docs/latest/window_guide.html#GLFW_FLOATING_hint)
+[GLFW 文档 -> 窗口参考](https://www.glfw.org/docs/latest/group__window.html)  
+[GLFW 文档 -> 窗口参考:glfwSetWindowAttrib](https://www.glfw.org/docs/latest/group__window.html#gace2afda29b4116ec012e410a6819033e)  
+[GLFW 文档 -> 窗口导览 -> 窗口属性](https://www.glfw.org/docs/latest/window_guide.html#window_attribs)  
+[GLFW 文档 -> 窗口导览 -> 窗口属性:GLFW_FLOATING](https://www.glfw.org/docs/latest/window_guide.html#GLFW_FLOATING_hint)
