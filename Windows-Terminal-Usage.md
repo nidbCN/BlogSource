@@ -234,6 +234,9 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 ### 添加到右键菜单
 
-1. `Win + R` 输入 `regedit` 打开注册表编辑器
-2. 转到`计算机\HKEY_CLASSES_ROOT\Directory\Background\shell`
-3. 
+1. `Win + R` 输入 `regedit` 打开注册表编辑器；
+2. 转到`计算机\HKEY_CLASSES_ROOT\Directory\Background\shell`；
+3. 新建项`Terminal`，将默认值修改为`在此处打开 Windows Terminal`；
+4. [下载图标(Gaein.cn)](https://static.cdn.gaein.cn/files/images/WindowsTerminal.ico)，保存到某个路径；
+5. 在`Terminal`里新建字符串，名字为`icon`，右键->修改，值为图标的路径；
+6. 在`Terminal`新建项，名字为`command`，值为`wt.exe`
