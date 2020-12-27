@@ -115,7 +115,7 @@ Install-Module oh-my-posh -Scope CurrentUser
 
    $time =  Get-date -Format "现在是yyyy年MM月dd日 HH时mm分"
    $path = $pwd.path           # 获取路径
-   if ( $path.split("\")[-1] -eq "Windows" || $path.split("\")[-1] -eq "System32") {
+   if ( $path.split("\")[-1] -eq "Windows" -xor $path.split("\")[-1] -eq "System32") {
        # 默认路径为桌面
        $desktop = "C:\Users\" + $env:UserName + "\Desktop\"
        # 切换到桌面
