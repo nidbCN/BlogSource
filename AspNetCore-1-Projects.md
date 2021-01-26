@@ -52,7 +52,9 @@ lambda 表达式
 public static IHostBuilder CreateHostBuilder(string[] args) =>
     Host.CreateDefaultBuilder(args)
         .ConfigureWebHostDefaults(
-            // ...Codes
+            // ...
+            // Code
+            // ...
         );
 ```
 
@@ -60,7 +62,9 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 第二个 lambda 表达式
 
 ```cs
-// ...Codes
+// ...
+// Code
+// ...
     Host.CreateDefaultBuilder(args)
         .ConfigureWebHostDefaults(webBuilder =>
         {
