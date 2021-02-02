@@ -1,4 +1,4 @@
-title: 'Asp.NET Core 入门(1)——项目结构'
+title: 'ASP.NET Core 代码各个文件都是什么——项目结构——ASP.NET Core 入门(1)'
 author: Gaein nidb
 categories:
   - 代码如诗

@@ -1,4 +1,4 @@
-title: 'Asp.NET Core Web API(1)——准备工作'
+title: '如何创建ASP.NET Core Web API——准备工作——ASP.NET Core Web API(1)'
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -10,7 +10,7 @@ tags:
   - 编程
   - 笔记
   - 后端
-date: 2021-2-30 18:47:49
+date: 2021-2-3 18:47:49
 
 ---
 

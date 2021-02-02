@@ -1,4 +1,4 @@
-title: 'Asp.NET Core 入门(2)——配置文件'
+title: '如何配置ASP.NET Core应用程序——配置文件——ASP.NET Core 入门(2)'
 author: Gaein nidb
 categories:
   - 代码如诗
