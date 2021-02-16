@@ -5,7 +5,7 @@ categories:
 cover: "https://s3.ax1x.com/2020/12/26/rfwPXQ.md.jpg"
 tags:
   - 笔记
-  - C 语言
+  - C语言
   - OpenGL
 date: 2020-12-26 1:27:00
 
