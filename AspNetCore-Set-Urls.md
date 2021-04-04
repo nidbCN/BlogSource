@@ -1,3 +1,17 @@
+title: 'ASP.NET Core 自定义Url和端口的五种办法'
+author: Gaein nidb
+categories:
+  - 代码如诗
+tags:
+  - CSharp
+  - dotNET
+  - AspNetCore
+  - 编程
+  - 后端
+date: 2021-4-4 3:18:28
+
+---
+
 > 翻译自[5 ways to set the URLs for an ASP.NET Core app](https://andrewlock.net/5-ways-to-set-the-urls-for-an-aspnetcore-app/)。本人文化水平不高，可能有误译，但是大致内容应该没有问题，还请多海涵。
 > 版权声明：本文:[5 ways to set the URLs for an ASP.NET Core app](https://andrewlock.net/5-ways-to-set-the-urls-for-an-aspnetcore-app/)为[Andrew Lock](https://andrewlock.net/about/)原创，依据 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可证进行授权，转载请附上出处链接及本声明。
 
