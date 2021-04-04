@@ -23,10 +23,10 @@ date: 2019-07-16 08:22:58
 1. 坏的显示器面板，不显示、碎屏、花屏都可以用，而且有面板就行。可以考虑到本地垃圾场去捡一个，单买的话有点~~败家~~。
    > 注意：必须是 LCD 屏！  
    > 注意：请使用其它视频源和连接线确保显示器是坏的，至少我不会希望把好的显示器拆开。
-   > ![确实坏了](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RARLZ.jpg)
+   > ![确实坏了](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RARLZ.jpg)
 2. LED 灯带/灯条
    > 注意：不是最小裁剪 1m 那种，而是裸板的 LED 灯带。这种：
-   > ![LED](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD95Q9R2T.jpg)
+   > ![LED](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD95Q9R2T.jpg)
 3. 12v 电源适配器，用于给 LED 灯带供电
 4. DC 母座，方便插电用
 5. 18650 电池、电池盒 x3，用于停电时给灯供电
@@ -34,12 +34,12 @@ date: 2019-07-16 08:22:58
 
 基本上的清单就是这样：
 
-![物品](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD53DHR2E.png)
+![物品](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD53DHR2E.png)
 
 
 当然还有一个显示屏
 
-![屏幕](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33Q9R2T.jpg)
+![屏幕](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33Q9R2T.jpg)
 
 # 制作
 
@@ -53,7 +53,7 @@ date: 2019-07-16 08:22:58
 
 我用显卡翘的，结果都弯了...
 
-![显卡](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RBNW5.jpg)
+![显卡](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RBNW5.jpg)
 
 最后暴力钻孔打穿了卡扣才卸下来。
 
@@ -61,39 +61,39 @@ date: 2019-07-16 08:22:58
 
 将后壳拿下来后里面大致是这样的
 
-![内部](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RCVCZ.jpg)
+![内部](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RCVCZ.jpg)
 
 将上面的胶带撕开，断开连接控制按钮的电线。
 
-![电线](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RC82Q.jpg)
+![电线](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RC82Q.jpg)
 
 将鼓起来那块放 PCB 的拆下，并断开电线
 
-![PCB](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RD375.jpg)
+![PCB](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RD375.jpg)
 
 这根电线粘在上面，要撕下来，这是给背光模组供电的。
 
-![电线](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RERGM.jpg)
+![电线](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RERGM.jpg)
 
 拆完后就剩下一个面板
 
-![面板](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RE3WP.jpg)
+![面板](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RE3WP.jpg)
 
 ### 拆解背光
 
 面板的四周是完全用卡扣固定的，轻轻的撬开就能将它打开。由于下面还有胶带粘住，只能先掀起来。
 
-![撬](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RFF05.jpg)
+![撬](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RFF05.jpg)
 
-![LCD](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RFR2T.jpg)
+![LCD](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RFR2T.jpg)
 
 黑色的是屏幕，去掉胶带后把黑色的屏幕拿下去，剩下的就是背光层。
 
-![背光层](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RGF5A.jpg)
+![背光层](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RGF5A.jpg)
 
 一层一层的把薄膜拿下来，最后一层是散光层
 
-![散光层](https://img.cdn.gaein.cn/Blog/How-to-DIY-lamp/BD33RGZHG.jpg)
+![散光层](https://img.cdn.gaein.cn/blog/posts/How-to-DIY-lamp/BD33RGZHG.jpg)
 
 侧面有一条LED灯带，作为光源。但是我这里不采用这个灯带，因为它的电压很高（我这个屏幕光源电压已经高于100V了），不是很安全。而且还要对供电进行魔改。所以我买了LED灯带。
 

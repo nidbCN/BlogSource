@@ -35,7 +35,7 @@ cover: 'https://s1.ax1x.com/2020/09/23/wvNK0g.md.png'
 
 由于这些笔记都是用OneNote手写的，听到那写到那，所以就没有排版可言了（逃
 
-![文件笔记](https://img.cdn.gaein.cn/Blog/PostsUsed/C-Note6-File-notePic.png)
+![文件笔记](https://img.cdn.gaein.cn/blog/posts/C-Notes/C-Note6-File-notePic.png)
 
 # 下载
 
