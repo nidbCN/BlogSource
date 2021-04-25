@@ -120,6 +120,3 @@ show databases; #显示数据库
 use 数据库名; #切换到数据库
 exit #退出
 ```
-
-
-
