@@ -64,9 +64,9 @@ public string Name
 当然，上面的代码可以使用自动实现的属性替换为，也可以用属性初始化器来初始化（第二行代码）
 
 ```cs
-public string Name {get; set;}
+public string Name { get; set; }
 
-public Guid Uid {get; set;} = new Guid();
+public Guid Uid { get; set; } = new Guid();
 ```
 
 注意看第一段代码的命名规范：本来 Microsoft 那边的规范是使用小写字母命名私有字段，但是 .NET Core 团队转向用下划线加小写字母来命名，这样显然更容易区分。
@@ -88,8 +88,8 @@ C#允许给属性的 `get` 和 `set` 访问器分别设置不同的修饰符。
 比如说：
 
 ```cs
-public string FirstName {get; set;}
-public string LastName {get; set;}
+public string FirstName { get; set; }
+public string LastName { get; set; }
 public string FullName => $"{FirstName} {LastName}"
 ```
 ##### 不可变的类型
