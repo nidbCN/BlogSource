@@ -146,9 +146,104 @@ public class LinkedList<T>: IEnumerable<T>
 
 #### 5.4.1 - 协变和抗变
 
-【这部分有点搞不懂欸】
+> 淦，这部分有点搞不懂欸（
+> 以后再做研究，这部分内容可参考性不高，可能存在错误。目前人是差不多理解了，说不出来...
 
-* 抗变：
-* 协变：
+* 协变：返回中，不能使用子类接收返回的父类，用父类接收返回的子类可以
+* 抗变：传参中，子类传入需要父类的地方
 
-假如有 `Shape` 类和 `Rectangle` 子类
+（那他妈不都是子类->父类嘛？）
+
+假如有 `Animal` 类和 `Dog` 子类。假设我定义了一个泛型 `Foo<Animal>` 那么它实现了协变，能去接受 `Dog` 类的实例。即协变为接受从子类转换为父类。这种与原始类型转换方向（类 -> Object 基类）相同的可变性就称作协变。
+
+反之，泛型类或方法的返回将 `Dog` 作为 `Animal` 是抗变。
+
+#### 5.4.2 - 泛型接口的协变
+
+如果泛型接口用 `out` 关键字标注，那么它就是协变的。
+
+比如，接口 `IIndex` 是协变的，从一个只读索引器中返回这个类型：
+
+```cs
+public interface IIndex<out T>
+{
+    T this [int index] { get; }
+    int Count { get; }
+}
+```
+
+不使用 `out` 或者 `in` 关键字，可以把类型定义为不变的。
+
+实现了这个接口（ `MyClass: IIndex<Dog>` ）的类可以把返回值赋给 `IIndex<Dog>` ，也可以赋值给 `IIndex<Animal>`。
+
+```cs
+IIndex<Rectangle> rectangles = /* codes ... */;
+IIndex<Shape> shapes = rectangles;
+```
+
+#### 5.4.2 - 泛型接口的抗变
+
+如果泛型类型用 `in` 关键字标记，泛型接口就是抗变的：
+
+```cs
+public interface IDisplay<in T>
+{
+    // codes
+}
+
+public class ShapeDisplay : IDisplay<Shape>
+{
+    // codes
+}
+```
+
+```cs
+IDisplay<Shape> shapeDisplay = new ShapeDisplay();
+IDisplay<Rectangle> rectDisplay = shapeDisplay;
+
+// ...
+```
+
+抗变更上面的协变看起来效果是相反的（但是它怎么安全的做到这一点的啊？）
+
+### 5.5 - 泛型结构
+
+与类相似，结构也可以是泛型的，比如 `Nullable<T>`。它们非常类似于泛型类，但是没有继承特性。
+
+把 `Nullable<T>` 类型强制转换成 `T` 类型的运算符重载是显示定义的，因为当 `hasValue` 为 `false` 时，它会抛出一个异常。强制转换 `T` 为 `Nullable<T>` 类型的运算符重载定义为隐式的，因为转换总是成功的。
+
+因为可空类型使用的非常频繁，C#有一个 `?` 运算符，用它来定义可空类型的变量，比如：
+
+```cs
+int? num = null;
+```
+
+> 注意：在运算可空类型的时候，如果两个可空变量中任何一个值是 `null` 那么它们的和就是 `null`
+
+非可空类型总是可以隐式转换为对应的可空类型。从可空类型转换到对应的非可空类型时需要强制转换，可能会引发异常，因此：
+
+```cs
+int? num = 18;
+
+int numInt = num ?? -1;
+```
+
+可以使用该类合并运算符以不进行显示转换。
+
+### 5.6 - 泛型方法
+
+除了定义泛型类以外还可以泛型方法。在泛型中，泛型类型用方法声明来定义，泛型方法可以在非泛型类中定义：
+
+```cs
+void Span<T>(ref T x, ref T y)
+{
+    T temp = x;
+    x = y;
+    y = temp;
+}
+```
+
+C#编译器会通过 `Swap` 方法来获取参数的类型，因此并不需要把泛型类型传过去。只需要 `Swap(3, 6)` 即可。
+
+#### 5.6.1 - 泛型方法示例
+
