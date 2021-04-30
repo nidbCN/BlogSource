@@ -11,6 +11,12 @@ tags:
 date: 2021-04-29 12:40:44
 ---
 
+# 目录
+
+* [C#基础](https://blog.gaein.cn/passages/CSharp-Basic/)
+* [C#面向对象](https://blog.gaein.cn/passages/CSharp-OOP/)
+* [C#泛型](https://blog.gaein.cn/passages/CSharp-Generics-Type/)
+
 # C# 泛型
 
 ## 5 - 泛型
@@ -282,4 +288,3 @@ pubic static T2 Accumulate<T1, T2>(IEnumerable<T1> source, Func<T1, T2, T2> acti
 泛型方法可以重载，为特定的类型定义规范。这也适用于带泛型参数的方法。
 
 > 注意：所调用的方法是在编译期间而不是运行期间定义的。
-

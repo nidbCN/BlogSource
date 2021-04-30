@@ -11,6 +11,12 @@ tags:
 date: 2021-04-27 21:52:51
 ---
 
+# 目录
+
+* [C#基础](https://blog.gaein.cn/passages/CSharp-Basic/)
+* [C#面向对象](https://blog.gaein.cn/passages/CSharp-OOP/)
+* [C#泛型](https://blog.gaein.cn/passages/CSharp-Generics-Type/)
+
 # C# 面向对象编程
 
 > 系统学习C#笔记，本来也想写在基础部分来着，但是上一篇博客太长了，想想还是拆出来写吧。
