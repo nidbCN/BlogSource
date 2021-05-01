@@ -16,6 +16,7 @@ date: 2021-04-27 21:52:51
 * [C#基础](https://blog.gaein.cn/passages/CSharp-Basic/)
 * [C#面向对象](https://blog.gaein.cn/passages/CSharp-OOP/)
 * [C#泛型](https://blog.gaein.cn/passages/CSharp-Generics-Type/)
+* [C#运算符和强制类型转换](https://blog.gaein.cn/passages/CSharp-Note4-Operators-and-TypeCasts/)
 
 # C# 面向对象编程
 
