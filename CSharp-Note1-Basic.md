@@ -1,5 +1,5 @@
 ---
-title: 基础 C#笔记 
+title: C#编程基础 - C#笔记 
 author: Gaein nidb
 categories:
   - 学习资料

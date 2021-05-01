@@ -1,5 +1,5 @@
 ---
-title: 泛型 C#笔记 
+title: C#中的泛型 - C#笔记 
 author: Gaein nidb
 categories:
   - 学习资料
