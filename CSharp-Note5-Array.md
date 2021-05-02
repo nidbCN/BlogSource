@@ -164,4 +164,175 @@ var array2 = (int[])array1.Clone();
 
 #### 7.5.3 - 排序
 
-`Array` 类使用快排算法来对数组中的元素进行排序。
+`Array` 类使用快排算法来对数组中的元素进行排序。`Sort` 方法需要数组中的元素实现 `IComparable` 接口。在简单类型中已经实现了该接口，所以可以直接进行排序。
+
+如果对数组使用自定义类，就实现 `IComparable` 接口（或者它的泛型版本），这个接口定义了方法：`Compare` ，该方法接受一个要被用来比较的对象作为参数：
+
+* 如果要比较的对象的相等，就返回0。
+* 如果该实例排在参数对象的前面，就返回小于0的值。
+* 如果该实例排在参数对象的后面，就返回大于0的值。
+
+如果对象的排序方法与上述不同，或者不能修改数组元素中用作元素的类（即修改元素的类并添加继承自 `IComparable` ），就可以考虑另外一个类（比如 `Comparer` ）实现 `IComparer` 接口或者其泛型版本。这两个接口定义了方法 `Compare` ，这个方法接受两个参数：
+
+* 如果两个参数对象相等，就返回0。
+* 如果第一个参数在第二个参数前面，则返回小于0的值。
+* 如果第一个参数在第二个参数后面，则返回大于0的值。
+
+> Tips：`Array` 类提供了 `Sort` 方法，需要传递一个委托i作为参数，而不需要依赖 `IComparer` 接口或者 `IComparable` 接口。
+
+### 7.6 - 数组作为参数
+
+要把数组传递给方法，就按着你想象的来就行了。将参数声明为数组：
+
+```cs
+static void DisplayStudents(Student[] stu)
+{
+    // code
+}
+```
+
+### 7.7 - 数组协变
+
+数组支持协变，也就是说，可以把数组声明为基类，其它派生类的对象可以被赋予数组：
+
+> 注意：数组协变只能用于引用类型不能用于值类型。
+
+### 7.8 - 枚举
+
+在 `foreach` 语句中使用枚举，可以迭代集合中的元素，且不需要知道集合中的元素个数。数组和集合实现了带 `GetEnumerator` 方法的 `IEnumerable` 接口。 `GetEnumerator` 方法返回一个实现 `IEnumerable` 接口的枚举。接着 `foreach` 语句就可以使用 `IEnumerable` 接口迭代集合了。
+
+#### 7.8.1 - `IEnumerator` 接口
+
+`foreach` 语句使用 `IEnumerator` 接口的方法和属性，迭代集合中的所有元素。为此接口定义了 `Current` 用来返回当前迭代的元素。
+
+`MoveNext` 方法移动到下一个元素上，如果没有下一个元素则返回 `false` ，移动成功则返回 `true` 。
+
+#### 7.8.2 - `foreach` 语句
+
+`foreach` 首先调用 `GetEnumerator` 方法获取一个枚举器，并且当 `MoveNext` 方法返回 `true` 时进行迭代。
+
+```cs
+foreach(var person in people)
+{
+    Console.WriteLine(person);
+}
+```
+
+相当于：
+
+```cs
+IEnumerator<Person> enumerator = people.GetEnumerator();
+while(enumerator.MoveNext())
+{
+    var person = enumerator.Current;
+    Console.WriteLine(enumerator.Current);
+}
+```
+
+#### 7.8.3 `yield` 语句
+
+`yield return` 语句返回集合的一个元素，并移动到下一个元素上。`yield break` 可停止迭代。
+
+> Tips：包含 `yield` 语句的方法或属性也成为迭代块。迭代块必须声明为返回 `IEnumerator` 或 `IEnumerable` 接口，或者这写接口的泛型版本。这个块可以包含多条 `yield return` 语句或 `yield break` 语句，但不能包含 `return` 语句。
+
+##### 1. 迭代集合的不同方式
+
+##### 2. 用 `yield return` 返回枚举器
+
+常见的使用方法是，用一个循环来迭代集合，然后每一次迭代来一个 `yield return` 语句，比如：
+
+```cs
+using System;
+using System.Collections.Generic;
+
+namespace Test
+{
+    public class Program
+    {
+        private static void Main()
+        {
+            var school = new School(10);
+
+            school.Add(new Student("Jack", 1));
+            school.Add(new Student("Jan", 2));
+            school.Add(new Student("John", 3));
+            school.Add(new Student("Mack", 4));
+            school.Add(new Student("Ann", 5));
+
+            foreach (var student in school)
+            {
+                Console.WriteLine(student);
+            }
+        }
+    }
+
+    public class Student
+    {
+        public Student(string name, uint grade)
+        {
+            Name = name ??
+                   throw new ArgumentNullException(nameof(name));
+            Grade = grade;
+        }
+
+        public override string ToString() =>
+            $"{Name} in {Grade}";
+
+        public string Name { get; set; }
+        public uint Grade { get; set; }
+    }
+
+    public class School
+    {
+        public School(uint count)
+        {
+            Count = count;
+            Students = new Student[Count];
+        }
+
+        private int _currentIndex;
+
+
+        public uint Count { get; set; }
+        public Student[] Students { get; set; }
+
+        /// <summary>
+        /// Add a student to school
+        /// </summary>
+        /// <param name="stu">Student Object</param>
+        public void Add(Student stu) =>
+            Students[_currentIndex++] = stu;
+
+        public IEnumerator<Student> GetEnumerator()
+        {
+            for (var i = 0; i < Count; i++)
+            {
+                yield return Students[i];
+            }
+        }
+    }
+}
+```
+
+首先，定义了一个学生类 `Student` ，其中含有学生的基础信息和一个用于实例化的构造函数以及重写的 `ToString` 方法。
+
+然后，定义了另外一个类 `School` ，在学校类中写了 `Add` 方法来添加学生。另外实现了 `GetEnumerator` 方法，由于在 `foreach` 中的元素是 `Student` 类的实例，因此类型为泛型的 `IEnumerator<Student>` 。`yield return` 返回每一次迭代的结果即可。
+
+### 7.9 - 结构比较
+
+数组和元组都实现了接口 `IStructuralEquatable` （用于进行内容比较是否相等）和 `IStructuralComparable` （用于在排序时进行比较决定顺序）。这两个接口不仅可以比较引用，还可以比较内容。
+
+可以让需要的结构实现 `IEquatable` 接口，这个接口定义了一个强化的 `Equals` 方法。这个方法接收两个参数，第一个是 `object` ，第二个是 `IEquatableComparer` ：
+
+```cs
+if ((people as IEquatable).Equals(people2, EqualityComparer<Person>.Default))
+{
+    Console.WriteLine("Same");
+}
+```
+
+### 7.10 - Span
+
+为了快速访问连续内存，可以使用 `Span<T>` 结构。一个可以使用 `Span<T>` 的例子是数组； `Span<T>` 结构在后台保存在连续的内存中。
+
+使用 `Span<T>` 可以
