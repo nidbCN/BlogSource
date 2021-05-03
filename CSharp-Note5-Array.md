@@ -1,3 +1,23 @@
+---
+title: C#中数组的使用 - C#笔记 
+author: Gaein nidb
+categories:
+  - 学习资料
+tags:
+  - 笔记
+  - 编程
+  - CSharp
+  - dotNET
+date: 2021-05-03 14:31:30
+---
+
+# 目录
+
+* [C#基础](https://blog.gaein.cn/passages/CSharp-Basic/)
+* [C#面向对象](https://blog.gaein.cn/passages/CSharp-OOP/)
+* [C#泛型](https://blog.gaein.cn/passages/CSharp-Generics-Type/)
+* [C#运算符和强制类型转换](https://blog.gaein.cn/passages/CSharp-Note4-Operators-and-TypeCasts/)
+
 # 数组
 
 ## 7 - 数组
@@ -335,4 +355,66 @@ if ((people as IEquatable).Equals(people2, EqualityComparer<Person>.Default))
 
 为了快速访问连续内存，可以使用 `Span<T>` 结构。一个可以使用 `Span<T>` 的例子是数组； `Span<T>` 结构在后台保存在连续的内存中。
 
-使用 `Span<T>` 可以
+使用 `Span<T>` 可以直接访问数组元素。数组的元素没有复制，可以直接使用，这比复制要快（废话）。
+
+`Span` 结构有个构造函数，把数组传参进去就行了，就能获得一个 `Span`。
+
+#### 7.10.1 - 创建切片
+
+`Span<T>` 的一个强大功特性是，可以使用它创建访问数组的一部分或者是切片。使用切片时，不会复制数组元素，它们是从 `Span` 直接访问的。
+
+调用 `Slice` 方法，也可以从 `Span<T>` 对象中创建一个切片。该方法接受两个参数：切片开始的索引号以及切片的长度。当然，也可以使用 `Span` 的构造函数创建一个切片：第一个参数是数组，后面是切片开始的索引号和长度。
+
+如果以后不需要修改 `Span` 引用的内容，可以使用 `ReadOnlySpan` 这个类型，转换是隐式进行的。
+
+> 注意：`Span<T>` 是安全的，不会出界破坏其它内存中的数据。如果创建的 `Span` 超出了数组的长度，则会抛出 `ArgumentOutOfRangeException` 异常。
+
+#### 7.10.2 - 使用 `Span` 改变值
+
+调用 `Clear` 方法，使用 `0` 填充 `Span<int>` 。
+
+调用 `Fill` 方法，使用传递的参数填充 `Span<T>` 。
+
+调用 `CopyTo` 方法，将一个 `Span` 复制到另一个 `Span` 中，如果目标不够大则会抛出 `ArgumentException` 异常。调用 `TryCopyTo` 方法来避免发生异常：
+
+```cs
+if (span.TryCopyTo(newSpan))
+{
+    Console.WriteLine("COPY SUCCESS");
+}
+```
+
+#### 7.10.3 - 只读的 `Span`
+
+如上文所说，对于不需要修改的 `Span` 可以使用 `ReadOnlySpan<T>` 类型，这种类型没有 `Clear` 和 `Fill` 等方法，但是可以调用 `CopyTo` 复制到新的 `Span` 。
+
+#### 7.11 - 数组池
+
+如果一个应用程序创建、销毁了很多数组，那么GC酱就会很累。可以通过 `ArrayPool` 类创建数组池。
+
+##### 7.11.1 - 创建数组池
+
+通过调用静态的 `Create` 方法，就可以创建 `ArrayPool<T>` 。使用 `Create` 方法可以在创建之前定义最大的数组长度和数组的数量：
+
+```cs
+var arrPool = ArrayPool<int>.Create(maxArrayLength: 8192, maxArraysPerBucket: 4096);
+```
+
+`maxArrayLength` 的默认值是 1024x1024 字节，`maxArraysPerBucket` 的默认值是 50 。数组池使用了多个桶，以便使用多个数组时更快。只要还没有达到数组的最大数量，大小类似的数组就尽可能保存在一个桶里。
+
+#### 1.12.2 - 从池中租借内存
+
+调用 `Rent` 方法从池中租借内存。该方法接受应请求的最小数组长度。`Rent` 方法返回一个数组，其中至少包含所请求的元素个数。返回的数组可能有更多的可用内存：
+
+```cs
+var arrayPool = ArrayPool<int>.Create(maxArrayLength: 8192, maxArraysPerBucket: 4096);
+var array = arrayPool.Rent(20);
+
+Console.WriteLine(array.Length);    // output: 32
+```
+
+#### 1.12.3 - 将内存返回给池
+
+不再需要数组的时候，可以把内存返回回去。数组返回后，稍后可以使用一个 `Rent` 来重用这些内存。
+
+调用数组池的 `Return` 方法并将数组作为参数传递给它。这样返回后不会清除数组内的数据，也就是下次 `Rent` 后还可以访问其中的数据。为此该方法还有一个可选参数，指定在返回池之前是否清空它。
