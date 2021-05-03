@@ -17,6 +17,7 @@ date: 2021-05-03 14:31:30
 * [C#面向对象](https://blog.gaein.cn/passages/CSharp-OOP/)
 * [C#泛型](https://blog.gaein.cn/passages/CSharp-Generics-Type/)
 * [C#运算符和强制类型转换](https://blog.gaein.cn/passages/CSharp-Note4-Operators-and-TypeCasts/)
+* [C#中数组的使用](https://blog.gaein.cn/passages/CSharp-Note5-Array/)
 
 # 数组
 
