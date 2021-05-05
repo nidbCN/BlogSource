@@ -18,6 +18,7 @@ date: 2021-05-03 14:31:30
 * [C#泛型](https://blog.gaein.cn/passages/CSharp-Generics-Type/)
 * [C#运算符和强制类型转换](https://blog.gaein.cn/passages/CSharp-Note4-Operators-and-TypeCasts/)
 * [C#中数组的使用](https://blog.gaein.cn/passages/CSharp-Note5-Array/)
+* [C#的委托、lambda 表达式和事件](https://blog.gaein.cn/passages/CSharp-Note6-Delegates-lambda-Expressions-and-Events/)
 
 # 数组
 
