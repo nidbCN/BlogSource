@@ -16,7 +16,7 @@ date: 2019-07-15 08:50:50
 操作系统：CentOS7
 MySQL版本：8.0.16 MySQL Community Server 
 
-##### 首先，登录服务器ssh
+########## 首先，登录服务器ssh
 使用
 ``` 
 mysql -u root -p
@@ -40,7 +40,7 @@ flush privileges
 ALTER USER 'testuser'@'%' IDENTIFIED WITH mysql_native_password BY 'TestUserPWD0';
 ```
 
-##### 注意事项
+########## 注意事项
 testuser是你要创建的用户的用户名
 TestUserPWD0是新创建的用户的密码
 MySQL8默认安装 validate_password 插件。这将要求密码包含至少一个大写字母，一个小写字母，一个数字和一个特殊字符，并且密码总长度至少为8个字符。

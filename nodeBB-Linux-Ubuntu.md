@@ -48,7 +48,7 @@ date: 2018-06-22 23:47:33
     </p>
     <hr/>
     <p>
-        <span style="font-size: 24px; color: #FFC000;">前奏</span>
+        <span style="font-size: 24px; color: ##FFC000;">前奏</span>
     </p>
     <p>
         第一步我选择切换到管理员账户（root）<br/>
@@ -109,7 +109,7 @@ date: 2018-06-22 23:47:33
     </p>
     <hr/>
     <p>
-        <span style="font-size: 24px; color: #FFC000;">安装Node.js LTS</span><br/>
+        <span style="font-size: 24px; color: ##FFC000;">安装Node.js LTS</span><br/>
     </p>
     <p>
         <img src="https://s1.ax1x.com/2018/06/22/Pp4AOJ.png"/>
@@ -167,7 +167,7 @@ date: 2018-06-22 23:47:33
     </p>
     <hr/>
     <p>
-        <span style="font-size: 24px; color: #FFC000;">数据库：Redis</span><br/>
+        <span style="font-size: 24px; color: ##FFC000;">数据库：Redis</span><br/>
     </p>
     <p>
         鉴于Redis体积较小等优点，数据库我选择了redis
@@ -177,7 +177,7 @@ date: 2018-06-22 23:47:33
     </p>
     <pre class="fy-prettyprint linenums">sudo add-apt-repository ppa:chris-lea/redis-server 
 sudo apt-get update
-sudo apt-get install -y redis-server #安装redis</pre>
+sudo apt-get install -y redis-server ##安装redis</pre>
     <p>
         使用这三行来安装redis（当然是从上到下一行一行来）
     </p>
@@ -194,7 +194,7 @@ sudo apt-get install -y redis-server #安装redis</pre>
         最后一步，慢慢等待
     </p>
     <p>
-        <span style="color: #8064A2;">Redis安全设置（强烈推荐进行这一步）</span><br/>
+        <span style="color: ##8064A2;">Redis安全设置（强烈推荐进行这一步）</span><br/>
     </p>
     <p>
         使用
@@ -239,7 +239,7 @@ rename-command FLUSHALL &quot;&quot;</pre>
     </p>
     <hr/>
     <p>
-        <span style="font-size: 24px; color: #FFC000;">NodeBB的安装</span><br/>
+        <span style="font-size: 24px; color: ##FFC000;">NodeBB的安装</span><br/>
     </p>
     <p>
         一切无误，进入最后步骤了（这当然不是全部的全部）
@@ -256,7 +256,7 @@ rename-command FLUSHALL &quot;&quot;</pre>
     </p>
     <pre class="fy-prettyprint linenums">git</pre>
     <p>
-        如果返回了一大串东西则是安装了，返回“Command &#39;git&#39; not found, but can be installed with:......”则是没有安装
+        如果返回了一大串东西则是安装了，返回“Command &##39;git&##39; not found, but can be installed with:......”则是没有安装
     </p>
     <p>
         <img src="https://s1.ax1x.com/2018/06/23/Pp4qtx.png"/>
@@ -270,7 +270,7 @@ rename-command FLUSHALL &quot;&quot;</pre>
     <p>
         在新版本的Ubuntu，你需要先
     </p>
-    <pre class="fy-prettyprint linenums">mkdir /www           #你喜欢的名字，带不带/有很大区别的</pre>
+    <pre class="fy-prettyprint linenums">mkdir /www           ##你喜欢的名字，带不带/有很大区别的</pre>
     <p>
         <img src="https://s1.ax1x.com/2018/06/23/Pp4j1O.png"/>
     </p>
@@ -284,7 +284,7 @@ rename-command FLUSHALL &quot;&quot;</pre>
     <p>
         使用命令，从git克隆nodebb
     </p>
-    <pre class="fy-prettyprint linenums">sudo git clone -b v1.9.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面</pre>
+    <pre class="fy-prettyprint linenums">sudo git clone -b v1.9.x https://github.com/NodeBB/NodeBB.git nodebb ##这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面</pre>
     <p>
         在大陆，尤其是网络环境不好的情况下，这个过程可能会非常漫长（解决方案见<a href="https://blog-old.gaein.cn/post/NodeBB-Linux-CentOS.html）">https://blog-old.gaein.cn/post/NodeBB-Linux-CentOS.html）</a><br/>
     </p>
@@ -319,7 +319,7 @@ rename-command FLUSHALL &quot;&quot;</pre>
     <p>
         使用：<br/>
     </p>
-    <pre class="fy-prettyprint linenums">./nodebb setup #尽管我使用的是./nodebb start &lt;=习惯的锅，由于没有运行过，仍然会进行安装</pre>
+    <pre class="fy-prettyprint linenums">./nodebb setup ##尽管我使用的是./nodebb start &lt;=习惯的锅，由于没有运行过，仍然会进行安装</pre>
     <p>
         进行安装
     </p>

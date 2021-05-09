@@ -41,7 +41,7 @@ date: 2018-07-21 19:20:03
 <p>
     就用yum安装呗
 </p>
-<pre class="fy-prettyprint linenums">yum install vim #如果 vim 指令未安装，那就安装它</pre>
+<pre class="fy-prettyprint linenums">yum install vim ##如果 vim 指令未安装，那就安装它</pre>
 <p>
     按下i键（当然如果你想知道有什么键可以自行百度）
 </p>
@@ -60,7 +60,7 @@ date: 2018-07-21 19:20:03
 <pre class="fy-prettyprint linenums">yum update
 yum -y install epel-release
 yum -y groupinstall &quot;Development Tools&quot;
-yum -y install git ImageMagick ImageMagick-devel#更新系统并安装一些基础工具</pre>
+yum -y install git ImageMagick ImageMagick-devel##更新系统并安装一些基础工具</pre>
 <p>
     <img src="https://s1.ax1x.com/2018/07/21/P8HqjH.jpg" alt="" width="619" height="477"/>
 </p>
@@ -83,7 +83,7 @@ yum -y install git ImageMagick ImageMagick-devel#更新系统并安装一些基�
     所以我们使用
 </p>
 <pre class="fy-prettyprint linenums">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-#或者
+##或者
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash</pre>
 <p>
     安装nvm（这是一个快速部署的脚本）
@@ -95,7 +95,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh |
     使用
 </p>
 <pre class="fy-prettyprint linenums">export NVM_DIR=&quot;$HOME/.nvm&quot;
-[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm</pre>
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot; ## This loads nvm</pre>
 <p>
     把nvm添加到环境变量
 </p>
@@ -193,13 +193,13 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc</pre>
 <p>
     完成之后使用
 </p>
-<pre class="fy-prettyprint linenums">service mongod start #启动 Mongodb
-mongod --version #查看 Mongodb 版本</pre>
+<pre class="fy-prettyprint linenums">service mongod start ##启动 Mongodb
+mongod --version ##查看 Mongodb 版本</pre>
 <p>
     <img src="https://s1.ax1x.com/2018/07/24/PYf9Qs.jpg" alt="" width="555" height="478"/>
 </p>
 <p>
-    <span style="color: #0070C0;">有一点需要注意：如果版本3.4.10的话需要升级，因为3.4.10以下有风险</span>
+    <span style="color: ##0070C0;">有一点需要注意：如果版本3.4.10的话需要升级，因为3.4.10以下有风险</span>
 </p>
 <p>
     安装完成后，为了消除 MongoDB 的性能警告，需要关闭 Linux 巨型页：
@@ -243,10 +243,10 @@ echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</pre>
 </p>
 <pre class="fy-prettyprint linenums">db.createUser({user: &quot;nodebb&quot; ,pwd: &quot;替换成你的密码&quot; ,roles:[ &quot;readWrite&quot; ]})</pre>
 <p>
-    添加用户角色<span style="color: #0070C0;">（牢记用户名（此处为nodebb）和密码！）</span>
+    添加用户角色<span style="color: ##0070C0;">（牢记用户名（此处为nodebb）和密码！）</span>
 </p>
 <p>
-    <span style="color: #0070C0;"><img src="https://s1.ax1x.com/2018/07/24/PYfAoT.jpg" alt="" data-load="full" style="" width="767" height="113"/></span>
+    <span style="color: ##0070C0;"><img src="https://s1.ax1x.com/2018/07/24/PYfAoT.jpg" alt="" data-load="full" style="" width="767" height="113"/></span>
 </p>
 <p>
     如果需要在nodebb后台查看数据库数据，输入以下代码
@@ -297,19 +297,19 @@ echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</pre>
 </p>
 <pre class="fy-prettyprint linenums">mkdir 目录</pre>
 <p>
-    来新建文件夹（注意有&#39;/&#39;和没有的区别）
+    来新建文件夹（注意有&##39;/&##39;和没有的区别）
 </p>
 <p>
     使用
 </p>
 <pre class="fy-prettyprint linenums">cd 目录</pre>
 <p>
-    进入刚刚新建的目录（同样注意&#39;/&#39;）
+    进入刚刚新建的目录（同样注意&##39;/&##39;）
 </p>
 <p>
     使用
 </p>
-<pre class="fy-prettyprint linenums">git clone -b v1.10.x https://github.com/NodeBB/NodeBB.git nodebb#把nodebb克隆进nodebb文件夹</pre>
+<pre class="fy-prettyprint linenums">git clone -b v1.10.x https://github.com/NodeBB/NodeBB.git nodebb##把nodebb克隆进nodebb文件夹</pre>
 <blockquote>
     <p>
         现在，你可以使用国内的镜像仓库(<code>https://gitee.com/NodeBB-CN/NodeBB.git</code>)来提高连接速度。<br/>
@@ -348,7 +348,7 @@ echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</pre>
     说明：
 </p>
 <p>
-    Web Address(URL)是以后访问的地址，如果是搭建的论坛记得写域名（可以不加端口，以后在nginx反代理）当然，建议先使用默认的调试。注意不要忘记“http://”，结尾不要加&#39;/&#39;，只有这个链接能够访问论坛，其他链接访问会显示链接断开（比如我有一个服务器，IP是1.2.3.4，域名www.exp.com和exp.com都A记录过去了，这里我填写www.exp.com，那么exp.com和1.2.3.4访问的时候都会显示与“NodeBB的链接断开”）<br/>
+    Web Address(URL)是以后访问的地址，如果是搭建的论坛记得写域名（可以不加端口，以后在nginx反代理）当然，建议先使用默认的调试。注意不要忘记“http://”，结尾不要加&##39;/&##39;，只有这个链接能够访问论坛，其他链接访问会显示链接断开（比如我有一个服务器，IP是1.2.3.4，域名www.exp.com和exp.com都A记录过去了，这里我填写www.exp.com，那么exp.com和1.2.3.4访问的时候都会显示与“NodeBB的链接断开”）<br/>
 </p>
 <p>
     Username，Email Address ，Password是论坛管理员的账号邮箱密码，牢记。邮箱要填写可以用的，以便以后开邮件验证功能的时候不用再去修改

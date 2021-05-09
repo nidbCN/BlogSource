@@ -1,5 +1,5 @@
 ---
-title: 'C#批量重命名图片为指定格式'
+title: 'CSharp批量重命名图片为指定格式'
 author: Gaein nidb
 categories:
 - 代码如诗

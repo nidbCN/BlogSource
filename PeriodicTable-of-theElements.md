@@ -15,7 +15,7 @@ date: 2019-07-13 22:55:37
 <!-- more -->
 > 因为刚好需要元素周期表就找了一下，网上大多数更新不及时而且样式不好看，数据不权威。终于在IUPAC官网和中国化学会找到了英文和中文（中国化学会译制的IUPAC周期表）
 
-## IUPAC（国际纯粹与应用化学联合会）元素周期表[英文/English]
+#### IUPAC（国际纯粹与应用化学联合会）元素周期表[英文/English]
 
 > International Union of Pure and Applied Chemistry (IUPAC) 国际纯粹与应用化学联合会，又译 国际理论（化学）与应用化学联合会， 是一个致力于促进化学相关的非政府组织，也是各国化学会的一个联合组织。 以公认的化学命名权威著称。 命名及符号分支委员会每年都会修改IUPAC命名法，以力求提供化合物命名的准确规则。 IUPAC 也是国际科学理事会的会员之一。
 
@@ -23,13 +23,13 @@ IUPAC官网:[IUPAC.org](https://iupac.org "国际纯粹与应用化学联合会�
 
 ![元素周期表英文版(IUPAC)](https://s2.ax1x.com/2019/07/13/Z4O5i4.md.png "元素周期表英文版IUPAC")
 
-### 图片下载：[[Gaein.cn | PTE-IUPAC.png | 225 KB](https://static.cdn.gaein.cn/website_used/files/PTE/PTE-IUPAC.png)]
+###### 图片下载：[[Gaein.cn | PTE-IUPAC.png | 225 KB](https://static.cdn.gaein.cn/website_used/files/PTE/PTE-IUPAC.png)]
 
-### PDF下载：[[Gaein.cn | PTE-IUPAC.pdf | 236 KB](https://static.cdn.gaein.cn/website_used/files/PTE/PTE-IUPAC.pdf)]
+###### PDF下载：[[Gaein.cn | PTE-IUPAC.pdf | 236 KB](https://static.cdn.gaein.cn/website_used/files/PTE/PTE-IUPAC.pdf)]
 
 //推荐下载PDF文件，更清晰，方便打印
 
-## CCS（中国化学会）元素周期表[中文/Chinese]
+#### CCS（中国化学会）元素周期表[中文/Chinese]
 
 > 中国化学会（Chinese Chemical Society，缩写CCS）是从事化学或与化学相关专业的科技、教育工作者自愿组成并依法注册登记的学术性、公益性法人社会团体，是中国科学技术协会的组成部分，是中国发展化学科学技术的重要社会力量。
 
@@ -39,9 +39,9 @@ CCS官网：[chemsoc.org.cn](https://www.chemsoc.org.cn "中国化学会官网")
 
 ![元素周期表中文版(CCS)](https://s2.ax1x.com/2019/07/13/Z4XcfH.md.png "元素周期表中文版CCS")
 
-### 图片下载：[[Gaein.cn | PTE-CCS.png | 217 KB](https://static.cdn.gaein.cn/website_used/files/PTE/PTE-CCS.png)]
+###### 图片下载：[[Gaein.cn | PTE-CCS.png | 217 KB](https://static.cdn.gaein.cn/website_used/files/PTE/PTE-CCS.png)]
 
-### PDF下载：[[Gaein.cn | PTE-CCS.pdf | 638 KB](https://static.cdn.gaein.cn/website_used/files/PTE/PTE-CCS.pdf)]
+###### PDF下载：[[Gaein.cn | PTE-CCS.pdf | 638 KB](https://static.cdn.gaein.cn/website_used/files/PTE/PTE-CCS.pdf)]
 
 //推荐下载PDF文件，更清晰，方便打印
 
@@ -63,7 +63,7 @@ CCS官网：[chemsoc.org.cn](https://www.chemsoc.org.cn "中国化学会官网")
 
 另外 元素：周期表 开发了Windows10应用，请到 [[Microsoft应用商店 元素：周期表](https://www.microsoft.com/zh-cn/p/元素-周期表/9wzdncrfjcm1)] 下载
 
-# 有关版权的特别声明：
+## 有关版权的特别声明：
 
 > 英文版化学元素周期表版权归国际纯粹与应用化学联合会（IUPAC）所有
 

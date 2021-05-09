@@ -24,7 +24,7 @@ https://wiki.vg/Authentication
 这里面详细的写了包括登录、刷新、登出等
 以下是翻译内容("(?)是当前无法确定的翻译")：
 从 Minecraft 1.6 起引入了一个名为yggdrasil的新认证方案，它完全取代了以前的认证系统。Mojang的另一个游戏——Scrolls，也使用这种身份验证方法。Mojang表示，每个人都应该使用这个认证系统进行自定义登录，但是不应该从用户那里收集凭证。
-# 目录：
+## 目录：
 - 1.认证格式
 - 2.错误
 - 3.登录
@@ -49,7 +49,7 @@ https://wiki.vg/Authentication
  - 3.3.响应
 - 8.加入服务器
 
-# 请求格式
+## 请求格式
 所有发送到ygdrasil的请求都发送到以下服务器：
 https://authserver.mojang.com
 此外，它们还应遵守以下规则：
@@ -68,7 +68,7 @@ https://authserver.mojang.com
 "cause":"错误原因"	//可选
 }
 
-# 错误
+## 错误
 以下是可能遇到的一些错误
 
 | 错误 | 原因 | 错误信息 | 笔记 |
@@ -84,16 +84,16 @@ https://authserver.mojang.com
 | IllegalArgumentException |  | 无效的salt版本 | ？？？ |
 | Unsupported Media Type |  | 服务器拒绝回复请求，因为请求的格式不受请求方法的支持 | 数据未作为"application/json"提交 |
 
-# 登录
+## 登录
 使用用户的密码进行登录
 
-## 端点
+#### 端点
 
 ``` 
 /authenticate
 ```
 
-## 有效负载
+#### 有效负载
 
 ```
 {
@@ -111,7 +111,7 @@ https://authserver.mojang.com
 ```
 clientToken应该是随机生成的标识符，并且对于每个请求都必须是相同的。Vanilla启动程序在第一次运行时生成一个随机的（版本4）的uuid并保存它，在随后的每个请求中都重复使用它。如果它被省略，服务器将基于Java的UUID.toString()生成一个随机令牌，然后由客户端存储。但是，这也会使该用户以前获得的所有客户端访问令牌失效。
 
-## 响应
+#### 响应
 
 ```
 {
@@ -162,7 +162,7 @@ clientToken应该是随机生成的标识符，并且对于每个请求都必须
         "properties": [
             {
                 "name": "preferredLanguage",   // 或许不是所有账户都存在此项
-                "value": "en"                  // Java locale 格式 (https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html#toString--)
+                "value": "en"                  // Java locale 格式 (https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html##toString--)
             },
             {
                 "name": "twitch_access_token", // 只有连接了twitch账户时才存在 (see https://account.mojang.com/me/settings)
@@ -216,7 +216,7 @@ Response
         "properties": [
             {
                 "name": "preferredLanguage",   // might not be present for all accounts
-                "value": "en"                  // Java locale format (https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html#toString--)
+                "value": "en"                  // Java locale format (https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html##toString--)
             },
             {
                 "name": "twitch_access_token", // only present if a twitch account is associated (see https://account.mojang.com/me/settings)
@@ -285,4 +285,4 @@ Response
 Returns an empty payload if successful.
 Joining a Server
 
-See Protocol Encryption#Authentication 
+See Protocol Encryption##Authentication 

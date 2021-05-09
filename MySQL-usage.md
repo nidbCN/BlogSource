@@ -11,61 +11,61 @@ date: 2020-04-17 15:10:44
 ---
 由于博客和其它的程序，经常要接触MySQL数据库。自己暑假想要学习PHP，肯定也要用到MySQL数据库。为了避免经常上网查常用的命令，就写篇博客备用。
 <!--more-->
-p.s. 为什么我感觉我从一个写桌面程序(C#.NET)的孩子变成了web运维(???)
-# 相关链接
+p.s. 为什么我感觉我从一个写桌面程序(CSharp.NET)的孩子变成了web运维(???)
+## 相关链接
 [菜鸟教程](https://www.runoob.com/mysql)
 [MySQL官网下载](https://www.mysql.com/downloads/)
-# 终端命令
-### 连接MySQL
+## 终端命令
+###### 连接MySQL
 ```bash
-mysql -p #使用root连接，如果需要在命令行中输入密码，则密码与"-p"之间没有空格
+mysql -p ##使用root连接，如果需要在命令行中输入密码，则密码与"-p"之间没有空格
 ```
 参数
 ```bash
--u #指定用户
--p #密码（必选，新版MySQL已经不支持无密码登录）
--P #端口，默认3306
--h #服务器地址
--D #数据库名
+-u ##指定用户
+-p ##密码（必选，新版MySQL已经不支持无密码登录）
+-P ##端口，默认3306
+-h ##服务器地址
+-D ##数据库名
 ```
-### 开启、关闭MySQL
+###### 开启、关闭MySQL
 ```bash
-mysqladmin -u root -p shutdown #关闭MySQL，需要输入密码
-#切记！千万不要使用kill等命令关闭MySQL，可能会造成数据损坏
-service mysqld start #启动MySQL
-service mysqld status #查看运行状态
+mysqladmin -u root -p shutdown ##关闭MySQL，需要输入密码
+##切记！千万不要使用kill等命令关闭MySQL，可能会造成数据损坏
+service mysqld start ##启动MySQL
+service mysqld status ##查看运行状态
 ```
-### 查看默认密码
+###### 查看默认密码
 ```bash
-sudo grep 'temporary password' /var/log/mysqld.log  #刚安装完MySQL时候使用此命令查看初始化的密码
+sudo grep 'temporary password' /var/log/mysqld.log  ##刚安装完MySQL时候使用此命令查看初始化的密码
 ```
-# 备份与恢复
-### 备份（导出.sql文件）
+## 备份与恢复
+###### 备份（导出.sql文件）
 终端输入：
 ```bash
 mysqldump -u root -p 用户名 数据库名 > dump.sql
 ```
-### 恢复（导入.sql文件）
+###### 恢复（导入.sql文件）
 MySQL输入：
 ```mysql
 SOURCE /data/文件路径;
 ```
-### 修复
+###### 修复
 有时候错误的关闭MySQL会造成数据损害，此时可以尝试修复。MySQL内输入命令：
 ```mysql
-CHECK TABLE 表名称;#检查数据表是否损坏
-REPAIRE TABLE 表名称;#修复损坏的表
-REPAIR TABLE EXTENDED 表名称;#速度慢，修复率高
+CHECK TABLE 表名称;##检查数据表是否损坏
+REPAIRE TABLE 表名称;##修复损坏的表
+REPAIR TABLE EXTENDED 表名称;##速度慢，修复率高
 ```
-# MySQL命令
-### 用户管理
+## MySQL命令
+###### 用户管理
 > 新版MySQL的密码规则要求密码必须包含大小写字母、特殊字符、数字，并且长度在8个字符及以上。不符合会弹出"ERROR 1819 (HY000): Your password does not satisfy the current policy requirements"
 > 在某些数据库中localhost可能是"%"
-##### 新建用户
+########## 新建用户
 ```mysql
 CREATE USER '用户名'@'localhost' IDENTIFIED BY '密码';
 ```
-##### 添加权限
+########## 添加权限
 ```mysql
 GRANT 权限 ON 数据库.数据表 TO '用户名'@'localhost' WITH GRANT OPTION;
 ```
@@ -102,39 +102,39 @@ INDEX：授予用户可以在表上定义索引的权限。
 ALL 或 ALL PRIVILEGES：所有的权限名。
 ```
 （权限列表摘自biancheng.net）
-##### 回收权限
+########## 回收权限
 ```mysql
 REVOKE 权限 ON 数据库.数据表  FROM '用户名'@'localhost';
 ```
-##### 更改密码
+########## 更改密码
 ```mysql
-ALTER USER '用户名'@'localhost' IDENTIFIED BY '密码'; #更改密码
+ALTER USER '用户名'@'localhost' IDENTIFIED BY '密码'; ##更改密码
 ```
-##### 删除用户
+########## 删除用户
 ```mysql
 DROP USER '用户名'@'localhost';
 ```
-### 数据管理
-##### 列出数据库
+###### 数据管理
+########## 列出数据库
 ```mysql
 SHOW DATABASES;
 ```
-##### 选中数据库
+########## 选中数据库
 ```mysql
 USE 数据库名;
 ```
-##### 查看数据库大小
+########## 查看数据库大小
 ```
 USE information_schema;
-select concat(round(sum(data_length/1024/1024),2),'MB') as data from tables;#查看总大小
-select concat(round(sum(data_length/1024/1024),2),'MB') as data from tables where table_schema='数据库名';#查看指定数据库大小
-select concat(round(sum(data_length/1024/1024),2),'MB') as data from tables where table_schema='数据库名' and table_name='表名';#查看指定表的大小
+select concat(round(sum(data_length/1024/1024),2),'MB') as data from tables;##查看总大小
+select concat(round(sum(data_length/1024/1024),2),'MB') as data from tables where table_schema='数据库名';##查看指定数据库大小
+select concat(round(sum(data_length/1024/1024),2),'MB') as data from tables where table_schema='数据库名' and table_name='表名';##查看指定表的大小
 ```
-##### 新建数据库
+########## 新建数据库
 ```mysql
 CREATE DATABASE 数据库名;
 ```
-##### 删除数据库
+########## 删除数据库
 ```mysql
 DROP DATABASE 数据库名;
 ```

@@ -11,7 +11,7 @@ date: 2019-07-15 10:52:59
 ---
 早就想去写的一篇博文，因为我在部署现在这个网站的服务器时，使用了最新版的MySQL，按照网上的教程安装出现了不少问题，写在这里备忘。
 <!-- more -->
-# 获取rpm
+## 获取rpm
 1. 访问 [https://www.mysql.com/downloads/](https://www.mysql.com/downloads/)
 ![MySQL官网的下载界面](https://s2.ax1x.com/2019/07/15/ZoEUeO.md.png)
 选择Yum Repository
@@ -24,7 +24,7 @@ date: 2019-07-15 10:52:59
 wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
 ```
 ![wget下载完成](https://s2.ax1x.com/2019/07/15/ZoEtOK.png)
-# 安装MySQL
+## 安装MySQL
 1. 导入rpm，使用命令：
 ```
 sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm 
@@ -39,7 +39,7 @@ sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm
 提示后按y开始安装，会自动下载文件，可能需要一段时间，依网速和服务器位置而定
 提示"Is this ok"时再次输入y并回车，确认
 ![确认](https://s2.ax1x.com/2019/07/15/ZoEBYd.md.png)
-# 设置MySQL
+## 设置MySQL
 1. 启动MySQL
 使用
 ```
@@ -69,7 +69,7 @@ mysql -u root -p
 并输入默认密码（Linux系统输入密码时不会显示）
 连接到MySQL服务器
 ![连接到MySQL](https://s2.ax1x.com/2019/07/15/ZoE66P.md.png)
-# 修改默认密码
+## 修改默认密码
 连接到MySQL服务器后，使用
 ```
 alter user 'root'@'localhost'IDENTIFIED BY 'pWD123456-';

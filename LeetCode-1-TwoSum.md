@@ -14,7 +14,7 @@ date: 2020-11-9 12:29:51
 
 > 其实两数之和这道题在一个月前用Java写过一次，难度应该是不算高。但是力扣判题变得丧心病狂了，一个月前通过了的相同代码到现在就疯狂超时，所以还要看看这题。
 
-# 题干
+## 题干
 
 [[力扣-两数之和](https://leetcode-cn.com/problems/two-sum/)]
 
@@ -26,15 +26,15 @@ date: 2020-11-9 12:29:51
 > 所以返回 [0, 1]
 > ```
 
-# 暴力解法
+## 暴力解法
 
-## 思路
+#### 思路
  
 用最暴力的算法两层循环还是非常简单的，只需要让第二层从`i + 1`开始循环即可防止重复，匹配到后将数组下标`i`和`j`添加到返回的数组里面即可
 
-## 代码
+#### 代码
 
-### Java
+###### Java
 
 ```java
 class Solution {
@@ -55,7 +55,7 @@ class Solution {
 }
 ```
 
-### C#(Microsoft Java)
+###### CSharp(Microsoft Java)
 
 ```cs
 public class Solution {
@@ -77,7 +77,7 @@ public class Solution {
 }
 ```
 
-### C
+###### C
 
 ```c
 int *twoSum(int *nums, int numsSize, int target, int *returnSize)
@@ -104,7 +104,7 @@ end:
 ```
 p.s.别骂我的goto，使用goto跳出C的两层循环还是蛮方便（逃）
 
-## 结果
+#### 结果
 
 ![一个月前的Java暴力算法](https://s1.ax1x.com/2020/11/10/BbBDCd.png)
 > 一个月前的Java代码，那个时候还能通过，现在提交同样的代码也会超时
@@ -112,29 +112,29 @@ p.s.别骂我的goto，使用goto跳出C的两层循环还是蛮方便（逃）
 ![C语言暴力算法](https://s1.ax1x.com/2020/11/10/BbB04H.png)
 > C语言暴力算法结果（超时）
 
-# 哈希表法
+## 哈希表法
 
-## 思路
+#### 思路
 > 这是实验室巨佬和我说的，所以我去了解了一下这个思路。大概的实现是这样的：遍历一次数组将值存入哈希表中，同时检查哈希表中是否存在 `target - num` 存在和话返回下标，不存在继续循环并将当前插入哈希表，直到循环结束则无结果。\
 官方题解使用的HashMap是开源项目 [uthash](https://troydhanson.github.io/uthash/) leetcode已经默认包含其头文件，可以直接使用（官方文档： https://troydhanson.github.io/uthash/userguide.html）
 
-## 代码
+#### 代码
   
 p.s. 写起来还是有点自闭的，现在已经是12:35了，才刚通过一个  
 p.s. 代码很长，有很多被注释掉的是当时测试用的，不舍得删掉了(最后还是删了)
 ```C
 /*AI+移动互联创新实验室 C语言培训练习题 两数之和 | 力扣-1*/
-#include <stdio.h>
-#include <malloc.h>
-#include <math.h>
-#include <stdbool.h>
+##include <stdio.h>
+##include <malloc.h>
+##include <math.h>
+##include <stdbool.h>
 // 头文件
 
-#include "uthash\uthash.h"
+##include "uthash\uthash.h"
 
-#define DEFAULT_SIZE 0
-#define FOUND_SIZE 2
-#define INT2_SIZE sizeof(int) * 2
+##define DEFAULT_SIZE 0
+##define FOUND_SIZE 2
+##define INT2_SIZE sizeof(int) * 2
 // 定义常量 PART1
 
 typedef struct _hashMap
@@ -145,7 +145,7 @@ typedef struct _hashMap
 } HashMap;
 // 哈希表结构体
 
-#define HASH_SIZE sizeof(HashMap) * 2
+##define HASH_SIZE sizeof(HashMap) * 2
 // 定义常量 PART2
 
 int *twoSum(int *nums, int numsSize, int target, int *returnSize);
@@ -222,11 +222,11 @@ bool hashInsert(int key, int val)
 }
 ```
 
-## 结果
+#### 结果
 ![C语言代码](https://s1.ax1x.com/2020/11/10/BbBwUe.png)
 > C语言的代码，时间还算不错，内存占用大了一点
 
-# 最后
+## 最后
 
 说起这题来真是心酸啊，跨越了一个月，也通过这道题学(zì)会(bì)了很多
 ![通过截屏](https://s1.ax1x.com/2020/11/10/BbBr8A.png)

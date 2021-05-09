@@ -36,7 +36,7 @@ cover: 'https://ww3.sinaimg.cn/large/6aee7dbbjw1eqft66xcg3j21kw12mdub.jpg'
 </blockquote>
 <ul>
 <li><a href="https://link.jianshu.com?t=http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="nofollow"><em>创始人 John Gruber 的 Markdown 语法说明</em></a></li>
-<li><a href="https://link.jianshu.com?t=http://wowubuntu.com/markdown/#list" target="_blank" rel="nofollow"><em>Markdown 中文版语法说明</em></a></li>
+<li><a href="https://link.jianshu.com?t=http://wowubuntu.com/markdown/##list" target="_blank" rel="nofollow"><em>Markdown 中文版语法说明</em></a></li>
 </ul>
 <h3>使用 Markdown 的优点</h3>
 <ul>
@@ -86,10 +86,10 @@ cover: 'https://ww3.sinaimg.cn/large/6aee7dbbjw1eqft66xcg3j21kw12mdub.jpg'
 <div class="image-package">
 <img src="https://ww1.sinaimg.cn/large/6aee7dbbgw1effeaclhiyj20eh09cwez.jpg" data-original-src="http://ww1.sinaimg.cn/large/6aee7dbbgw1effeaclhiyj20eh09cwez.jpg" alt="标题" style="cursor: zoom-in;"><div class="image-caption">标题</div>
 </div>
-<p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 <code>#</code> 号即可。</p>
-<p><code># 一级标题</code></p>
-<p><code>## 二级标题</code></p>
-<p><code>### 三级标题</code></p>
+<p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 <code>##</code> 号即可。</p>
+<p><code>## 一级标题</code></p>
+<p><code>#### 二级标题</code></p>
+<p><code>###### 三级标题</code></p>
 <p>以此类推，总共六级标题，建议在井号后加一个空格，这是最标准的 Markdown 语法。</p>
 <h3>列表</h3>
 <p>熟悉 HTML 的同学肯定知道有序列表与无序列表的区别，在 Markdown 下，列表的显示只需要在文字前加上 <code>-</code> 或 <code>*</code> 即可变为无序列表，有序列表则直接在文字前加<code>1.</code> <code>2.</code> <code>3.</code> 符号要和文字之间加上一个字符的空格。</p>

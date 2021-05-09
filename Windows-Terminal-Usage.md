@@ -14,11 +14,11 @@ date: 2020-12-27 1:43:18
 
 <!--more-->
 
-# 前言
+## 前言
 
 > 总感觉 cmd、PowerShell 太丑。以前折腾过一阵子的 cmder 感觉也就一般。听学姐们吹了挺长时间的 Windows Terminal。今天试一下，确实效果非常好，美观好用。不得不说~~巨硬~~Microsoft 正经去做某个东西还是非常好的。
 
-# 安装
+## 安装
 
 这次主要有以下几个目的：
 
@@ -27,14 +27,14 @@ date: 2020-12-27 1:43:18
 3. 在 Windows Terminal 里面添加 python 控制台；
 4. 合并 PowerShell、Git Bash、cmd 和 python 到 Windows Terminal 中，并取消其它的右键菜单，为 Windows Terminal 添加右键菜单。
 
-## 安装 Windows Terminal
+#### 安装 Windows Terminal
 
-### 介绍
+###### 介绍
 
 是一款新式、快速、高效且强大的终端应用程序。通过它可以使用命令提示符、PowerShell、WSL 等诸多 shell。Windows Terminal 支持多选项卡、窗格、Unicode 和 GPU 加速文本渲染引擎，同时也支持丰富多彩的用户自定义主题。
 ![wt宣传片](https://s3.ax1x.com/2020/12/27/r4qygP.png)
 
-### 安装
+###### 安装
 
 1. 打开系统的 Microsoft Store；
 2. 搜索"Windows Terminal"；
@@ -46,15 +46,15 @@ date: 2020-12-27 1:43:18
 菜单里出现 Windows Terminal，打开后如图所示即为安装完成。
 ![WT打开](https://s3.ax1x.com/2020/12/27/r4qQAJ.png)
 
-## 安装 PowerShell Core
+#### 安装 PowerShell Core
 
-### 介绍
+###### 介绍
 
 最初，Windows PowerShell 是在 .NET Framework 基础之上构建而成，仅适用于 Windows 系统。 在最新版本中，PowerShell 使用 .NET Core 3.1 作为运行时。 PowerShell 在 Windows、macOS 和 Linux 平台上运行。
 新的 PowerShell 拥有更高的效率和诸多优点。
 PowerShell Core 是 [GitHub](https://github.com/PowerShell/PowerShell) 上面的开源项目，使用 MIT 许可证。
 
-### 安装
+###### 安装
 
 > 官方有详细的安装文档，见 [Microsoft DOCS](https://docs.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell)
 
@@ -69,11 +69,11 @@ PowerShell Core 是 [GitHub](https://github.com/PowerShell/PowerShell) 上面的
 3. 一直点击"Next"，直到安装完成，点击"Finish"。
    ![安装PSCore](https://s3.ax1x.com/2020/12/27/r4qlN9.png)
 
-## 配置 PowerShell Core
+#### 配置 PowerShell Core
 
-### 准备
+###### 准备
 
-#### 安装模块
+######## 安装模块
 
 打开 PowerShell 7，输入以下命令：
 
@@ -87,14 +87,14 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 > 先输入一个命令，光标会移动到下一行的最左侧。这时候不要着急输入另一个，稍等一会如果出现提示那么就按`Y`。安装完成（左侧有显示"PS xxx"字样）再安装另外一个。两个不分先后。
 
-#### 安装 PowerLine 字体
+######## 安装 PowerLine 字体
 
 这一部分微软官方文档有写，详见 [Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/terminal/tutorials/powerline-setup)
 
 1. 打开 Cascadia Code [GitHub 发布页](https://github.com/microsoft/cascadia-code/releases)，下载最新的 Release `CascadiaCode-2009.22.zip`；
 2. 下载完成后解压文件，进入`解压后的文件夹->ttf`，双击里面`.ttf`结尾的文件，安装。
 
-### 配置
+###### 配置
 
 1. 从菜单栏打开安装好的 PowerShell 7。如果电脑安装有 Visual Studio Code 的话在里面输入以下内容：
    ```ps
@@ -109,27 +109,27 @@ Install-Module oh-my-posh -Scope CurrentUser
 2. 输入完成后按下回车，VSCode（或记事本）将会打开一个文件（可能是空的），在里面输入以下内容后保存
 
    ```ps
-   # by Gaein nidb , https://www.Gaein.cn
+   ## by Gaein nidb , https://www.Gaein.cn
 
-   Clear-Host                  # 清除屏幕
+   Clear-Host                  ## 清除屏幕
 
    $time =  Get-date -Format "现在是yyyy年MM月dd日 HH时mm分"
-   $path = $pwd.path           # 获取路径
+   $path = $pwd.path           ## 获取路径
    if ( $path.split("\")[-1] -eq "Windows" -xor $path.split("\")[-1] -eq "System32") {
-       # 默认路径为桌面
+       ## 默认路径为桌面
        $desktop = "C:\Users\" + $env:UserName + "\Desktop\"
-       # 切换到桌面
+       ## 切换到桌面
        Set-Location $desktop
    }
    Write-Output $time
    $motdPath = "C:\Users\" + $env:UserName + "\Documents\PowerShell\motd.txt"
-   Get-Content $motdPath   # 欢迎消息
+   Get-Content $motdPath   ## 欢迎消息
 
-   # 导入模块
+   ## 导入模块
    Import-Module posh-git
    Import-Module oh-my-posh
 
-   # 设置主题
+   ## 设置主题
    Set-Theme PowerLine
    ```
 
@@ -149,9 +149,9 @@ Install-Module oh-my-posh -Scope CurrentUser
 
    > 这里的内容是完全自定义的，算是欢迎消息，即打开 PowerShell 输出的一段话。你可以随便写。
 
-## 配置 Windows Terminal
+#### 配置 Windows Terminal
 
-### 自定义设置
+###### 自定义设置
 
 1. 打开 Windows Terminal，点击 `下箭头->设置` 或按下 `Win+,` 打开设置文件
    ![打开的setting.json](https://s3.ax1x.com/2020/12/27/r4qG1x.png)
@@ -181,7 +181,7 @@ Install-Module oh-my-posh -Scope CurrentUser
          "acrylicOpacity": 0.75, // 不透明度
          "closeOnExit": true, // 退出时关闭
          "colorScheme": "Campbell", // 配色方案
-         "cursorColor": "#FFFFFF", // 颜色
+         "cursorColor": "##FFFFFF", // 颜色
          "cursorShape": "bar", // bar
          "fontFace": "Cascadia Code PL", // 字体
          "fontSize": 10, // 字号
@@ -269,7 +269,7 @@ Install-Module oh-my-posh -Scope CurrentUser
 
    > 可以按需进行修改
 
-### 添加到右键菜单
+###### 添加到右键菜单
 
 1. `Win + R` 输入 `regedit` 打开注册表编辑器；
 2. 转到`计算机\HKEY_CLASSES_ROOT\Directory\Background\shell`；
@@ -282,7 +282,7 @@ Install-Module oh-my-posh -Scope CurrentUser
 6. 在`Terminal`新建项，名字为`command`，值为`wt.exe`
    ![命令](https://s3.ax1x.com/2020/12/27/r4qB4A.png)
 
-# 参考
+## 参考
 
 1. [Microsoft Docs:Windows Terminal](https://docs.microsoft.com/zh-cn/windows/terminal/)
 2. [Microsoft Docs:从 PowerShell5 迁移到 7 ](https://docs.microsoft.com/zh-cn/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.1)

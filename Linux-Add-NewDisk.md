@@ -49,7 +49,7 @@ date: 2018-10-20 12:07:15
 <p>
     比较简单，应该很容易看懂，暂时把几个常用的写上了意思
 </p>
-<pre class="fy-prettyprint linenums">Command (m for help): p                                        #显示磁盘信息
+<pre class="fy-prettyprint linenums">Command (m for help): p                                        ##显示磁盘信息
 Disk /dev/sdb: 10 GiB, 10737418240 bytes, 20971520 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 4096 bytes
@@ -57,18 +57,18 @@ I/O size (minimum/optimal): 4096 bytes / 4096 bytes
 Disklabel type: dos
 Disk identifier: 0xb5106536
 
-Command (m for help): n                                        #新建分区
+Command (m for help): n                                        ##新建分区
 Partition type
    p   primary (0 primary, 0 extended, 4 free)
    e   extended (container for logical partitions)
-Select (default p): p                                          #新建逻辑分区
+Select (default p): p                                          ##新建逻辑分区
 Partition number (1-4, default 1): 
 First sector (2048-20971519, default 2048): 
 Last sector, +sectors or +size{K,M,G,T,P} (2048-20971519, default 20971519): 
-#直接留空，我只想把所有的空间分一个分区
-Created a new partition 1 of type &#39;Linux&#39; and of size 10 GiB.
+##直接留空，我只想把所有的空间分一个分区
+Created a new partition 1 of type &##39;Linux&##39; and of size 10 GiB.
 
-Command (m for help): w                                        #保存退出
+Command (m for help): w                                        ##保存退出
 The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks.</pre>
@@ -138,16 +138,16 @@ mkntfs completed successfully. Have a nice day.</pre>
     <p>
         来永久挂载磁盘
     </p>
-    <pre class="fy-prettyprint linenums"># /etc/fstab: static file system information.
-# 
-# Use &#39;blkid&#39; to print the universally unique identifier for a
-# device; this may be used with UUID= as a more robust way to name devices
-# that works even if disks are added and removed. See fstab(5).
-#
-# &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
-# / was on /dev/sda1 during installation
+    <pre class="fy-prettyprint linenums">## /etc/fstab: static file system information.
+## 
+## Use &##39;blkid&##39; to print the universally unique identifier for a
+## device; this may be used with UUID= as a more robust way to name devices
+## that works even if disks are added and removed. See fstab(5).
+##
+## &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
+## / was on /dev/sda1 during installation
 UUID=22e202f3-ae04-4995-b214-de7f192f33c4 /               ext4    errors=remount-ro 0       1
-# swap was on /dev/sda5 during installation
+## swap was on /dev/sda5 during installation
 UUID=472580b3-a87b-4fe2-8bda-59b59d087ec6 none            swap    sw              0       0
 /dev/fd0        /media/floppy0  auto    rw,user,noauto,exec,utf8 0       0
 /dev/sdb1       /data   ntfs    defaults        0       0
@@ -156,23 +156,23 @@ UUID=472580b3-a87b-4fe2-8bda-59b59d087ec6 none            swap    sw            
 <p>
     需要注意的是，中间的空不需要打空格，用TAB制表符更方便<br/>
 </p>
-<pre class="fy-prettyprint linenums">root@rootadmin:/data# mkdir blog
-root@rootadmin:/data# dir
+<pre class="fy-prettyprint linenums">root@rootadmin:/data## mkdir blog
+root@rootadmin:/data## dir
 blog
-root@rootadmin:/data# reboot
+root@rootadmin:/data## reboot
 Connection closing...Socket close.
 
 Connection closed by foreign host.
 
 Disconnected from remote host(GAEIN.CN) at 12:21:20.
 
-Type `help&#39; to learn how to use Xshell prompt.
+Type `help&##39; to learn how to use Xshell prompt.
 [C:\~]$ 
 
 Connecting to *.*.*.*:22...
 
 Connection established.
-To escape to local shell, press &#39;Ctrl+Alt+]&#39;.
+To escape to local shell, press &##39;Ctrl+Alt+]&##39;.
 
 Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-38-generic x86_64)
 

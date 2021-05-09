@@ -12,7 +12,7 @@ date: 2019-02-17 00:17:51
 <!-- more -->
 版权声明：标题图引用自淘宝，内部部分图片和内容引用于网络（如Chiphell），如果侵权请联系mail@Gaein.cn
 
-# 查询序列号
+## 查询序列号
 经常有人问怎么区分三星B-Die或者C-Die啥的，今天呢闲来无事看了一下，就写在这里啦
 首先要确定内存是三星的，具体可以用AIDA64软件来看，在主板>SPD>DRAM制造商一栏，比如我的是镁光公司制造的颗粒
 ![ks5Vrq.png](https://s2.ax1x.com/2019/02/17/ks5Vrq.png)
@@ -20,23 +20,23 @@ date: 2019-02-17 00:17:51
 ![ks5QG4.md.jpg](https://s2.ax1x.com/2019/02/17/ks5QG4.md.jpg)]
 从第二行起：
 K4A8G085WB-BCPB
-# 序列号含义
+## 序列号含义
 这是个B-Die芯片。我们来解释一下三星的序列号意义（部分内容为个人根据官网数据总结而来）：
 ***
-### K4：
+###### K4：
 不同于Chiphell某个帖子的说法，我认为4并非代表DRAM产品。因为三星的LPDDR3、LPDDR4X产品中均出现了K3开头的型号，LPDDR4X的中文名称是四代超低功耗双倍数据率同步动态随机存储器，双倍数据率同步动态随机存储器就是DRAM。而且在三星产品网页的网址"https://www.samsung.com/semiconductor/cn/dram/lpddr4x/"也能看出来其是DRAM产品，但并非K4开头。除此之外，HBM、HBM2均为KH开头。
 （LPDDR3、LPDDR4X有K3，HBM、HBM2均为KH）
 ***
-### A：
+###### A：
 代表DDR4。（此外：F是LPDDR4，U是LPDDR4X，B是DDR3，Q（K3开头）或E（K4开头）是LPDDR3，Z是GDDR6，G是GDDR5，A8是HBM/HBM2）
 ***
-### 8G：
+###### 8G：
 代表容量（整个内存容量，如果是这样的话应该是1Gx8（单面条）或者512MX16（双面）或者2GX4）（除此之外，DDR4产品用AG代表6GB，LPDDR4产品用2代表12GB、6代表16GB、H代表24GB、B代表32GB、4和8分别代表4G和8G，LPDDR4X产品用H6代表48GB、用H7代表64GB、12GB 16GB 24FB 32GB同LPDDR4，DDR3用1G2G4G表示容量，LPDDR3用F3（K3开头）或者6E（K4开头）表示16GB、HE表示24GB、F4（K3开头）或者BE（K4开头）表示32GB、用FA表示64G）
 ***
-### W后面的B：
+###### W后面的B：
 代表版本：B，也就是B-Die颗粒（如果在三星官网找到那个内存颗粒的网页，然后点相关资源>Datasheet会发现标题写着“8Gb B-die DDR4 SDRAM”）同样的，C就是C-Die，E是E-Die或者C-Die（对于其他产品如LPDDR4等，并不适用）
 ***
-### -BCPB
+###### -BCPB
 我不是特别清楚，可以参考：https://www.chiphell.com/thread-1625004-1-1.html
 但是原文我感觉有误，因为B表示78 FBGA的话，为什么96也写的B？
 ***

@@ -26,9 +26,9 @@ SDL（Simple DirectMedia Layer）是一套开放源代码的跨平台多媒体�
 > 3. MinGW-w64 GCC 8.1.0(x86_64-posix-seh-rev0)
 > 4. SDL2-2.0.12 [DEV]
 
-# SDL2 配置
+## SDL2 配置
 
-## 下载 SDL2
+#### 下载 SDL2
 
 1. 打开 SDL 官网的下载页 [LibSDL.org](https://www.libsdl.org/download-2.0.php)
    ![下载](https://s3.ax1x.com/2020/12/17/r3kLTA.jpg)
@@ -36,7 +36,7 @@ SDL（Simple DirectMedia Layer）是一套开放源代码的跨平台多媒体�
    我下载的是["SDL2-devel-2.0.12-mingw.tar.gz"](https://www.libsdl.org/release/SDL2-devel-2.0.12-mingw.tar.gz)  
    (注：此链接不确保时效性，请去官网下载最新版本)
 
-## 配置 SDL2
+#### 配置 SDL2
 
 1. 解压缩下载的"SDL2-devel-2.0.12-mingw.tar.gz"，将"x86_64-w64-mingw32"中的所有文件复制到你 MinGW-w64 的目录中。  
    如果你的 MinGW 是 i686 则复制"i686-w64-mingw32"中的所有文件。
@@ -48,40 +48,40 @@ SDL（Simple DirectMedia Layer）是一套开放源代码的跨平台多媒体�
    ![SDL2](https://s3.ax1x.com/2020/12/17/r3kTyD.jpg)
    ![INCLUDE](https://s3.ax1x.com/2020/12/17/r3kTyD.jpg)
 
-# CMake 配置
+## CMake 配置
 
-## 新建
+#### 新建
 
 在 CLion 中点"文件"->"新建项目"，选择 C++(C 也可以)
 ![新建](https://s3.ax1x.com/2020/12/17/r3koQO.jpg)
 
-## 配置
+#### 配置
 
 将"CMakeLists.txt"按照如下内容修改：  
 (注：文件的内容根据你的项目决定，一般来说不用修改默认生成的)
 ![库](https://s3.ax1x.com/2020/12/17/r3kbeH.jpg)
 
 ```cmake
-# 设置CMake需要的版本
+## 设置CMake需要的版本
 cmake_minimum_required(VERSION 3.17)
-# 设置项目名称
+## 设置项目名称
 project(SDL2_Test)
-# 设置C++版本
+## 设置C++版本
 set(CMAKE_CXX_STANDARD 20)
-# 设置includePath
+## 设置includePath
 include_directories(SDL)
-# 生成文件
+## 生成文件
 add_executable(SDL2_Test main.cpp)
-# 链接库
+## 链接库
 target_link_libraries(SDL2_Test mingw32 SDL2main SDL2)
 ```
 ![完成](https://s3.ax1x.com/2020/12/17/r3k4W6.jpg)
 
-# 测试
+## 测试
 
 在"main.cpp"中写入如下内容：
 ```cpp
-#include "SDL2/SDL.h"
+##include "SDL2/SDL.h"
 
 int main(int argc, char *argv[])
 {
@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
 1. 无法找到头文件：检查是否复制"include"和设置"include_directories(SDL)"
 2. 找不到WinMain：检查是否复制库。或者尝试调换"target_link_libraries(SDL2_Test mingw32 SDL2main SDL2)"中库的顺序
 
-# 说明
+## 说明
 
 1. 有些同学可能很迷惑：为什么要把SDL扔进MinGW-w64的目录里面呢？因为我在外面的目录尝试的时候各种报错，后来看了 [CSDN:Clion配置SDL2开发环境（Windows系统）](https://blog.csdn.net/ronaldinho2014/article/details/104835426)。貌似把SDL扔进mingw目录就能解决。具体原因还有待深究。
 2. 其它方法：使用vcpkg可以安装，也可以使用CMake模块：

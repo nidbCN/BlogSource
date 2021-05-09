@@ -1,6 +1,6 @@
-# 字符串和正则表达式
+## 字符串和正则表达式
 
-在C#中，`string` 关键字的映射实际上指向 `.NET` 基类 `System.String` 。 `System.String` 是一个功能非常强大且用途广泛的基类。
+在CSharp中，`string` 关键字的映射实际上指向 `.NET` 基类 `System.String` 。 `System.String` 是一个功能非常强大且用途广泛的基类。
 
 使用运算符重载可以连接字符串：
 
@@ -11,7 +11,7 @@ var msg = str + str1;
 Console.WriteLine(msg);     // HelloWorld
 ```
 
-C#还允许使用索引器来提取指定的字符串：
+CSharp还允许使用索引器来提取指定的字符串：
 
 ```cs
 var msg = "HelloWorld";
@@ -32,3 +32,13 @@ Console.WriteLine(msg[4]);      // o
 * `LastIndexOf`：与 `IndexOf` 一样，从后往前查找。
 * `LastIndexOfAny`：与 `IndexOfAny` 一样，从后往前找。
 * `PadLeft`：在字符串的左侧，通过添加指定的重复字符来填充字符串。
+* `PadRight`：同上，在字符串右侧。
+* `Replace`：用另一个字符或子字符串替换字符串中给定的字符或子字符串。
+* `Split`：用给定字符作为分隔符分隔字符串。
+* `SubString`：从字符串中获取指定位置的子字符串。
+* `ToLower`：转换成小写。
+* `ToUpper`：转换成大写。
+* `Trim`：删除首尾的空白。
+
+######## 9.1.1 - 构建字符串
+

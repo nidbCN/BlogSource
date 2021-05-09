@@ -18,7 +18,7 @@ vim /etc/nginx/nginx.conf
 ```
 server { 
   listen 80;  
-  server_name www.xxx.com; # 你的域名
+  server_name www.xxx.com; ## 你的域名
 
   location / 
   {        
@@ -29,7 +29,7 @@ server {
     proxy_set_header X-NginX-Proxy true;  
     proxy_pass http://127.0.0.1:4567; 
     proxy_redirect off; 
-    # Socket.IO Support
+    ## Socket.IO Support
     proxy_http_version 1.1;  
     proxy_set_header Upgrade $http_upgrade;    
     proxy_set_header Connection "upgrade";
@@ -42,12 +42,12 @@ server {
 ```
 server
 {
-    #基础设置
+    ##基础设置
     listen 80;
     listen 443 ssl;
     server_name www.minecrafter.cn;
     
-    #错误页面
+    ##错误页面
     error_page 502  /502.html;
     location = /502.html 
     {
@@ -55,34 +55,34 @@ server
        internal;
     }    
     
-    #反代理设置
+    ##反代理设置
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header Host $http_host;
     proxy_set_header X-NginX-Proxy true;
-    #proxy_pass http://127.0.0.1:4567;
-    #proxy_pass http://io_nodes;
+    ##proxy_pass http://127.0.0.1:4567;
+    ##proxy_pass http://io_nodes;
     proxy_redirect off;
-    # Socket.IO Support
+    ## Socket.IO Support
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection "upgrade";
     
-    #gizip设置 
+    ##gizip设置 
     gzip            on;
     gzip_min_length 1000;
     gzip_proxied    off;
     gzip_types      text/plain application/xml text/javascript application/javascript application/x-javascript text/css application/json;
 
-    #SSL-START SSL相关配置，请勿删除或修改下一行带注释的404规则
-    #error_page 404/404.html;
-    #HTTP_TO_HTTPS_START
+    ##SSL-START SSL相关配置，请勿删除或修改下一行带注释的404规则
+    ##error_page 404/404.html;
+    ##HTTP_TO_HTTPS_START
     if ($server_port !~ 443)
     {
         rewrite ^(/.*)$ https://$host$1 permanent;
     }
-    #HTTP_TO_HTTPS_END
+    ##HTTP_TO_HTTPS_END
     ssl_certificate    /etc/letsencrypt/live/www.minecrafter.cn/fullchain.pem;
     ssl_certificate_key    /etc/letsencrypt/live/www.minecrafter.cn/privkey.pem;
     ssl_protocols TLSv1.1 TLSv1.2;
@@ -91,9 +91,9 @@ server
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
     error_page 497  https://$host$request_uri;
-    #SSL-END
+    ##SSL-END
 
-    #静态资源代理设置
+    ##静态资源代理设置
     location @nodebb 
     {
         proxy_pass http://io_nodes;
@@ -113,7 +113,7 @@ server
         proxy_pass http://io_nodes;
     }
 }
-    #负载均衡设置
+    ##负载均衡设置
 upstream io_nodes 
 {
     ip_hash;
@@ -123,27 +123,27 @@ upstream io_nodes
 ```
 这是最终版本，有负载均衡，资源代理，压缩
 
-不需要压缩删除 #gzip设置的内容即可
+不需要压缩删除 ##gzip设置的内容即可
 
-不需要负载均衡（仅一个端口）删除 #负载均衡的内容，将 #静态资源代理设置的内容中
+不需要负载均衡（仅一个端口）删除 ##负载均衡的内容，将 ##静态资源代理设置的内容中
 ```
 proxy_pass http://io_nodes;
 ```
 改成
 ```
-proxy_pass  #端口依情况而定
+proxy_pass  ##端口依情况而定
 ```
-不需要静态资源代理删除 #静态资源代理内容，如果有负载均衡，删除
+不需要静态资源代理删除 ##静态资源代理内容，如果有负载均衡，删除
 ```
-#proxy_pass http://io_nodes;
+##proxy_pass http://io_nodes;
 ```
-前的“#”
+前的“##”
 
 没有则删除
 ```
-proxy_pass http://127.0.0.1:4567; #端口依情况而定
+proxy_pass http://127.0.0.1:4567; ##端口依情况而定
 ```
-前的“#”
+前的“##”
 
 
 除了nginx之外要做的
