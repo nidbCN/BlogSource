@@ -30,6 +30,8 @@ mkv格式本身是一个“容器”，它包括了视频、音频、章节等�
 
 目录结构如下：
 
+![Dir](https://img.cdn.gaein.cn/website_used/blog/AdobePr-import-mkv/01.webp)
+
 * sourceforge：https://sourceforge.net/projects/mkvextractgui-2/
 
 ## 提取音视频
@@ -45,6 +47,8 @@ mkv格式本身是一个“容器”，它包括了视频、音频、章节等�
 在当前目录打开 powershell 后，输入：
 
 `.\mkvinfo.exe "<mkv文件路径>"` ，比如我这个是 `.\mkvinfo.exe "C:\Users\Gaein_nidb\Videos\High School Fleet [01].mkv"`
+
+![Output](https://img.cdn.gaein.cn/website_used/blog/AdobePr-import-mkv/02.webp)
 
 以VCB-S压制的 High School Fleet/高校舰队 为例，程序会输出一大坨mkv的信息，我们需要关注的为 `Tracks` ，其中的每一个 `Track` 为一条轨道，其中包括：
 
