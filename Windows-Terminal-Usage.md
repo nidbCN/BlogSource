@@ -5,14 +5,9 @@ categories:
 tags:
   - 软件介绍
   - 软件教程
-cover: 'https://s3.ax1x.com/2020/12/27/r4qygP.md.png'
 date: 2020-12-27 1:43:18
 
 ---
-
-使用Windows Terminal + PowerShell 7 打造超强终端，Windows Terminal 美化与 PowerShell 7 个性化教程。
-
-<!--more-->
 
 ## 前言
 
@@ -32,19 +27,19 @@ date: 2020-12-27 1:43:18
 ###### 介绍
 
 是一款新式、快速、高效且强大的终端应用程序。通过它可以使用命令提示符、PowerShell、WSL 等诸多 shell。Windows Terminal 支持多选项卡、窗格、Unicode 和 GPU 加速文本渲染引擎，同时也支持丰富多彩的用户自定义主题。
-![wt宣传片](https://s3.ax1x.com/2020/12/27/r4qygP.png)
+![wt宣传片](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/01.webp)
 
 ###### 安装
 
 1. 打开系统的 Microsoft Store；
 2. 搜索"Windows Terminal"；
-   ![商店界面](https://s3.ax1x.com/2020/12/27/r4qUBD.png)
+   ![商店界面](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/02.webp)
 3. 点击"安装"。
 
 > 由于网络环境不同等待时间也可能不一样
 
 菜单里出现 Windows Terminal，打开后如图所示即为安装完成。
-![WT打开](https://s3.ax1x.com/2020/12/27/r4qQAJ.png)
+![WT打开](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/03.webp)
 
 #### 安装 PowerShell Core
 
@@ -61,13 +56,13 @@ PowerShell Core 是 [GitHub](https://github.com/PowerShell/PowerShell) 上面的
 我使用下载-安装的方式而没有使用包管理器。
 
 1. 从[GitHub 的 Release](https://github.com/PowerShell/PowerShell/releases/)中下载`PowerShell-7.1.0-win-x64.msi`；
-   ![Release页面](https://s3.ax1x.com/2020/12/27/r4q1hR.png)
+   ![Release页面](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/04.webp)
 2. 下载完成后找到下载的文件夹，双击运行；
 
    > 如果提示 “不是有效的 WIN32 应用程序” 请返回刚才的 Release 页面下载`PowerShell-7.1.0-win-x86.msi`
 
 3. 一直点击"Next"，直到安装完成，点击"Finish"。
-   ![安装PSCore](https://s3.ax1x.com/2020/12/27/r4qlN9.png)
+   ![安装PSCore](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/05.webp)
 
 #### 配置 PowerShell Core
 
@@ -100,12 +95,12 @@ Install-Module oh-my-posh -Scope CurrentUser
    ```ps
    code $profile
    ```
-   ![code效果](https://s3.ax1x.com/2020/12/27/r4q891.png)
+   ![code效果](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/06.webp)
    如果你没有安装或者不知道什么是 Visual Studio Code 的话输入以下内容：
    ```ps
    notepad $profile
    ```
-   ![notepad效果](https://s3.ax1x.com/2020/12/27/r4qK74.png)
+   ![notepad效果](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/07.webp)
 2. 输入完成后按下回车，VSCode（或记事本）将会打开一个文件（可能是空的），在里面输入以下内容后保存
 
    ```ps
@@ -154,8 +149,10 @@ Install-Module oh-my-posh -Scope CurrentUser
 ###### 自定义设置
 
 1. 打开 Windows Terminal，点击 `下箭头->设置` 或按下 `Win+,` 打开设置文件
-   ![打开的setting.json](https://s3.ax1x.com/2020/12/27/r4qG1x.png)
+   ![打开的setting.json](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/08.webp)
 2. 向设置文件写入以下内容：
+
+> 注意，现在打开默认是图形化设置，需要进入图形设置再点击左侧栏目下方的设置图标。
 
    ```json
    // 文档: https://aka.ms/terminal-documentation
@@ -271,16 +268,18 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 ###### 添加到右键菜单
 
+> 注意，这部分可能不再需要。貌似现在的wt装完之后自动添加了右键菜单。
+
 1. `Win + R` 输入 `regedit` 打开注册表编辑器；
 2. 转到`计算机\HKEY_CLASSES_ROOT\Directory\Background\shell`；
 3. 新建项`Terminal`，将默认值修改为`在此处打开 Windows Terminal`；
-   ![修改值](https://s3.ax1x.com/2020/12/27/r4qNnO.png)
-4. [下载图标(Gaein.cn)](https://static.cdn.gaein.cn/files/images/WindowsTerminal.ico)，保存到某个路径；
+   ![修改值](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/09.webp)
+4. [下载图标(从Gaein.cn)](https://static.cdn.gaein.cn/website_used/files/WT-Icon/wt.ico)，保存到某个路径；
 5. 在`Terminal`里新建字符串，名字为`icon`，右键->修改，值为图标的路径；
-   ![设置图标](https://s3.ax1x.com/2020/12/27/r4qaHe.png)
-   ![设置图标路径](https://s3.ax1x.com/2020/12/27/r4qwAH.png)
+   ![设置图标](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/10.webp)
+   ![设置图标路径](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/11.webp)
 6. 在`Terminal`新建项，名字为`command`，值为`wt.exe`
-   ![命令](https://s3.ax1x.com/2020/12/27/r4qB4A.png)
+   ![命令](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/12.webp)
 
 ## 参考
 
