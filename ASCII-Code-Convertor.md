@@ -6,13 +6,8 @@ categories:
 tags:
   - 笔记
   - 编程
-cover: 'https://s1.ax1x.com/2020/09/22/wOiUT1.md.png'
 date: 2020-09-22 14:05:19
 ---
-
-ASCII 是一种计算机的编码系统，编码了数字、拉丁字母和一些控制符。
-
-<!--MORE-->
 
 ## 简介
 
@@ -22,23 +17,11 @@ ASCII 是一种计算机的编码系统，编码了数字、拉丁字母和一�
 
 下面是完整的 ASCII 表，0 ～ 31 及 127(共 33 个)是控制字符或通信专用字符，其余为可显示字符
 
-![ASCII](https://s1.ax1x.com/2020/09/22/wLWF2Q.png)
-
-#### 下载
-
-[ASCII-Table.xlsx|18KB](https://static.cdn.gaein.cn/files/ASCII-Table/ASCII-Table.xlsx)
-
-[ASCII-Table.pdf|138KB](https://static.cdn.gaein.cn/files/ASCII-Table/ASCII-Table.pdf)
-
----
+![ASCII](https://img.cdn.gaein.cn/website_used/blog/ASCII-Code-Convertor/01.webp)
 
 ## 转换
 
----
-
-#### 将字符转换为 ASCII 十进制码
-
----
+### 将字符转换为 ASCII 十进制码
 
 <link rel="stylesheet" href="https://static.cdn.gaein.cn/Layui/css/layui.css">
 
@@ -66,11 +49,7 @@ ASCII 是一种计算机的编码系统，编码了数字、拉丁字母和一�
 </div>
 <br/ >
 
----
-
-#### 将十进制码转换为 ASCII 字符
-
----
+### 将十进制码转换为 ASCII 字符
 
 <div class="layui-form">
     <div class="layui-form-item">
