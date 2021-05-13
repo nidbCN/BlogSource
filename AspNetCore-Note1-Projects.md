@@ -1,4 +1,5 @@
-title: 'ASP.NET Core 代码各个文件都是什么——项目结构——ASP.NET Core 入门(1)'
+---
+title: ASP.NET Core 代码各个文件都是什么——项目结构——ASP.NET Core 入门(1)
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -10,12 +11,7 @@ tags:
   - 笔记
   - 后端
 date: 2021-1-26 22:35:31
-
 ---
-
-不知不觉新的一年来了，大学半年生活也落下帷幕。经过这半年和各位大佬们的摸鱼，深感自身技能不足，趁着寒假没什么事情，学习一下 web 框架——ASP.NET Core。选择 ASP.NET Core 是因为 ASP.NET Core 是高效的 web 框架，同时自己用了挺长时间的 CSharp ，转战其它语言也挺不习惯。另外，算是半个软粉了。
-
-<!--more-->
 
 ## 前言
 
@@ -33,7 +29,7 @@ ASP.NET Core 项目本质上仍然是.NET Core 控制台应用。
 
 ## 项目基本结构
 
-#### Main 方法
+### Main 方法
 
 程序入口点，配置整个 ASP.NET Core 然后运行。  
 调用了一个静态方法
@@ -44,7 +40,7 @@ IHostBuilder CreateHostBuilder(string[] args)
 
 调用这个方法，返回 `IHostBuilder` 执行 `Build()` 方法后控制台项目转变为了 ASP.NET Core 项目，然后执行 `Run()` 方法启动。
 
-#### CreateHostBuilder 方法
+### CreateHostBuilder 方法
 
 lambda 表达式
 
@@ -78,15 +74,15 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 然后 `webBuilder` 使用 `StartUp` 类来初始化。
 
-#### StarUp 类文件
+### StarUp 类文件
 
 这个类没有实现任何的接口等，这里面方法的名称是运行时的约定名称，运行时通过名字来进行调用两个方法：`ConfigureServices`和`Configure`。
 
-###### ConfigureServices 方法
+#### ConfigureServices 方法
 
 负责配置依赖注入（DI）等
 
-######## 依赖注入 DI
+##### 依赖注入 DI
 
 它是 ASP.NET Core 不可分割的一部分，依赖于 IoC 容器。
 
@@ -97,7 +93,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 2. `Scoped` : 每次 Web 请求的时候生成一个新的实例，生命周期到 Web 请求最终处理完；
 3. `Singleton` : 一旦被创建，每次请求都是这一个实例；
 
-######## 注册服务
+###### 注册服务
 
 使用通过 `IServiceCollection` 接口的变量 `service` 注册服务，比如 MVC 的注册方法：
 
@@ -111,7 +107,7 @@ services.AddControllersWithViews();     // 传统 ASP.NET Core MVC
 services.AddControllers();              // 添加控制器
 ```
 
-######## 自定服务
+###### 自定服务
 
 1. 创建一个文件夹(通常命名为"Services")
 2. 新建一个接口，比如 `IClock`
@@ -154,25 +150,25 @@ services.AddControllers();              // 添加控制器
 
       > 注册服务后，传给控制器的参数的类型为泛型的第二个参数；这样写实现一个接口可以保证在更改服务注入其它类的时候不需要更改控制器的传入参数。这样可以使控制器和具体的服务类解耦。
 
-######## DI 的优点
+###### DI 的优点
 
 1. 解耦，没有强依赖，利于进行单元测试；
 2. 不需要了解具体的服务类；
 3. 不需要手动管理服务类的生命周期。
 
-###### Configure 方法
+#### Configure 方法
 
 实际上传入的参数 `IApplicationBuilder app` 对应的是一个服务，通过依赖注入（在 `CreateHostBuilder()` 时候）注入进来。
 
 此方法用来配置 ASP.NET Core 对处理 HTTP 请求的管道（pipeline），指定整个应用对 HTTP 请求的处理方法，HTTP 请求从管道进去，又从管道返回。
 
-######## 管道与中间件
+##### 管道与中间件
 
 如果管道什么也没有，那么对 HTTP 请求不会做任何处理。
 
 放在管道里面、处理请求的叫做中间件。
 
-######## 中间件：开发模式设置
+###### 中间件：开发模式设置
 
 ```cs
 // 判断是否为开发模式
@@ -194,7 +190,7 @@ if (env.IsDevelopment())
 4. 自定义环境——"自定义字符串"
    > 使用 `env.IsEnvironment("自定义字符串")` 来判断自定义环境变量。
 
-######## 中间件：路由
+##### 中间件：路由
 
 ```cs
 app.UseRouting();   // 中间件：使用路由
@@ -203,7 +199,7 @@ app.UseRouting();   // 中间件：使用路由
 
 路由中间件能判断 HTTP 请求出现在那个端点。
 
-######## 中间件：端点
+##### 中间件：端点
 
 端点就是 HTTP 请求的 URL 的结尾部分。这一部分会被中间件件处理。
 
@@ -231,7 +227,7 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
-######## 中间件：静态文件
+##### 中间件：静态文件
 
 如果需要静态文件的话（返回 HTML、JS 等）需要中间件。
 
@@ -247,7 +243,7 @@ app.UseStaticFiles();
 则 url 为
 `https://api.gaein.cn/daily-picture/today.png`
 
-######## 中间件：强制 HTTPS
+##### 中间件：强制 HTTPS
 
 如果需要将 HTTP 请求强制跳转到 HTTPS 则需要中间件。
 
@@ -255,7 +251,7 @@ app.UseStaticFiles();
 app.UseHttpsRedirection();
 ```
 
-######## 中间件顺序
+##### 中间件顺序
 
 中间件的顺序就是处理的顺序，顺序很重要。比如 Auth 会放在前边，路由、端点等写在认证的后边。
 
@@ -264,7 +260,7 @@ app.UseHttpsRedirection();
 在 VS 中运行时，有两个选项：可以选择 IIS Express，也可以选择项目本身（ASP.NET Core 控制台应用内嵌了一个 Web 服务器，名叫 Kestrel）。  
 可以在“项目”->“右键”->“属性”来配置启动时候的工作。
 
-#### 环境设置
+### 环境设置
 
 1. 通过环境变量设置；
 2. 通过约定名称方法，比如 `Configure()` 方法和 `ConfigureDevelopment()` 方法。
@@ -273,17 +269,17 @@ app.UseHttpsRedirection();
    webBuilder.UseStartup(typeof(Program));
    ```
 
-#### 包管理
+### 包管理
 
-###### 后端
+#### 后端
 
-######## Nuget
+##### Nuget
 
-###### 前端
+#### 前端
 
 > 但是实际上手的话前后端分离香一些
 
-######## NPM
+##### NPM
 
 1. 添加 `package.json` 文件（有模板）
 2. 在 `devDependencies` 中添加包，使用 json 键值对来设置包和版本，比如：
@@ -293,7 +289,7 @@ app.UseHttpsRedirection();
     }
    ```
 
-######## LibMan
+##### LibMan
 
 1. “右键”->“添加”->“添加客户端库”
 2. “提供程序”选择"unpkg"

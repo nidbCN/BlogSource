@@ -1,4 +1,5 @@
-title: 'Adobe Premiere 导入 mkv 格式的视频'
+---
+title: Adobe Premiere 导入 mkv 格式的视频
 author: Gaein nidb
 categories:
   - 软件教程
@@ -8,7 +9,6 @@ tags:
   - 工具
   - 杂记
 date: 2021-05-12 22:32:26
-
 ---
 
 ## mkv

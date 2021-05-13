@@ -1,4 +1,5 @@
-title: '如何配置ASP.NET Core应用程序——配置文件——ASP.NET Core 入门(2)'
+---
+title: 如何配置ASP.NET Core应用程序——配置文件——ASP.NET Core 入门(2)
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -10,7 +11,6 @@ tags:
   - 笔记
   - 后端
 date: 2021-1-28 02:19:14
-
 ---
 
 ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这个文件中写了启动ASP.NET Core的一些配置，比如环境、log等级等，也支持写入自定义的JSON对象。
@@ -26,14 +26,14 @@ ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这�
 
 ## ASP.NET Core 中的配置信息
 
-#### 特点
+### 特点
 
 1. 使用键值对；
 2. 存储在内存、JSON、XML、INI 等文件，或者系统环境变量；
 3. 配置信息与配置系统是解耦的，不是和某一部分写死的；
 4. 可以依赖注入。
 
-#### 信息源
+### 信息源
 
 按照查找顺序排序
 
@@ -42,12 +42,12 @@ ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这�
 3. 环境变量
 4. 命令行参数（优先级最高）
 
-#### 自定义配置
+### 自定义配置
 
 1. 在 `appsettings.json` 里面添加自定义信息；
 2. 在 `StartUp` 的构造方法中添加参数，类型为 `IConfiguration` ，赋值给一个 `readonly` 的私有变量，或者只有 `get` 访问器的变量；
 
-###### 使用索引获取
+#### 使用索引获取
 
 实际上这个接口对象实际上是一个存有配置信息键值对的列表，可以通过索引比如：  
 JSON
@@ -72,7 +72,7 @@ var myConfig = Configuration["AppConfig:port"];
 // string myConfig = "3306"
 ```
 
-###### 映射到类
+#### 映射到类
 
 但是 CSharp作为强类型语言，比较好的做法是用强类型表示，可以避免很多错误。  
 将自定义的 JSON 对象映射到一个类中：
@@ -115,7 +115,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
         ;
 ```
 
-#### 使用配置
+### 使用配置
 
 完成上文的服务注入后：  
 在接口中注入，构造函数添加以下参数：
