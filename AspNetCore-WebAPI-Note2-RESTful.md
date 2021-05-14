@@ -1,4 +1,5 @@
-title: '什么是REST——RESTful API简介——ASP.NET Core Web API(2)'
+---
+title: 什么是REST——RESTful API简介——ASP.NET Core Web API(2)
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -11,12 +12,9 @@ tags:
   - 笔记
   - 后端
 date: 2021-2-2 15:48:49
-
 ---
 
 经常听说 RESTful API ，那么究竟什么是REST，怎么判断一个API的成熟度呢？
-
-<!--more-->
 
 ## 前言
 
@@ -24,11 +22,13 @@ date: 2021-2-2 15:48:49
 
 > 这一节主要是说说啥是REST，REST的优点与约束以及成熟度模型。
 
+> 关于 API 设计的规范，可以看微软的 API指南：[microsoft/api-guidelines: Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines)
+
 ## RESTful API
 
 > 主要是 REST 的概念和介绍（挺无聊的，抄 PPT）
 
-#### 什么是 REST
+### 什么是 REST
 
 REST:状态表述转换
 
@@ -40,7 +40,7 @@ REST:状态表述转换
 
 REST 是一种架构风格，而不是规范或者标准，它需要一些规范、协议和标准来实现。REST 与协议无关。JSON 与 HTTP 并不是 REST 强制的（但是大部分都是）。
 
-###### 优点
+### 优点
 
 1. 简单高效；
 2. 可扩展性、可修改性高；
@@ -48,7 +48,7 @@ REST 是一种架构风格，而不是规范或者标准，它需要一些规范
 4. 可靠性；
 5. 可视性。
 
-#### REST 的约束
+### REST 的约束
 
 考虑到以下约束，并确定不保证互不干扰
 
@@ -65,25 +65,25 @@ REST 是一种架构风格，而不是规范或者标准，它需要一些规范
 
 > 如果一个 Web API 没有实现这五个约束，则不是 RESTful API。不是 RESTful API 并不能说明它不好。
 
-#### Richardson 成熟度模型
+### Richardson 成熟度模型
 
 用来评估 RESTful API 的成熟度，有四个级别
 
-###### Lv.0 沼泽
+#### Lv.0 沼泽
 
 仅仅使用 HTTP 协议，其余部分没有实现。比如在同一个 URI 上同一个 HTTP 动词做不同的操作（反正就是垃圾的一批）
 
-###### Lv.1 资源
+#### Lv.1 资源
 
 URI 正确使用，不同的资源有 URI 做区分。但是 HTTP 动词没有正确（比如查询使用`POST`方法）
 
-###### Lv.2 动词
+#### Lv.2 动词
 
 HTTP 动词正确使用，返回 HTTP 状态码正确（符合统一资源接口）。
 
 > ~~我也就这样了~~
 
-###### Lv.3 超媒体
+#### Lv.3 超媒体
 
 前面全部正确。同时返回了其它操作的链接。
 

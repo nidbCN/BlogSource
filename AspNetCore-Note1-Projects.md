@@ -181,7 +181,7 @@ if (env.IsDevelopment())
 
 通过设置环境变量来启用或关闭开发模式（？）
 
-环境变量名称为： "ASPNETCORE_ENVIRONMENT"
+环境变量名称为： `ASPNETCORE_ENVIRONMENT`
 值为：
 
 1. 开发环境——"Development"
@@ -273,7 +273,7 @@ app.UseHttpsRedirection();
 
 #### 后端
 
-##### Nuget
+##### NuGet
 
 #### 前端
 
@@ -285,7 +285,7 @@ app.UseHttpsRedirection();
 2. 在 `devDependencies` 中添加包，使用 json 键值对来设置包和版本，比如：
    ```json
     "devDependencies": {
-        "aplayer": "1.10.1"
+        "aPlayer": "1.10.1"
     }
    ```
 

@@ -1,4 +1,5 @@
-title: 'ASP.NET Core 自定义Url和端口的五种办法'
+---
+title: ASP.NET Core 自定义Url和端口的五种办法
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -9,7 +10,6 @@ tags:
   - 编程
   - 后端
 date: 2021-4-4 3:18:28
-
 ---
 
 > 文章由我翻译自[5 ways to set the URLs for an ASP.NET Core app](https://andrewlock.net/5-ways-to-set-the-urls-for-an-aspnetcore-app/)。本人文化水平不高，可能有误译，但是大致内容应该没有问题，还请多海涵。
@@ -34,7 +34,7 @@ date: 2021-4-4 3:18:28
 
 在下面我们来看各个办法的详细说明。
 
-#### 你能用什么样的URLs
+### 你能用什么样的URLs
 
 在这篇文章里我说了你可以监听的"URLs"，但是你不可能只用URL。这有3类URL可以用来监听的URLs。
 
@@ -50,7 +50,7 @@ date: 2021-4-4 3:18:28
 
 当你知道你需要你的程序监听那些URLs时，你需要告诉你的程序这些事。在这篇博客里我写了干这件事5种可能的方法。
 
-#### UseUrls()
+### UseUrls()
 
 第一种、并且也是最简单的设置绑定URL的的办法是在 `IWebHostBuilder` 中使用 `UseUrls()` 写死：
 
@@ -76,7 +76,7 @@ public class Program
 
 幸运的是，你仍旧可以从外部配置文件、环境变量活命令行参数中设置URLs。
 
-#### 环境变量
+### 环境变量
 
 .NET Core使用两 *种* 设置：
 * **App设置** 是你通常所使用的，并且从 *appSettings.json* 、环境变量以及其它地方加载。
@@ -117,7 +117,7 @@ export ASPNETCORE_URLS="http://localhost:5001;https://localhost:5002"
 
 > [Marc在评论中](https://disq.us/p/28v6d6c)指出，如果你在Docker中运行它，[Dockerfile会将`ASPNETCORE_URLS` 环境变量设置为端口80](https://github.com/dotnet/dotnet-docker/blob/402a1591e224b681015be628986eefa5012e940e/3.1/runtime-deps/alpine3.11/amd64/Dockerfile##L15)
 
-#### 命令行参数
+### 命令行参数
 
 另外一个设置host设置值的办法是使用命令行。如果设置了环境变量则命令行参数会重写它们。只需要使用 `--urls` 参数：
 
@@ -133,7 +133,7 @@ dotnet run --urls "http://localhost:5100;https://localhost:5101"
 
 环境变量和命令行参数可能是生产环境中设置URLs用的最多的办法了，但是对于在本地开发来说可能略显笨重，因此在本地开发通常简单的使用 *launchSettings.json*
 
-#### launchSettings.json
+### launchSettings.json
 
 大部分ASP.NET项目模板在 `Properties` 文件夹中包含 `launchSettings.json` 文件。这个文件包含了启动ASP.NET Core应用程序的几种配置。一个典型的例子是包含从命令行直接启动选项的定义还有一个使用IIS Express。这个文件配置了Visual Studio中Debug的下拉菜单：
 
@@ -183,11 +183,11 @@ dotnet run --urls "http://localhost:5100;https://localhost:5101"
 dotnet run --no-launch-profile
 ```
 
-这将会跳过 `aunchSettings.json` 文件并且使用本机的环境变量来内部确定URLs。
+这将会跳过 `launchSettings.json` 文件并且使用本机的环境变量来内部确定URLs。
 
 所有的这些办法都是简介的对 Kestrel 的间接设置，但你仍然可以直接设置它们。
 
-#### KestrelServerOptions.Listen()
+### KestrelServerOptions.Listen()
 
 在大部分ASP.NET Core程序中，[Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1)被设置为默认的服务器。如果你想的话可以手动设置为Kestrel设置端点，或者通过 `IConfiguration` 系统去配置 `KestrelServerOptions`。
 
@@ -234,6 +234,6 @@ info: Microsoft.Hosting.Lifetime[0]
 
 个人认为，没有必要像这样从 Kestrel 中绑定端点，但是如果你有需要的话，这是一个摆脱 Kestrel 控制的好方法。
 
-#### 总结
+### 总结
 
 这篇文章中我给出了五种不同的设置监听的URLs的办法。`UseUrls()`是最简单的，但是并不适合在生产环境中使用。`--urls` 命令行参数和 `ASPNETCORE_`/`DOTNET_` 环境变量是在生产环境中设置最有用的办法。`launchSettings.json` 文件在开发环境中设置URLs非常有用。如果你需要对配置进行底层的控制，你可以直接使用  Kestrel 的 `Listen*` 选项，无论是生产环境开始开发环境它们都可以轻易的设置。
