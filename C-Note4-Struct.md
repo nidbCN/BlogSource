@@ -8,7 +8,6 @@ tags:
   - C语言
   - 笔记
 date: 2020-09-22 17:23:09
-cover: 'https://s1.ax1x.com/2020/09/22/wOU2Yq.md.png'
 ---
 从结构类型开始学习了一些自定义的结构，其中struct是较为重要的。跟随着翁恺教授的课记了一些笔记。
 <!--MORE-->
@@ -35,7 +34,7 @@ cover: 'https://s1.ax1x.com/2020/09/22/wOU2Yq.md.png'
 
 由于这些笔记都是用OneNote手写的，听到那写到那，所以就没有排版可言了（逃
 
-![结构类型笔记](https://s1.ax1x.com/2020/09/22/wOaSne.png)
+![结构类型笔记](https://img.cdn.gaein.cn/website_used/blog/C-Note4-Struct/01.webp)
 
 ## 下载
 

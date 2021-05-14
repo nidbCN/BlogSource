@@ -8,7 +8,6 @@ tags:
   - C语言
   - 笔记
 date: 2020-09-23 15:39:27
-cover: 'https://s1.ax1x.com/2020/09/23/wvVF0O.png'
 ---
 程序结构使整个程序变得更加“优雅”、利于后期维护和更新，在做大型程序的时候是不可或缺的。翁恺教授讲解了本地变量、全局变量等以及预编译处理指令、如果编译多个.c文件等等。跟随着翁恺教授的课记了一些笔记。
 <!--MORE-->
@@ -35,7 +34,7 @@ cover: 'https://s1.ax1x.com/2020/09/23/wvVF0O.png'
 
 由于这些笔记都是用OneNote手写的，听到那写到那，所以就没有排版可言了（逃
 
-![程序结构笔记](https://s1.ax1x.com/2020/09/23/wvV0BT.png)
+![程序结构笔记](https://img.cdn.gaein.cn/website_used/blog/C-Note5-ProgramStructure/01.webp)
 
 ## 下载
 

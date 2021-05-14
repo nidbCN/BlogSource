@@ -8,10 +8,9 @@ tags:
   - C语言
   - 笔记
 date: 2020-09-22 16:58:09
-cover: 'https://s1.ax1x.com/2020/09/22/wOtu7R.md.png'
 ---
+
 C语言的字符串实际上是char数组。跟随着翁恺教授的课记了一些笔记。
-<!--MORE-->
 
 ## C语言笔记目录
 
@@ -35,7 +34,7 @@ C语言的字符串实际上是char数组。跟随着翁恺教授的课记了一
 
 由于这些笔记都是用OneNote手写的，听到那写到那，所以就没有排版可言了（逃
 
-![字符串笔记](https://s1.ax1x.com/2020/09/22/wOGQtf.png)
+![字符串笔记](https://img.cdn.gaein.cn/website_used/blog/C-Note3-String/01.webp)
 
 ## 下载
 
