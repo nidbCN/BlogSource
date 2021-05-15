@@ -102,7 +102,7 @@ date: 2020-02-08 22:36:25
 
 ``` javascript
 <script>
-function gettime(){
+function getTime(){
 ajax()
   function ajax(option){
     var xhr = null;
@@ -134,7 +134,7 @@ ajax()
 
 #### 页面代码
 
-因为HTML是顺序加载的，所以我希望 `HTML` 加载完全后再读取`js`（否则 `js` 会找不到 `id` 为 `0` 的 `div`），所以我们写个 `onload`，为了刷新时间我在 `gettime` 函数里面利用 `setTimeout` 调用它自己实现定时（一分钟）刷新。HTML全文如下：
+因为HTML是顺序加载的，所以我希望 `HTML` 加载完全后再读取`js`（否则 `js` 会找不到 `id` 为 `0` 的 `div`），所以我们写个 `onload`，为了刷新时间我在 `getTime` 函数里面利用 `setTimeout` 调用它自己实现定时（一分钟）刷新。HTML全文如下：
 
 ``` html
 <!DOCTYPE html>
@@ -143,7 +143,7 @@ ajax()
     <meta charset="utf-8">
     <title>考勤打卡</title>
     <script>
-      function gettime() {
+      function getTime() {
       ajax()
       function ajax(option) {
       var xhr = null;
@@ -164,16 +164,16 @@ ajax()
               time = xhr.getResponseHeader("Date");
               curDate = new Date(time);
               //下面修改HTML
-              document.getElementById("0").innerHTML = "时间：<input type='text' name='time' value='"+curDate.getHours()+":"+cur.DategetMinutes()+"' readonly><br>";//拼接时间
+              document.getElementById("0").innerHTML = "时间：<input type='text' name='time' value='"+curDate.getHours()+":"+cur.DateGetMinutes()+"' readonly><br>";//拼接时间
               document.getElementById("1").innerHTML = "日期：<input type='text' name='filename' value='"+curDate.getFullYear()+(curDate.getMonth()+1)+curDate.getDate()+"' readonly><br>";//通过readonly阻止修改时间
             }
           }
         }
-	      setTimeout(gettime,60000);
+	      setTimeout(getTime, 60000);
       }
     </script>
   </head>
-  <body onload="gettime()">
+  <body onload="getTime()">
 	  <form action="process.php" method="post">
       姓名：<input type="text" name="name"><br>
 		  <div id="0"></div>
