@@ -1,21 +1,16 @@
-title: 'OpenGL GLFW 窗口前端显示'
+---
+title: OpenGL GLFW 窗口前端显示
 author: Gaein nidb
 categories:
   - 代码如诗
-cover: "https://s3.ax1x.com/2020/12/26/rfwPXQ.md.jpg"
 tags:
   - 笔记
   - C语言
   - OpenGL
 date: 2020-12-26 1:27:00
-
 ---
 
 使用 GLFW 库自带的函数设置窗口置于顶层前端显示。起因：一位群友问到这个问题，在网上查找 GLFW 前端显示窗口和 OpenGL 前端显示窗口无果后翻阅 GLFW 的 docs 找到了解决方案。写个博客记录一下。
-
-<!-- more -->
-
-> 起因：一位群友问到这个问题，在网上查找 GLFW 前端显示窗口和 OpenGL 前端显示窗口无果后翻阅 GLFW 的 docs 找到了解决方案。写个博客记录一下。
 
 ## 起因
 
@@ -79,6 +74,6 @@ glfwSetWindowAttrib(window, GLFW_FLOATING, GLFW_FALSE);
 
 [GLFW 文档](https://www.glfw.org/documentation.html)  
 [GLFW 文档 -> 窗口参考](https://www.glfw.org/docs/latest/group__window.html)  
-[GLFW 文档 -> 窗口参考:glfwSetWindowAttrib](https://www.glfw.org/docs/latest/group__window.html##gace2afda29b4116ec012e410a6819033e)  
-[GLFW 文档 -> 窗口导览 -> 窗口属性](https://www.glfw.org/docs/latest/window_guide.html##window_attribs)  
-[GLFW 文档 -> 窗口导览 -> 窗口属性:GLFW_FLOATING](https://www.glfw.org/docs/latest/window_guide.html##GLFW_FLOATING_hint)
+[GLFW 文档 -> 窗口参考:glfwSetWindowAttrib](https://www.glfw.org/docs/latest/group__window.html#gace2afda29b4116ec012e410a6819033e)  
+[GLFW 文档 -> 窗口导览 -> 窗口属性](https://www.glfw.org/docs/latest/window_guide.html#window_attribs)  
+[GLFW 文档 -> 窗口导览 -> 窗口属性:GLFW_FLOATING](https://www.glfw.org/docs/latest/window_guide.html#GLFW_FLOATING_hint)

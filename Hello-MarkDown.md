@@ -6,26 +6,31 @@ tags:
 - 语言
 categories: [软件教程]
 date: 2019-04-28 00:23:38
-cover: 'https://ww3.sinaimg.cn/large/6aee7dbbjw1eqft66xcg3j21kw12mdub.jpg'
 ---
-<p><a href="https://link.jianshu.com?t=http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="nofollow">Markdown</a> 是一种轻量级的<strong>「标记语言」</strong>，它的优点很多，目前也被越来越多的写作爱好>者，撰稿者广泛使用。看到这里请不要被<strong>「标记」</strong>、<strong>「语言」</strong>所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分
-轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。</p>
-<!-- more -->
+
+[Markdown](https://zh.wikipedia.org/wiki/Markdown)是一种轻量级的 **「标记语言」**，它的优点很多，目前也被越来越多的写作爱好>者，撰稿者广泛使用。看到这里请不要被 **「标记」**、 **「语言」** 所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分
+轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。
+
 根据作者
+
 > 转载请注明原作者
 
 转载
+
 作者：Te_Lee 
+
 原文：https://www.jianshu.com/p/1e402922ee32
+
 如有侵权请联系删除
-<div data-note-content="" class="show-content">
-          <div class="show-content-free">
-            <p><strong>转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，也可以来请我<a href="https://link.jianshu.com?t=http://ww2.sinaimg.cn/large/6aee7dbbjw1eiixgkex2ij21kw0t7wn5.jpg" target="_blank" rel="nofollow">喝咖啡</a>。</strong></p>
-<h4>导语：</h4>
-<blockquote>
-<p><a href="https://link.jianshu.com?t=http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="nofollow">Markdown</a> 是一种轻量级的<strong>「标记语言」</strong>，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被<strong>「标记」</strong>、<strong>「语言」</strong>所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。</p>
-</blockquote>
-<div class="image-package">
+
+**转载请注明原作者，如果你觉得这篇文章对你有帮助或启发，也可以来请我[喝咖啡](https://link.jianshu.com?t=http://ww2.sinaimg.cn/large/6aee7dbbjw1eiixgkex2ij21kw0t7wn5.jpg)**
+
+## 导语
+
+> [Markdown](https://zh.wikipedia.org/wiki/Markdown)是一种轻量级的 **「标记语言」**，它的优点很多，目前也被越来越多的写作爱好>者，撰稿者广泛使用。看到这里请不要被 **「标记」**、 **「语言」** 所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分
+轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。
+
+
 <img src="https://ww3.sinaimg.cn/large/6aee7dbbjw1eqft66xcg3j21kw12mdub.jpg" data-original-src="http://ww3.sinaimg.cn/large/6aee7dbbjw1eqft66xcg3j21kw12mdub.jpg" alt="[Ulysses for Mac](http://www.ulyssesapp.com)" style="cursor: zoom-in;"><div class="image-caption">[Ulysses for Mac](http://www.ulyssesapp.com)</div>
 </div>
 <h2>一，认识 Markdown</h2>

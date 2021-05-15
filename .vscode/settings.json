@@ -3,6 +3,7 @@
         "Cluv",
         "Trenki's",
         "WINDOWPOS",
+        "Wwindow",
         "adolfans",
         "appsettings",
         "devel",
@@ -12,6 +13,8 @@
         "mysqlnd",
         "opcache",
         "pecl",
-        "setx"
+        "resolvconf",
+        "setx",
+        "wrui"
     ]
 }
