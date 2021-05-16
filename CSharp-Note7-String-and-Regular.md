@@ -1,5 +1,9 @@
 ## 字符串和正则表达式
 
+### 9 - 字符串和正则表达式
+
+#### 9.1 - System.String 类
+
 在CSharp中，`string` 关键字的映射实际上指向 `.NET` 基类 `System.String` 。 `System.String` 是一个功能非常强大且用途广泛的基类。
 
 使用运算符重载可以连接字符串：
@@ -40,7 +44,7 @@ Console.WriteLine(msg[4]);      // o
 * `ToUpper`：转换成大写。
 * `Trim`：删除首尾的空白。
 
-######## 9.1.1 - 构建字符串
+##### 9.1.1 - 构建字符串
 
 `Spring` 类存在一个问题：重复修改给定的字符串，效率会很低，它实际上是一个不可变的数据类型，表面上修改字符串内容的方法和运算符实际上是创建了一个新字符串并将内容复制过去。
 
@@ -53,3 +57,54 @@ Console.WriteLine(msg[4]);      // o
 
 对字符串的修改就在赋予 `StringBuilder` 实例的内存中进行，这就大大提高了追加或替换单个字符的效率，插入和删除子字符（串）的效率依然不高，因为要移动后面的字符串。
 
+> 最好把容量设置为字符串可能的最大长度，确保 `StringBuilder` 类不需要重新分配内存。
+
+一般而言，使用 `StringBuilder` 类执行字符串的任何操作，而 `String` 类用于存储字符串或显示最后结果。
+
+##### 9.1.2 - 字符串插值
+
+使用 `$` 前缀创建字符串，在花括号中可以包含占位符来引用代码，比如：
+
+```cs
+var name = "Jack";
+var msg = $"Hello { name }, Welcome!";
+Console.WriteLine(msg);     // Hello Jack, Welcome!
+```
+
+注意，这只是个语法糖，编译器会创建 `String.Format` 方法的调用。
+`StringFormat` 方法的第一个参数接受一个格式字符串，其中的占位符从0开始，比如：
+
+```cs
+var name = "Jack";
+var msg = String.Format("Hello { 0 }, Welcome!", name);
+Console.WriteLine(msg);  
+```
+
+###### FormattableString
+
+把字符串赋予 `FormattableString` ，就很容易得到翻译过来的插值字符串。
+
+```cs
+var x = 3, y = 4;
+FormattableString s = $"The result of { x } and { y } is { x + y }";
+Console.WriteLine($"Format: { s.Format } ");
+foreach(var i = 0; i < s.ArgumentCount; ++i)
+{
+    Console.WriteLine($"Argument { i }: { s.GetArgument(i) }");
+}
+```
+
+输出为：
+
+```sh
+Format: The result of { 0 } + { 1 } is { 2 }
+Argument 0: 3
+Argument 1: 4
+Argument 2: 7
+```
+
+###### 给字符串插值使用其他区域值
+
+辅助方法 `Invariant` 把插值字符串改为使用不变的区域值，而不是当前的区域值。
+
+区域值就是对于某些特殊的字符串（比如时间、日期），在不同的区域有不同的格式。
