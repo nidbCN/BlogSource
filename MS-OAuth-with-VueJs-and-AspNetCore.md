@@ -1,3 +1,5 @@
+> 发现教程，咕咕咕：https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/
+
 # 使用微软的OAuth保护Vue + ASP.NET Core Web应用。
 
 > 目标：用户使用微软的OAuth授权登录后，可以访问被保护的API（返回 HTTP 200 而不是 HTTP 401）。
