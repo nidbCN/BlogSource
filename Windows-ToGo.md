@@ -2,14 +2,13 @@
 title: '世界那么大，旅行时别忘了带上Windows——windows to go 入坑'
 author: Gaein nidb
 categories:
-  - 电脑软件
   - 电脑硬件
 tags:
   - WTG
   - 软件介绍
-cover: 'https://s2.ax1x.com/2020/01/25/1eVjMR.png'
 date: 2020-01-24 23:38:30
 ---
+
 Windows to go，说白了就是在U盘里面装Windows，随身带着Windows操作系统和软件。只要在BIOS里面设置了U盘启动就能进入U盘里面的Windows系统。
 <!-- more -->
 官方说明详见 https://docs.microsoft.com/zh-cn/windows/deployment/planning/windows-to-go-overview （机翻）
