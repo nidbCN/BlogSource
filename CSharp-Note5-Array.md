@@ -2,7 +2,7 @@
 title: CSharp中数组的使用 - CSharp笔记 
 author: Gaein nidb
 categories:
-  - 学习资料
+  - 代码如诗
 tags:
   - 笔记
   - 编程

@@ -2,7 +2,7 @@
 title: CSharp面向对象——对象和类型与继承 - CSharp笔记 
 author: Gaein nidb
 categories:
-  - 学习资料
+  - 代码如诗
 tags:
   - 笔记
   - 编程
