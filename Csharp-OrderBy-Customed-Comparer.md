@@ -186,25 +186,19 @@ LINQ 的 `OrderBy` 方法没有像 `Array` 和 `List<T>` 一样的传入 `Compar
 ```cs
 var files = new DirectoryInfo(Directory.GetCurrentDirectory()).GetFiles().ToList();
 
-var comparer1 = Comparer<string>.Create((x, y) =>
-    string.Compare(x, y, StringComparison.Ordinal)
-);
-var comparer2 = new MyComparer();
+var comparer = new MyComparer();
 
-var listAfterSort1 = files.OrderBy(it => it.Name, new MyComparer()).ToList();
-var listAfterSort2 = files.OrderBy(it => it.Name, Comparer<int>.Create((x, y) =>
-    Math.Abs(x).CompareTo(Math.Abs(y))
+// 使用创建的类的实例
+var listAfterSort1 = files.OrderBy(it => it.Name, comparer).ToList();
+// 使用 Comparer<T>.Create 传参委托的匿名函数创建
+var listAfterSort2 = files.OrderBy(it => it.Name, Comparer<string>.Create((x, y) =>
+    string.Compare(x, y, StringComparison.Ordinal);
 ));
-var listAfterSort3 = files.OrderBy(it => it.Name, comparer1).ToList();
-var listAfterSort4 = files.OrderBy(it => it.Name, comparer2).ToList();
 
 public class MyComparer : Comparer<string>
 {
-    // x 在 y 的后面：小于0
-    // x 在 y 的前面：大于0
     public override int Compare(string x, string y)
         => string.Compare(x, y, StringComparison.Ordinal);
 }
 ```
 > 注意：这种情况实际上是不需要自定义比较器的，为了演示才这么写的（因为我懒得想例子）
-
