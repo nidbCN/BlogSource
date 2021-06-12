@@ -1,5 +1,5 @@
 ---
-title: Ubuntu下apt “无法解析域名”解决方案
+title: Ubuntu下apt“无法解析域名”解决方案
 author: Gaein nidb
 tags:
   - 运维
@@ -10,7 +10,9 @@ categories: 服务器运维
 date: 2018-10-20 11:42:39
 ---
 
-> 注意，本博客过于久远，内容可能已经不适用
+> 注意：本博客过于久远，内容可能已经不适用
+
+> 注意：正确的更改DNS的方法见博客：[常见公共DNS服务&Linux和Windows下修改DNS的方法](https://blog.gaein.cn/passages/Public-DNS-and-configure-DNS)
 
 DNS莫名其妙出错，啥也干不了
 
