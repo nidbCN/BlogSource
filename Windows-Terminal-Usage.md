@@ -11,7 +11,7 @@ date: 2020-12-27 1:43:18
 
 ## 前言
 
-> 总感觉 cmd、PowerShell 太丑。以前折腾过一阵子的 cmder 感觉也就一般。听学姐们吹了挺长时间的 Windows Terminal。今天试一下，确实效果非常好，美观好用。不得不说~~巨硬~~Microsoft 正经去做某个东西还是非常好的。
+> 总感觉 cmd、PowerShell 太丑。以前折腾过一阵子的 cmder 感觉也就一般。听学姐们吹了挺长时间的 Windows Terminal。今天试一下，确实效果非常好，美观好用。不得不说~~巨硬~~Micro$oft 正经去做某个东西还是非常好的。
 
 ## 安装
 
@@ -38,6 +38,8 @@ date: 2020-12-27 1:43:18
 
 > 由于网络环境不同等待时间也可能不一样
 
+> 在未来某个版本的Windows会默认安装Windows Terminal，但是是几百年后就不知道了（x
+
 菜单里出现 Windows Terminal，打开后如图所示即为安装完成。
 ![WT打开](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/03.webp)
 
@@ -53,6 +55,8 @@ PowerShell Core 是 [GitHub](https://github.com/PowerShell/PowerShell) 上面的
 
 > 官方有详细的安装文档，见 [Microsoft DOCS](https://docs.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell)
 
+> 建议参考官方文档选择适合自己的方式安装，我目前系统中的WT是作为dotnet CLI 全局工具安装的
+
 我使用下载-安装的方式而没有使用包管理器。
 
 1. 从[GitHub 的 Release](https://github.com/PowerShell/PowerShell/releases/)中下载`PowerShell-7.1.0-win-x64.msi`；
@@ -66,9 +70,9 @@ PowerShell Core 是 [GitHub](https://github.com/PowerShell/PowerShell) 上面的
 
 #### 配置 PowerShell Core
 
-###### 准备
+##### 准备
 
-######## 安装模块
+###### 安装模块
 
 打开 PowerShell 7，输入以下命令：
 
@@ -82,11 +86,12 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 > 先输入一个命令，光标会移动到下一行的最左侧。这时候不要着急输入另一个，稍等一会如果出现提示那么就按`Y`。安装完成（左侧有显示"PS xxx"字样）再安装另外一个。两个不分先后。
 
-######## 安装 PowerLine 字体
+###### 安装 PowerLine 字体
 
 这一部分微软官方文档有写，详见 [Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/terminal/tutorials/powerline-setup)
 
 1. 打开 Cascadia Code [GitHub 发布页](https://github.com/microsoft/cascadia-code/releases)，下载最新的 Release `CascadiaCode-2009.22.zip`；
+
 2. 下载完成后解压文件，进入`解压后的文件夹->ttf`，双击里面`.ttf`结尾的文件，安装。
 
 ###### 配置
@@ -104,12 +109,12 @@ Install-Module oh-my-posh -Scope CurrentUser
 2. 输入完成后按下回车，VSCode（或记事本）将会打开一个文件（可能是空的），在里面输入以下内容后保存
 
    ```ps
-   ## by Gaein nidb , https://www.Gaein.cn
+   # by Gaein nidb , https://www.Gaein.cn
 
-   Clear-Host                  ## 清除屏幕
+   Clear-Host                  # 清除屏幕
 
    $time =  Get-date -Format "现在是yyyy年MM月dd日 HH时mm分"
-   $path = $pwd.path           ## 获取路径
+   $path = $pwd.path           # 获取路径
    if ( $path.split("\")[-1] -eq "Windows" -xor $path.split("\")[-1] -eq "System32") {
        ## 默认路径为桌面
        $desktop = "C:\Users\" + $env:UserName + "\Desktop\"
@@ -118,13 +123,13 @@ Install-Module oh-my-posh -Scope CurrentUser
    }
    Write-Output $time
    $motdPath = "C:\Users\" + $env:UserName + "\Documents\PowerShell\motd.txt"
-   Get-Content $motdPath   ## 欢迎消息
+   Get-Content $motdPath   # 欢迎消息
 
-   ## 导入模块
+   # 导入模块
    Import-Module posh-git
    Import-Module oh-my-posh
 
-   ## 设置主题
+   # 设置主题
    Set-Theme PowerLine
    ```
 
@@ -146,13 +151,47 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 #### 配置 Windows Terminal
 
-###### 自定义设置
+##### 自定义设置
 
 1. 打开 Windows Terminal，点击 `下箭头->设置` 或按下 `Win+,` 打开设置文件
    ![打开的setting.json](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/08.webp)
 2. 向设置文件写入以下内容：
 
-> 注意，现在打开默认是图形化设置，需要进入图形设置再点击左侧栏目下方的设置图标。
+   > 注意，现在打开默认是图形化设置，需要进入图形设置再点击左侧栏目下方的设置图标。
+
+   首先修改全局设置（即 `profiles.defaults` 节点）：
+   ```json
+   "defaults": {
+     // 默认设置
+     "acrylicOpacity": 0.75, // 不透明度
+     "closeOnExit": true, // 退出时关闭
+     "colorScheme": "Campbell", // 配色方案
+     "cursorColor": "#FFFFFF", // 颜色
+     "cursorShape": "bar", // bar
+     "fontFace": "Cascadia Code PL", // 字体
+     "fontSize": 10, // 字号
+     "historySize": 9001, // 历史记录
+     "padding": "0, 0, 0, 0", // 内部显示位置
+     "snapOnInput": true, // ?
+     "startingDirectory": "./", // 打开目录
+     "useAcrylic": true // 使用亚克力效果
+   },
+   ```
+
+   然后添加Python控制台，并将不想看到的自动生成的三个的 `hidden` 属性设置为 `true`:
+   
+   ```json
+   {
+     // Python Console
+     "guid": "{de7c0f31-aa6b-c0f6-44a8-fe162d8f31fc}", // 随机生成一个guid即可
+     "hidden": false,
+     "name": "Python 3.9",
+     "icon": "C:\\Users\\Gaein\\Documents\\WindowsTerminal\\python-logo.png", // 自定义python图标
+     "commandline": "C:\\Program Files\\Python39\\python.exe" // python路径
+   },
+   ```
+
+   整个配置文件如下：
 
    ```json
    // 文档: https://aka.ms/terminal-documentation
@@ -178,7 +217,7 @@ Install-Module oh-my-posh -Scope CurrentUser
          "acrylicOpacity": 0.75, // 不透明度
          "closeOnExit": true, // 退出时关闭
          "colorScheme": "Campbell", // 配色方案
-         "cursorColor": "##FFFFFF", // 颜色
+         "cursorColor": "#FFFFFF", // 颜色
          "cursorShape": "bar", // bar
          "fontFace": "Cascadia Code PL", // 字体
          "fontSize": 10, // 字号
@@ -266,9 +305,9 @@ Install-Module oh-my-posh -Scope CurrentUser
 
    > 可以按需进行修改
 
-###### 添加到右键菜单
+##### 添加到右键菜单
 
-> 注意，这部分可能不再需要。貌似现在的wt装完之后自动添加了右键菜单。
+> 注意：这部分可能不再需要。貌似现在的wt装完之后自动添加了右键菜单。
 
 1. `Win + R` 输入 `regedit` 打开注册表编辑器；
 2. 转到`计算机\HKEY_CLASSES_ROOT\Directory\Background\shell`；
