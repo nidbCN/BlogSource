@@ -147,3 +147,16 @@ Saturday, October 1, 1949
 ```
 
 根据系统的语言设置，输出可能不同。
+
+> 另请参阅： [Standard date and time format strings | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+
+使用 `n` 用分隔符（逗号）表示数字， `e` 表示指数表示法， `x` 表示转换为十六进制， `c` 显示为货币。
+
+还可以使用占位符：
+
+1. 数字占位符 `#`：如果数字可用则显示数字，不可用则不显示；
+2. 零占位符 `0`：如果数字可用则显示数字，不可用则显示 0；
+
+> 另请参阅：[Standard numeric format strings | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings)
+
+##### 9.2.3 

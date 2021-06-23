@@ -13,9 +13,9 @@ date: 2021-05-03 14:31:30
 
 ## 目录
 
-* [CSharp基础](https://blog.gaein.cn/passages/CSharp-Basic/)
-* [CSharp面向对象](https://blog.gaein.cn/passages/CSharp-OOP/)
-* [CSharp泛型](https://blog.gaein.cn/passages/CSharp-Generics-Type/)
+* [CSharp基础](https://blog.gaein.cn/passages/CSharp-Note1-Basic/)
+* [CSharp面向对象](https://blog.gaein.cn/passages/CSharp-Note2-OOP/)
+* [CSharp泛型](https://blog.gaein.cn/passages/CSharp-Note3-Generics-Type/)
 * [CSharp运算符和强制类型转换](https://blog.gaein.cn/passages/CSharp-Note4-Operators-and-TypeCasts/)
 * [CSharp中数组的使用](https://blog.gaein.cn/passages/CSharp-Note5-Array/)
 * [CSharp的委托、lambda 表达式和事件](https://blog.gaein.cn/passages/CSharp-Note6-Delegates-lambda-Expressions-and-Events/)

@@ -22,6 +22,8 @@ date: 2020-12-27 1:43:18
 3. 在 Windows Terminal 里面添加 python 控制台；
 4. 合并 PowerShell、Git Bash、cmd 和 python 到 Windows Terminal 中，并取消其它的右键菜单，为 Windows Terminal 添加右键菜单。
 
+> 可参阅： [Windows Terminal Startup Settings | Microsoft Docs](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/startup)
+
 #### 安装 Windows Terminal
 
 ###### 介绍
