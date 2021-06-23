@@ -159,4 +159,48 @@ Saturday, October 1, 1949
 
 > 另请参阅：[Standard numeric format strings | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings)
 
-##### 9.2.3 
+##### 9.2.3 自定义字符串格式
+
+可以为自己的类型创建自定义格式字符串。为此，需要实现接口 `IFormattable`。
+
+为实现自定义格式字符串，接口 `IFormattable` 实现了带两个参数的 `ToString` 重载：第一个参数是格式字符串，第二个参数是 `IFormatProvider`。这个参数用于基于区域值进行不同显示。
+
+比如类 `Student` ：
+
+```cs
+public class Student : IFormattable
+{
+    public string Name { get; set; }
+    public uint Code { get; set; }
+
+    string IFormattable.ToString(string format, IFormatProvider formatProvider)
+        => format switch
+        {
+            "N" => Name,
+            "C" => Code.ToString("0000"),
+            _ => throw new FormatException($"Invaild format string {format}")
+        };
+    }
+```
+
+主函数里：
+
+```cs
+var student = new Student()
+{
+    Name = "康萱琪",
+    Code = 21
+};
+
+Console.WriteLine($"{student:N}");
+Console.WriteLine($"{student:C}");
+```
+
+输出如下：
+
+```
+❯ .\SimpleTest.exe
+康萱琪
+0021
+```
+
