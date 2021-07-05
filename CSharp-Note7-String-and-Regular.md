@@ -178,7 +178,7 @@ public class Student : IFormattable
         {
             "N" => Name,
             "C" => Code.ToString("0000"),
-            _ => throw new FormatException($"Invaild format string {format}")
+            _ => throw new FormatException($"Invalid format string {format}")
         };
     }
 ```
@@ -199,8 +199,10 @@ Console.WriteLine($"{student:C}");
 输出如下：
 
 ```
-❯ .\SimpleTest.exe
+> dotnet run
 康萱琪
 0021
 ```
+
+#### 正则表达式
 
