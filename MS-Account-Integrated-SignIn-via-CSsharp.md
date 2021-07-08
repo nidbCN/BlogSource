@@ -1,3 +1,14 @@
+title: C#实现使用微软账户集成登录
+author: Gaein nidb
+categories:
+  - 软件教程
+tags:
+  - CSharp
+  - 身份认证
+  - dotNET
+date: 2021-07-09 04:49:35
+---
+
 ## 版权声明
 
 > "[Microsoft account integrated sign in via C#](https://anduin.aiursoft.com/post/2020/3/18/microsoft-account-integrated-sign-in-via-c#)" by [Anduin Xue](https://anduin.aiursoft.com/), used under [CC AS 4.0](http://creativecommons.org/licenses/by-sa/4.0/), ‎translate from original.
