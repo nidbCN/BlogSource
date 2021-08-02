@@ -5,25 +5,27 @@
 >  
 > 本文翻译自 [Dan Carter](https://codingblog.carterdan.net/About/) 的 "[Command Line Parser for C# | DC Coding](https://codingblog.carterdan.net/2019/04/12/command-line-parser/)"。
 
-Anther's permission:
-
-
+> Anther's permission:
+> 原作者许可：
+> 
 
 ---
 
-I recently came across Command Line Parser. It’s a C# library (available on NuGet) that takes care of the boilerplate code often associated with parsing, validating and using options specified as command line arguments.
+我最近正在折腾 Command Line Parser。这是一个处理、解析命令行参数和选项的样板代码 C# 库（可以用 NuGet 来安装）
 
-It uses common conventions for how it assumes the options will appear (similar to C’s getopt function).
+它使用常见的约定来确定选项的处理方式（类似于 C 的 `getopt` 函数）。
 
-The GitHub page has pretty comprehensive documentation on how to use it, but I thought I’d share here briefly how it works.
+它的 GitHub page 上有很完善的文档，但是我仍然决定在这里分享一下怎么用。
 
-Simple options
-Suppose we’re creating an application which describes a file in terms of its properties (size, file type etc), and suppose the desired command-line options are:
+简单选项
 
-<file path> (required)
--d or --detailed (if present gives as much information as it can find, otherwise gives the most commonly-wanted info)
--o <file path> or --output <file path> (specifies a file to output the file properties to)
-Then we create an Options class with properties for all the possible command-line options, decorated with attributes detailing the expected usage:
+假设我们现在正在创建一个用户获取文件属性（大小、文件类型等）的程序，希望支持以下命令行选项：
+
+<文件路径> (必须)
+-d or --detailed （如果存在这个参数则输出所有能获取到的文件属性，否则则输出最常用的信息）
+-o <文件路径> 或 --output <文件路径> （指定文件属性输出的位置）
+
+然后我们可以创建一个包括可能的命令行选项的属性类 `Options` ，使用特性来修饰期望的具体的用法：
 
 C#
 class Options
@@ -37,9 +39,10 @@ class Options
     [Option('o', "output")]
     public string Output { get; set; }
 }
-The Value attribute defines a positional argument, and the Option attribute defines an argument that is passed in by name.
 
-Then in the Main method, it’s as simple as doing the following:
+`Value` 特性定义了按位置识别的参数，`Option` 特性定义了按名字识别的参数。
+
+然后在主函数中轻轻松松的像下面这样写：
 
 C#
 class Program
