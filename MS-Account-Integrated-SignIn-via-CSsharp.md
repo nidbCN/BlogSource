@@ -1,3 +1,4 @@
+---
 title: C#实现使用微软账户集成登录
 author: Gaein nidb
 categories:
@@ -6,6 +7,7 @@ tags:
   - CSharp
   - 身份认证
   - dotNET
+  - 翻译
 date: 2021-07-09 04:49:35
 ---
 

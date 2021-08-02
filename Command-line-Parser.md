@@ -1,3 +1,15 @@
+---
+title: C#解析命令行参数
+author: Gaein nidb
+categories:
+  - 代码如诗
+tags:
+  - CSharp
+  - dotNET
+  - 翻译
+  - 编程
+date: 2021-8-2 22:24:35
+---
 
 ## 版权声明
 
