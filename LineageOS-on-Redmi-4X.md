@@ -2,6 +2,7 @@
 
 > 设备：红米4X(santoni)  
 > 系统：MIUI开发版 9.10.11
+> 架构：ARM64
 
 ## 准备工作
 
@@ -19,9 +20,11 @@
 2. 下载 [小米解锁工具](https://www.miui.com/unlock/index.html)，确保账号有权限解锁；
 3. 在 `设置>更多设置>开发者选项>设备解锁状态` 中，插入SIM卡并绑定账号。具体步骤可以参考[小米社区](https://www.xiaomi.cn/post/4378807)；
 4. 在 `设置>更多设置>开发者选项>USB调试` 中启用USB调试。
-5. 在电脑终端内输入 `adb shell reboot -p` ，手机弹窗允许调试点击“确定”，手机关机；
-6. 关机状态下，按住 `音量-` 再按 `电源键` ，开机进入 fastboot；
-7. 运行小米解锁工具，登录账户并确认解锁。
+5. 下载 [小米刷机工具](http://www.miui.com/shuaji-393.html) ，不用下载任何包，在 `fastboot` 下解压运行后按提示安装驱动，然后这玩意就没用了；
+   > 似乎只有在 `fastboot` 模式下用小米来装驱动才行，此前不知道怎么回事一直没驱动。
+6. 在电脑终端内输入 `adb shell reboot -p` ，手机弹窗允许调试点击“确定”，手机关机；
+7. 关机状态下，按住 `音量-` 再按 `电源键` ，开机进入 fastboot；
+8. 运行小米解锁工具，登录账户并确认解锁。
 
 ## 刷入第三方 Recovery
 
@@ -143,3 +146,36 @@
    > 如果无法下载可以考虑添加环境变量 `REPO_URL=https://github.com/GerritCodeReview/git-repo`；
 4. 【可能需要代理】使用 `repo sync` 下载源代码；
    > 这步好艰难...要下很长时间
+
+#### 配置设备相关
+
+输入 
+```
+source build/envsetup.sh
+breakfast santoni
+```
+
+下载红米4X(santoni)的配置文件和内核。
+
+> 部分机型需要一个vendor目录。如果你收到了一个关于vendor的错误，到 [GitLab](https://gitlab.com/the-muppets/proprietary_vendor_xiaomi/-/tree/lineage-16.0/santoni) 下载。放入 `~/android/lineageos/vendor/xiaomi` 后，再次执行 `breakfast santoni` 即可。
+> 经尝试上述方法在后来引起了错误，所以参考官方文档，从LineageOS的包里导出该文件，首先下载 [LineageOS 16.0 for santoni](https://lineageosroms.com/santoni/) （这个包的来历我也不知道，应该是以前镜像的官方build），使用 `unzip path/to/lineage-*.zip system/*` 解压，并将 `system` 目录移动到 `~/android/system_dump/`，到 `~/android/lineage/device/xiaomi/santoni` 目录执行 `./extract-files.sh ~/android/system_dump/` 导出。
+
+#### 编译LineageOS
+
+执行
+```
+croot
+brunch santoni
+```
+
+> 报错 
+> ```
+> ninja: error: '/home/nidb/android/lineageos/out/target/common/obj/JAVA_LIBRARIES/WfdCommon_intermediates/javalib.jar', needed by '/home/nidb/android/lineageos/out/target/product/santoni/dex_bootjars/system/framework/boot.prof', missing and no known rule to make it
+> ```
+> 很是绝望。参考 [StackOverflow](https://stackoverflow.com/questions/54946271) 发现或许是缺了 Wfd，在Github找到[这个仓库](https://github.com/bionicBUG/android_device_xiaomi_santoni/tree/los16) ，克隆该项目替换，没有作用。
+
+
+> 考虑使用 `make` 直接编译，因为脚本中含有 python2，所以卸载 `python-is-python3` ，然后 `apt install python2`；  
+> 尝试使用 `lunch` ,`make -j10` 。  
+> 报错 `ninja: error: 'prebuilts/lineage-sdk/api/9.txt'`，参考 [XDA](https://forum.xda-developers.com/t/help-by-building-lineageos-16.3887273/) 克隆 `https://github.com/LineageOS/android_prebuilts_lineage-sdk` 到 `prebuilts` 解决。  
+> 编译到一大半报错 `ninja: build stopped: subcommand failed.` 原因是被Linux系统限制，使用 `ulimit -c unlimited` 解除。
