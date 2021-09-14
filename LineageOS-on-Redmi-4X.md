@@ -4,6 +4,8 @@
 > 系统：MIUI开发版 9.10.11
 > 架构：ARM64
 
+> 咕咕咕中，问题真的好多啊
+
 ## 准备工作
 
 > 另请参阅：[Install LineageOS on santoni | LineageOS Wiki](https://wiki.lineageos.org/devices/santoni/install)
@@ -141,7 +143,7 @@
 * lineage-16.0
 
 1. 进入目录: `cd ~/android/lineage`；
-2. 安装python（由于Ubuntu自带python，安装 `pyhton-is-python3`）即可；
+2. 安装python（由于Ubuntu自带python，安装 `python-is-python3`）即可；
 3. 【可能需要代理】初始化项目: `repo init -u https://github.com/LineageOS/android.git -b lineage-<version>`
    > 如果无法下载可以考虑添加环境变量 `REPO_URL=https://github.com/GerritCodeReview/git-repo`；
 4. 【可能需要代理】使用 `repo sync` 下载源代码；
