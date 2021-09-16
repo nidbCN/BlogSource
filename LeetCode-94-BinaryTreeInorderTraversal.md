@@ -34,7 +34,7 @@ public class TreeNode {
 }
 ```
 
-> 不得不说这一股子 Java 味的 C# 弄得我是...血压升高又无话可说
+> 不得不说这代码弄得我是...血压升高又没得办法
 
 ```csharp
 public int Val { get; set;}
@@ -64,4 +64,26 @@ var node = new TreeNode()
 
 首先啥是二叉树，这玩意离散数学应该讲过，~~但是我没听（x）~~ 二叉树是一个树形结构，每个节点有两个子节点。中序遍历就是先遍历左面的，再来他本身然后是右面的。递归的话不深究他的细节，写就完了。
 
-首先来个判空避免 `NullReferenceException` 
+首先来个判空避免 `NullReferenceException` ，对于递归来说我们只需要负责好其中的环节就好了，至于细节千万不要深究，比较脑瓜子没几层栈，想了没两下就 StackOverflow 了。
+
+那么在这个方法中，先添加左，再添加他本身，然后右节点，返回即可。
+
+```csharp
+public IList<int> InorderTraversal(TreeNode root)
+{
+    if (root is null) return new List<int>();
+
+    var result = new List<int>();
+
+    // 实际上不需要判空
+    // 递归左
+    result.AddRange(InorderTraversal(root.left));
+
+    result.Add(root.val);
+
+    // 递归右
+    result.AddRange(InorderTraversal(root.right));
+
+    return result;
+}
+```
