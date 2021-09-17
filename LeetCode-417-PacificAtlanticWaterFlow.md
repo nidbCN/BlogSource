@@ -1,5 +1,17 @@
+title: '太平洋大西洋水流问题-力扣417 深都优先搜索'
+author: Gaein nidb
+categories:
+  - 代码如诗
+tags:
+  - 算法
+  - 笔记
+  - CSharp
+date: 2021-09-17 20:47:22
+---
 
 ## 题干
+
+[力扣-太平洋大西洋水流问题](https://leetcode-cn.com/problems/pacific-atlantic-water-flow/)
 
 > 给定一个 ` m x n ` 的非负整数矩阵来表示一片大陆上各个单元格的高度。“太平洋”处于大陆的左边界和上边界，而“大西洋”处于大陆的右边界和下边界。
 > 

@@ -11,7 +11,7 @@ date: 2021-09-15 22:22:13
 
 ## 题干
 
-[力扣-二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)]
+[[力扣-二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)]
 
 > 题干详见 LeetCode ，图片过多不在此赘述。
 

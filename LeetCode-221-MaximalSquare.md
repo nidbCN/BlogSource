@@ -11,7 +11,7 @@ date: 2021-09-17 18:50:22
 
 ## 题干
 
-[力扣-最大正方形](https://leetcode-cn.com/problems/maximal-square/)]
+[力扣-最大正方形](https://leetcode-cn.com/problems/maximal-square/)
 
 > 题干详见 LeetCode ，图片过多不在此赘述。
 
