@@ -68,6 +68,8 @@ var node = new TreeNode()
 
 那么在这个方法中，先添加左，再添加他本身，然后右节点，返回即可。
 
+#### 代码
+
 ```csharp
 public IList<int> InorderTraversal(TreeNode root)
 {
