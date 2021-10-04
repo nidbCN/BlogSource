@@ -1,3 +1,13 @@
+title: 'Linux挂载新硬盘'
+author: 'Gaein nidb'
+categories:
+  - 杂记
+tags:
+  - Android
+  - 软件教程
+date: 2021-10-4 18:43:15
+---
+
 > 本来就想顺便玩玩结果用了4部手机了.jpg
 
 > 设备：红米4X(santoni)  
