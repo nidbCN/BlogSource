@@ -1,5 +1,5 @@
 ---
-title: CSharp中的泛型 - CSharp笔记 
+title: C#中的泛型 - C#笔记 
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -13,12 +13,13 @@ date: 2021-04-29 12:40:44
 
 ## 目录
 
-* [CSharp基础](https://blog.gaein.cn/passages/CSharp-Note1-Basic/)
-* [CSharp面向对象](https://blog.gaein.cn/passages/CSharp-Note2-OOP/)
-* [CSharp泛型](https://blog.gaein.cn/passages/CSharp-Note3-Generics-Type/)
-* [CSharp运算符和强制类型转换](https://blog.gaein.cn/passages/CSharp-Note4-Operators-and-TypeCasts/)
-* [CSharp中数组的使用](https://blog.gaein.cn/passages/CSharp-Note5-Array/)
-* [CSharp的委托、lambda 表达式和事件](https://blog.gaein.cn/passages/CSharp-Note6-Delegates-lambda-Expressions-and-Events/)
+* [C#基础](https://blog.gaein.cn/passages/CSharp-Note1-Basic/)
+* [C#面向对象](https://blog.gaein.cn/passages/CSharp-Note2-OOP/)
+* [C#泛型](https://blog.gaein.cn/passages/CSharp-Note3-Generics-Type/)
+* [C#运算符和强制类型转换](https://blog.gaein.cn/passages/CSharp-Note4-Operators-and-TypeCasts/)
+* [C#中数组的使用](https://blog.gaein.cn/passages/CSharp-Note5-Array/)
+* [C#的委托、lambda 表达式和事件](https://blog.gaein.cn/passages/CSharp-Note6-Delegates-lambda-Expressions-and-Events/)
+* [C#字符串和正则表达式](https://blog.gaein.cn/passages/CSharp-Note7-String-and-Regular/)
 
 ## CSharp 泛型
 

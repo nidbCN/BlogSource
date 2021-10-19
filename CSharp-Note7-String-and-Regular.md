@@ -1,3 +1,26 @@
+---
+title: C#字符串和正则表达式 - C#笔记 
+author: Gaein nidb
+categories:
+  - 代码如诗
+tags:
+  - 笔记
+  - 编程
+  - CSharp
+  - dotNET
+date: 2021-05-03 14:31:30
+---
+
+## 目录
+
+* [C#基础](https://blog.gaein.cn/passages/CSharp-Note1-Basic/)
+* [C#面向对象](https://blog.gaein.cn/passages/CSharp-Note2-OOP/)
+* [C#泛型](https://blog.gaein.cn/passages/CSharp-Note3-Generics-Type/)
+* [C#运算符和强制类型转换](https://blog.gaein.cn/passages/CSharp-Note4-Operators-and-TypeCasts/)
+* [C#中数组的使用](https://blog.gaein.cn/passages/CSharp-Note5-Array/)
+* [C#的委托、lambda 表达式和事件](https://blog.gaein.cn/passages/CSharp-Note6-Delegates-lambda-Expressions-and-Events/)
+* [C#字符串和正则表达式](https://blog.gaein.cn/passages/CSharp-Note7-String-and-Regular/)
+
 ## 字符串和正则表达式
 
 ### 9 - 字符串和正则表达式
