@@ -116,15 +116,12 @@ DNS 全称是 Domain Name System ，可以理解为负责把域名变成 IP 的�
 ### Windows 10
 
 1. 点击右下角网络图标，然后点击"Network & Internat settings"；
-
 ![图标](https://img.cdn.gaein.cn/website_used/blog/Public-DNS-and-configure-DNS/01.webp)
 
 2. 点击正在使用的网络（比如我的是"Ethernet"，如果你在使用 WiFi 这里应该会显示"Wi-Fi"），点击"Properties"；
-
 ![设置页面](https://img.cdn.gaein.cn/website_used/blog/Public-DNS-and-configure-DNS/02.webp)
 
-在 "IP Settings" 处点击 "Edit"，依次输入 "Preferred DNS" 和 "Alternate DNS"，如果有 IPv6 那么在下面的 "IPv6" 栏的对应位置输入 IPv6 DNS。
-
+3. 在 "IP Settings" 处点击 "Edit"，依次输入 "Preferred DNS" 和 "Alternate DNS"，如果有 IPv6 那么在下面的 "IPv6" 栏的对应位置输入 IPv6 DNS。
 ![输入DNS](https://img.cdn.gaein.cn/website_used/blog/Public-DNS-and-configure-DNS/03.webp)
 
 ### Ubuntu
@@ -132,6 +129,8 @@ DNS 全称是 Domain Name System ，可以理解为负责把域名变成 IP 的�
 我手里只有 Ubuntu，其它 Linux 如何配置未知。貌似更改 `/etc/resolv.conf` 是通用方法。
 
 由于我们使用的是 Ubuntu，Ubuntu 的 DNS 是由 systemd-resolve 来管理的，因此我们不需要手动更新 `/etc/resolv.conf` （事实上更新了也会被覆盖）。
+
+更好的方法还可以考虑使用 Netplan 来管理 DNS ， 详见 [Using DHCP and static addressing](https://netplan.io/examples/#using-dhcp-and-static-addressing) 中 `nameservers` 一章的配置。
 
 关于错误示范请见我在 18 年干的傻事：
 
