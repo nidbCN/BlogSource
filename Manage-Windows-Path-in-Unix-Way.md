@@ -1,5 +1,5 @@
 ---
-title: 以类Unix的方法管理Windows程序的Path
+title: 以类Unix的方法管理Windows的Path环境变量
 author: Gaein nidb
 categories:
   - 软件
