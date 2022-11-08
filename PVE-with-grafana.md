@@ -12,6 +12,10 @@ date: 2022-10-03 19:11:23
 
 本博客实际上是由旧的服务器向新的服务器迁移并且重新部署的过程中写的，因此 InfluxDB 没有使用最新的 `2.4` 版本而是使用了 `1.8.10`。
 
+![概览](https://img.cdn.gaein.cn/website_used/blog/PVE-with-grafana/01.webp)
+
+非常的帅气
+
 ## InfluxDB
 
 ### 安装 InfluxDB
