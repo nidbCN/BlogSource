@@ -155,3 +155,18 @@ enabled = true
 ```
 
 取消注释并改为 `true`。
+
+## Nginx
+
+grafana 默认监听在 3000 端口，这样用起来非常的 low，这里使用 nginx 把 `localhost:3000` 反向代理到 `http://grafana-server/monitor/` 。
+
+修改配置文件 `/etc/nginx/sites-enabled/default` ，在 `server` 块内添加：
+
+```conf
+# Grafana
+location /monitor/ {
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_pass http://localhost:3000;
+}
+```
