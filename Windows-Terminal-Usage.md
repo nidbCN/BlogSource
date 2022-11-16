@@ -1,37 +1,52 @@
-title: '个性化你的Windows Terminal终端与PowerShell 7'
+---
+title: 个性化你的 Windows Terminal 终端与 PowerShell
 author: Gaein nidb
 categories:
   - 电脑软件
 tags:
   - 软件介绍
   - 软件教程
-date: 2020-12-27 1:43:18
-
+date: 2020-11-09 01:43:18
 ---
 
 ## 前言
 
 > 总感觉 cmd、PowerShell 太丑。以前折腾过一阵子的 cmder 感觉也就一般。听学姐们吹了挺长时间的 Windows Terminal。今天试一下，确实效果非常好，美观好用。不得不说~~巨硬~~Micro$oft 正经去做某个东西还是非常好的。
 
+2022年11月9日更新如下：
+
+> * 修改名称 “Powershell 7” 为 “Powershell”，“Powershell 5” 为 “Windows Powershell”；
+> * 修改部分失效的配置
+> * 修改安装方式等
+
+（其实还改了很多，毕竟已经两年过去了）
+
 ## 安装
 
 这次主要有以下几个目的：
 
-1. 使用 PowerShell Core 代替系统自带的 PowerShell 5；
+1. 使用 PowerShell 代替系统自带的 Windows PowerShell；
 2. 优化 PowerShell 字体、配色等；
 3. 在 Windows Terminal 里面添加 python 控制台；
 4. 合并 PowerShell、Git Bash、cmd 和 python 到 Windows Terminal 中，并取消其它的右键菜单，为 Windows Terminal 添加右键菜单。
 
 > 可参阅： [Windows Terminal Startup Settings | Microsoft Docs](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/startup)
 
-#### 安装 Windows Terminal
+### Windows Terminal
 
-###### 介绍
+#### Windows Terminal 简介
 
 是一款新式、快速、高效且强大的终端应用程序。通过它可以使用命令提示符、PowerShell、WSL 等诸多 shell。Windows Terminal 支持多选项卡、窗格、Unicode 和 GPU 加速文本渲染引擎，同时也支持丰富多彩的用户自定义主题。
-![wt宣传片](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/01.webp)
 
-###### 安装
+![wt宣传片](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/01.webp)
+ 
+#### 安装 Windows Terminal
+
+可以使用多种方式安装：
+
+包管理器 `winget` 和 `scoop` 等均有 windows terminal 的包，Windows 11 自带 Windows Terminal（中文版显示为“终端”）。
+
+应用商店：
 
 1. 打开系统的 Microsoft Store；
 2. 搜索"Windows Terminal"；
@@ -39,21 +54,23 @@ date: 2020-12-27 1:43:18
 3. 点击"安装"。
 
 > 由于网络环境不同等待时间也可能不一样
-
-> 在未来某个版本的Windows会默认安装Windows Terminal，但是是几百年后就不知道了（x
+> ~~在未来某个版本的Windows会默认安装Windows Terminal，但是是几百年后就不知道了（x~~ Windows 11 已经预装。
 
 菜单里出现 Windows Terminal，打开后如图所示即为安装完成。
+
 ![WT打开](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/03.webp)
 
-#### 安装 PowerShell Core
+#### PowerShell
 
-###### 介绍
+所以 Powershell 和 Windows Powershell 有啥不同？
+
+##### Powershell 简介
 
 最初，Windows PowerShell 是在 .NET Framework 基础之上构建而成，仅适用于 Windows 系统。 在最新版本中，PowerShell 使用 .NET Core 3.1 作为运行时。 PowerShell 在 Windows、macOS 和 Linux 平台上运行。
 新的 PowerShell 拥有更高的效率和诸多优点。
 PowerShell Core 是 [GitHub](https://github.com/PowerShell/PowerShell) 上面的开源项目，使用 MIT 许可证。
 
-###### 安装
+##### 安装 Powershell
 
 > 官方有详细的安装文档，见 [Microsoft DOCS](https://docs.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell)
 
@@ -99,14 +116,18 @@ Install-Module oh-my-posh -Scope CurrentUser
 ###### 配置
 
 1. 从菜单栏打开安装好的 PowerShell 7。如果电脑安装有 Visual Studio Code 的话在里面输入以下内容：
+
    ```ps
    code $profile
    ```
+
    ![code效果](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/06.webp)
    如果你没有安装或者不知道什么是 Visual Studio Code 的话输入以下内容：
+
    ```ps
    notepad $profile
    ```
+
    ![notepad效果](https://img.cdn.gaein.cn/website_used/blog/Windows-Terminal-Usage/07.webp)
 2. 输入完成后按下回车，VSCode（或记事本）将会打开一个文件（可能是空的），在里面输入以下内容后保存
 
@@ -162,6 +183,7 @@ Install-Module oh-my-posh -Scope CurrentUser
    > 注意，现在打开默认是图形化设置，需要进入图形设置再点击左侧栏目下方的设置图标。
 
    首先修改全局设置（即 `profiles.defaults` 节点）：
+
    ```json
    "defaults": {
      // 默认设置
@@ -181,7 +203,7 @@ Install-Module oh-my-posh -Scope CurrentUser
    ```
 
    然后添加Python控制台，并将不想看到的自动生成的三个的 `hidden` 属性设置为 `true`:
-   
+
    ```json
    {
      // Python Console
@@ -325,6 +347,6 @@ Install-Module oh-my-posh -Scope CurrentUser
 ## 参考
 
 1. [Microsoft Docs:Windows Terminal](https://docs.microsoft.com/zh-cn/windows/terminal/)
-2. [Microsoft Docs:从 PowerShell5 迁移到 7 ](https://docs.microsoft.com/zh-cn/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.1)
+2. [Microsoft Docs:从 PowerShell5 迁移到 7](https://docs.microsoft.com/zh-cn/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.1)
 3. [知乎 @tnnmigga:Windows Terminal 终端入门](https://zhuanlan.zhihu.com/p/144612614)
 4. [简书 @码农小胖哥:Windows 命令行终端 PowerShell 美化计划](https://www.jianshu.com/p/95c5194857b7)
