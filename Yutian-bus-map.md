@@ -20,7 +20,7 @@ date: 2023-02-11 15:10:18
 
 {% raw %}
 
-<iframe width="100%" heigh="80vh" src="https://static.cdn.gaein.cn/yutian-bus-map-viewer/"></iframe>
+<iframe title="页内查看器" width="100%" height="480" src="https://static.cdn.gaein.cn/yutian-bus-map-viewer/"></iframe>
 
 {% endraw %}
 
