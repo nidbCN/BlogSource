@@ -12,36 +12,24 @@ date: 2023-02-11 15:10:18
 
 ### 概览
 
+![公交线路图](https://img.cdn.gaein.cn/website_used/blog/Yutian-bus-map/1.webp)
+
+> 点击图片可查看大图，更多缩放功能使用下文的查看器或独立页面的查看器
+
+### 查看器
+
 {% raw %}
 
-<iframe width="100%" src="https://static.cdn.gaein.cn/yutian-bus-map-viewer/"></iframe>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.2/viewer.min.css" integrity="sha512-9EosEckNJFma9X2uo5ysGPhVf/dcZTuZUBVW2A9QcWBd0HAx6zs+FK+wsBGhl91uFfDI4ZY+/7MVhtYU4tXEig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.2/viewer.min.js" integrity="sha512-1TCjsgfYd9edJ4mO6sb8rLzhnGpnFR4GazDGVhDekHrOHU7y7vcqGiO+4yW0HIDBoIY/ocbM/BrXxg8dYO6wSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<img id="image" src="https://img.cdn.gaein.cn/website_used/yutian-map-viewer/overview.svg" alt="玉田公交线路图" />
-
-<script>
-    const viewer = new Viewer(document.getElementById('image'), {
-        navbar: false,
-        slideOnTouch: false,
-        title: () => "玉田公交线路图",
-        toolbar: {
-            zoomIn: true,
-            zoomOut: true,
-            oneToOne: true
-        },
-        viewed() {
-            viewer.moveTo(-512, 320);
-            viewer.zoomTo(1.5);
-        },
-    });
-</script>
+<iframe width="100%" heigh="80vh" src="https://static.cdn.gaein.cn/yutian-bus-map-viewer/"></iframe>
 
 {% endraw %}
 
-> 点击图片进入查看器  
-> [独立页面的图片查看器](https://static.cdn.gaein.cn/yutian-bus-map-viewer/)
+> [独立页面的查看器](https://static.cdn.gaein.cn/yutian-bus-map-viewer/)
+
+### 数据来源
+
+* 玉田生活
+* 腾讯出行服务
 
 ### 附
 
