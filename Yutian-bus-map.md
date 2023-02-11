@@ -14,6 +14,8 @@ date: 2023-02-11 15:10:18
 
 {% raw %}
 
+<iframe width="100%" src="https://static.cdn.gaein.cn/yutian-bus-map-viewer/"></iframe>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.2/viewer.min.css" integrity="sha512-9EosEckNJFma9X2uo5ysGPhVf/dcZTuZUBVW2A9QcWBd0HAx6zs+FK+wsBGhl91uFfDI4ZY+/7MVhtYU4tXEig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.2/viewer.min.js" integrity="sha512-1TCjsgfYd9edJ4mO6sb8rLzhnGpnFR4GazDGVhDekHrOHU7y7vcqGiO+4yW0HIDBoIY/ocbM/BrXxg8dYO6wSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
