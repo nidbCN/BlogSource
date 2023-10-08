@@ -242,6 +242,14 @@ A、B、C 三个登机口是三个不同方向的巨大连廊，可能有数公�
 
 > 再见到陆地时候，已经是在日本境内了。
 
+眼看着都快落地了，过了巡航阶段了， flight log 也没给我，寻思着可能是机长没空填了，准备作罢了。不过在降落前空乘奇迹般的交给了我，好耶！
+
+机长还附上了舱单。
+
+![厦门高崎-大阪关西段的 flight log](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/fl2.webp)
+
+> 厦门高崎-大阪关西段的 flight log。
+
 可能是因为关西机场航班较多，飞机盘旋了一会才顺利降落，落地时候已经黄昏了。短短的几个小时航程却令我十分焦灼。
 
 ![黄昏的大阪湾](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/20.webp)
@@ -342,6 +350,87 @@ A、B、C 三个登机口是三个不同方向的巨大连廊，可能有数公�
 
 原定于明天的行程如上所示，不过由于没取到地铁卡，所以明天还得去趟难波站的的关西游客中心。
 
+### 8.12 Day2 梅田/本町/心斋桥/难波/道顿堀/日本桥/通天阁
+
+写完标题就笑了，什么速通。
+
+早起起床后去洗了个澡，然后哥们手机卡进水用不了了（恼
+
+洗完澡准备出门，背着相机主打一个健身（x
+
+![北加贺屋附近的街道](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/kitakagaya-road.webp)
+
+> 北加贺屋附近的街道
+
+日本居民区大部分也都是这种小路，倒是自行车比起汽车更多一些。
+
+![食其家的早饭](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/sukiya-breakfast.webp)
+
+> 食其家的牛肉饭
+
+早就物色好了车站附近的 すき家（すきや），过去吃早饭。朋友点了一个早餐的套餐，我想了想点了通常午饭吃的牛肉饭。
+
+我点的是大份，大概 800JPY，小份的会便宜一些。
+
+大学生嘛，吃吃吃怎么了？
+
+酒足饭饱之后坐地铁先去难波站拿一下大阪地铁卡，从北加贺屋坐四桥线到了难波站，下了车人就傻了，难波站也太大了，但是也不是中国车站那种面积大，而是岔路多、出口多。
+
+![难波站地图](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/map-of-namba.webp)
+
+> 深色的部分，是巨大的难波站。
+
+难波游客中心在南海CITY里面，是个巨大的电车站+商场，而谷歌地图导航又没有具体走路的路线图，而且还不知道在商场几层...
+
+之后转啊转啊，找了几乎一个小时才在二楼商场里面找到了难波游客中心，结果一看——门口排了几十米的长队。
+
+放弃了，不差这一天两天的（虽然原定行程才3天）。
+
+之后想了想，大阪城是没时间去了，最近初音未来 16th 有一个主题店，大阪的在梅田，干脆过去看看好了。
+
+![16生日纪念店](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/miku-16th.webp)
+
+坐地铁到了梅田，到了 hep five 之后却找不到上去的路，电梯只能坐到 1 层，楼梯那边门也锁着，就很让人摸不到头脑。
+
+![hep five商场](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/jr-beside-shop.webp)
+
+> hep five 旁边由梅田站驶出的 JR 西日本。不过图片是后来照的。
+
+兜兜转转上上下下跑了好几圈，才发现，原来人家 11 点才开门啊！
+
+多少有够懒狗的...
+
+无奈，只能去旁边随便转转咯。周围是阪急的商店街，不过有很多店铺也没有开业。大路上则是梅田的高楼大厦。
+
+![早上的阪急商店街](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/shop-street.wbep)
+
+> 早上的阪急商店街。
+
+![梅田的高楼](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/umeda-buildings.webp)
+
+> 梅田的高楼。
+
+回来时候有好多人在门口等，还有好多jk，终于蹲到了11点开门，从 -1 楼卷上电梯直上 6 楼，冲进联动的店。门口的牌子上写着吧唧卖空了，但是实际上还是有的。
+
+买了一个吧唧一个亚克力立牌，顺手薅了一张魔法未来的海报。
+
+![店铺](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/miku-16th-goods.webp)
+
+> 买到的谷子，开心！
 
 
+![梅田的高楼](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/miku-16th-tile.webp)
 
+> 亚克力立牌。
+
+![牌子](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/miku-16th-menu.webp)
+ 
+> 门口的牌子，上面写着“完贩”。
+
+![店铺](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/miku-16th-shop.webp)
+
+> 联动的店铺，朋友笑得超级开心，可惜只能化作马赛克。
+
+![超大海报](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/miku-16th-poster.webp)
+
+> 店门口的超大海报！
