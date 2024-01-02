@@ -1,3 +1,4 @@
+---
 title: 'CentOS部署MySQL8步骤'
 author: Gaein nidb
 categories:

@@ -1,3 +1,4 @@
+---
 title: 'nginX设置错误页面'
 author: Gaein nidb
 categories:

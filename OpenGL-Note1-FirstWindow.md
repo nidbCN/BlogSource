@@ -1,3 +1,4 @@
+---
 title: 'OpenGL学习笔记——第一个窗口'
 author: Gaein nidb
 categories:

@@ -4,7 +4,8 @@ author: Gaein nidb
 tags: 
   - Linux
   - 运维
-categories: [服务器运维]
+categories: 
+  - 服务器运维
 date: 2018-08-17 09:36:49
 ---
 

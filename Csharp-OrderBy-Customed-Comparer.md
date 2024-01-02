@@ -1,5 +1,5 @@
 ---
-title: C# 中集合和LINQ的排序
+title: C# 中集合和 LINQ 的排序
 author: Gaein nidb
 categories:
   - 学习资料

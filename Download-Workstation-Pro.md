@@ -1,5 +1,5 @@
 ---
-title: 优雅的从VMWare官网上下载完整版Workstation Pro
+title: 优雅的从 VMWare 官网上下载完整版 Workstation Pro
 author: Gaein nidb
 categories:
   - 电脑软件

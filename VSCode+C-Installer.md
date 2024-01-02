@@ -1,3 +1,4 @@
+---
 title: 'VSCode 一键配置 C/C++环境程序'
 author: Gaein nidb
 categories:

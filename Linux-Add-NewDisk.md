@@ -1,3 +1,4 @@
+---
 title: 'Linux挂载新硬盘'
 author: Gaein nidb
 cover: 'https://s1.ax1x.com/2018/10/20/i04JfK.png'

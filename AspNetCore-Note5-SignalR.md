@@ -1,3 +1,4 @@
+---
 title: '在ASP.NET Core中的实时通信——SignalR 实时通信——ASP.NET Core 入门(3)'
 author: Gaein nidb
 categories:

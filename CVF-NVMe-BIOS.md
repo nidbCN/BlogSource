@@ -1,5 +1,5 @@
 ---
-title: 华硕C5F改BIOS支持NVMe SSD启动
+title: 华硕 C5F 改 BIOS 支持 NVMe SSD 启动
 author: Gaein nidb
 categories:
 - 电脑硬件

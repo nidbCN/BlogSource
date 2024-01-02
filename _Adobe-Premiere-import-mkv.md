@@ -1,5 +1,5 @@
 ---
-title: Adobe Premiere 导入 mkv 格式的视频
+title: 【过期内容】Adobe Premiere 导入 mkv 格式的视频
 author: Gaein nidb
 categories:
   - 软件教程
@@ -10,6 +10,8 @@ tags:
   - 杂记
 date: 2021-05-12 22:32:26
 ---
+
+> 注意：此内容已过期。Adobe Premiere 不能导入的本质原因的 PR 2020 前的版本不支持 HEVC/H.265 编码。旧版本使用 ffmpeg 进行转码即可正常使用，新版本没有此问题。
 
 ## mkv
 

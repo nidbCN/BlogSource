@@ -1,3 +1,4 @@
+---
 title: '初音ミク「マジカルミライ」魔法未来2023 大阪攻略'
 author: Gaein nidb
 categories:

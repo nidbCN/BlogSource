@@ -1,3 +1,4 @@
+---
 title: 2019年2月12日服务器宕机说明
 author: Gaein nidb
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 值得一试：阿斯加特AN2石墨烯黑科技固态开箱评测
+title: 值得一试：阿斯加特 AN2 石墨烯黑科技固态开箱评测
 author: Gaein nidb
 categories:
 - 电脑硬件
@@ -10,15 +10,15 @@ tags:
 date: 2018-12-07 21:34:35
 ---
 
-随着SSD价格的回落，越来越多的人选择入手了新的固态硬盘。考虑到老的东芝A100实在是有些慢了，于是权衡了影驰>和阿斯加特后入手了阿斯加特AN2 SSD(250G)。这款硬盘采用石墨烯散热，薄薄的一层黑色片代替以前厚重的金属散热>。速度也很可观，于是便从某宝入手了。
+随着SSD价格的回落，越来越多的人选择入手了新的固态硬盘。考虑到老的东芝 A100 实在是有些慢了，于是权衡了影驰和阿斯加特后入手了阿斯加特 AN2 SSD(250G)。这款硬盘采用石墨烯散热，薄薄的一层黑色片代替以前厚重的金属散热。速度也很可观，于是便从某宝入手了。
 
-目前在阿斯加特官网上面只有AN系列和雷赤系列，没有找到新的AN2。
+目前在阿斯加特官网上面只有 AN 系列和雷赤系列，没有找到新的 AN2。
 
 ## 包装
 
 ![包装盒](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/01.webp)
 
-阿斯加特AN2的盒子以黑色为主色调，辅之以红色，非常帅气。正面写有白字的Asgord AN series M.2 NVMe SSD，侧面有Asgord标识。
+阿斯加特 AN2 的盒子以黑色为主色调，辅之以红色，非常帅气。正面写有白字的 Asgord AN series M.2 NVMe SSD，侧面有 Asgord 标识。
 
 ![背面包装](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/02.webp)
 
@@ -52,7 +52,7 @@ date: 2018-12-07 21:34:35
 
 ![硬盘](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/09.webp)
 
-硬盘表面是磨砂质感的黑色散热，上面有红色的Asgord LOGO
+硬盘表面是磨砂质感的黑色散热，上面有红色的 Asgord LOGO
 
 ![背面](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/10.webp)
 
@@ -73,19 +73,19 @@ date: 2018-12-07 21:34:35
 * READ:2100MB/S
 * WRITE:1800MB/S
 
-因为主板没有M.2接口，只能用PCI-E转接卡，没有nvme协议肯定会有所损失，另外主板的接口还是PCIE2.0
+因为主板没有 M.2 接口，只能用 PCI- E转接卡，没有 nvme 协议肯定会有所损失，另外主板的接口还是 PCIE2.0
 
 ![硬盘和卡](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/13.webp)
 
-PCIE-M.2是某宝花了几十买的，据说浦科特的那个非常好，只不过转接卡快赶上我固态的价格了...
+PCIE-M.2 是某宝花了几十买的，据说浦科特的那个非常好，只不过转接卡快赶上我固态的价格了...
 
 ![接口](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/14.webp)
 
-仔细看看做工还算可以，一开始这个SATA吓我一大跳，仔细一看，一个是基于SATA的，另一个是PCIE的
+仔细看看做工还算可以，一开始这个 SATA 吓我一大跳，仔细一看，一个是基于 SATA 的，另一个是 PCIE 的
 
 ![安装硬盘](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/15.webp)
 
-非常轻松的按照说明书按照SSD，第一次装M.2的固态，感觉有点像笔记本内存的装法？？？
+非常轻松的按照说明书按照 SSD，第一次装 M.2 的固态，感觉有点像笔记本内存的装法？？？
 
 ![安装完成](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/16.webp)
 
@@ -93,11 +93,11 @@ PCIE-M.2是某宝花了几十买的，据说浦科特的那个非常好，只不
 
 ![总体](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/17.webp)
 
-安装到电脑的PCIE插槽上面，至少需要PCIE X4才能发挥出来它的性能，还好ROG有四个槽，我插在了PCIE X8/X16上面，应该是没有问题的了
+安装到电脑的 PCIE 插槽上面，至少需要 PCIE X4 才能发挥出来它的性能，还好 ROG 有四个槽，我插在了 PCIE X8/X16 上面，应该是没有问题的了
 
 ![速度测试](https://img.cdn.gaein.cn/website_used/blog/Asgord-M2-AN2-SSD/18.webp)
 
-随便用了两个比较常见的软件进行测试，结果总结如下，可见比较SATA SSD来说，M.2的优势是显而易见的。不过并没有达到官方宣传速度。
+随便用了两个比较常见的软件进行测试，结果总结如下，可见比较 SATA SSD 来说， M.2 的优势是显而易见的。不过并没有达到官方宣传速度。
 
 测试平台：
 * CPU: AMD FX8300

@@ -1,3 +1,4 @@
+---
 title: '在红米4X上安装LineageOS'
 author: 'Gaein nidb'
 categories:
