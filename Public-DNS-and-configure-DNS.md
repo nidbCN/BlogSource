@@ -6,7 +6,7 @@ categories:
 tags:
   - DNS
   - Windows
-date: 2021-6-12 14:57:12
+date: 2021-06-12 14:57:12
 ---
 
 因为校园网 DNS 污染，导致我无法连接 `githubusercontent.com` ，所以准备更换一个公共 DNS。以下为常见的一些公共 DNS 服务。

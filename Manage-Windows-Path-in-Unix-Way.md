@@ -6,7 +6,7 @@ categories:
 tags:
   - Windows
   - Linux
-date: 2022-2-1 23:21:28
+date: 2022-02-01 23:21:28
 ---
 
 首先恭祝大家新春快乐！

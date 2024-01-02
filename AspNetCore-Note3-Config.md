@@ -10,7 +10,7 @@ tags:
   - 编程
   - 笔记
   - 后端
-date: 2021-1-28 02:19:14
+date: 2021-01-28 02:19:14
 ---
 
 ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这个文件中写了启动ASP.NET Core的一些配置，比如环境、log等级等，也支持写入自定义的JSON对象。

@@ -10,7 +10,7 @@ tags:
   - 编程
   - 后端
   - docker
-date: 2021-4-4 0:10:02
+date: 2021-04-04 00:10:02
 ---
 
 ## 将ASP.NET Core应用程序部署到docker中

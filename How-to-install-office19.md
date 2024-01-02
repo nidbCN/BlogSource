@@ -6,7 +6,7 @@ categories:
 tags:
   - Office
   - 软件教程
-date: 2020-2-28 09:29:34
+date: 2020-02-28 09:29:34
 ---
 
 闲来无事安装了Office2019，激活软件是从 HWIDGen 作者的 Github 上面拉下来的（顺手汉化了一下），KMS激活，180天

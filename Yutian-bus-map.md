@@ -4,7 +4,8 @@ author: Gaein nidb
 tags: 
   - 公交
   - 生活
-categories: [杂记]
+categories: 
+  - 杂记
 date: 2023-02-11 15:10:18
 ---
 

@@ -1,4 +1,5 @@
-﻿title: Sueface二手电脑验机步骤 - 二手surface怎么验机
+﻿---
+title: Sueface二手电脑验机步骤 - 二手surface怎么验机
 author: Gaein nidb
 categories:
 - 电脑硬件
@@ -8,7 +9,7 @@ tags:
 cover: 'https://s2.ax1x.com/2019/03/16/AZSQL4.md.png'
 date: 2019-03-16 16:34:35
 ---
- 半个月前购入了一台Surface Pro 3 (i3/4G/64G)这里呢，贴一下验机步骤备用。最近两周一直在研究Surface系统（
+半个月前购入了一台Surface Pro 3 (i3/4G/64G)这里呢，贴一下验机步骤备用。最近两周一直在研究Surface系统（
 我在Microsoft官网下载的Surface恢复系统没有简体中文）
 <!-- more -->
 ## 前言

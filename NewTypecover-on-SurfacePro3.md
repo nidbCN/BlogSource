@@ -8,7 +8,7 @@ tags:
   - 开箱
   - surface
 cover: 'https://s2.ax1x.com/2020/02/28/3DFQun.md.jpg'
-date: 2020-2-28 14:23:25
+date: 2020-02-28 14:23:25
 ---
 尽管全网都在说surface pro7的键盘盖不支持pro3，但是我还是义务反顾买了一个，结果发现，完美兼容！
 <!-- more -->

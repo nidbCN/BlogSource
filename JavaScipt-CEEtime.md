@@ -1,5 +1,5 @@
 ---
-title: 'javascript制作高考倒计时网页'
+title: 'javascript 制作高考倒计时网页'
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -8,7 +8,7 @@ tags:
   - 编程
   - 天天向上
 cover: 'https://s2.ax1x.com/2019/12/01/QZ78S0.md.png'
-date: 2019-12-1 09:54:14
+date: 2019-12-01 09:54:14
 ---
 暑假的时候做了一个高考倒计时兼目标的页面，由于高三实在是忙，一直没有时间写成博客
 <!-- more -->

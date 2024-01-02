@@ -10,7 +10,7 @@ tags:
   - 编程
   - 翻译
   - 后端
-date: 2021-4-4 3:18:28
+date: 2021-04-04 3:18:28
 ---
 
 > 文章由我翻译自[5 ways to set the URLs for an ASP.NET Core app](https://andrewlock.net/5-ways-to-set-the-urls-for-an-aspnetcore-app/)。本人文化水平不高，可能有误译，但是大致内容应该没有问题，还请多海涵。
