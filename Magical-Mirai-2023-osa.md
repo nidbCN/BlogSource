@@ -8,6 +8,7 @@ tags:
   - 魔法未来
   - 初音未来
 date: 2023-05-30 20:27:11
+image: "https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/magical-mirai-flags.webp"
 ---
 ## 初音ミク「マジカルミライ2023」魔法未来2023 大阪攻略
 

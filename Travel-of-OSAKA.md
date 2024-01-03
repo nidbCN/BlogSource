@@ -7,6 +7,7 @@ tags:
   - 日本之旅
   - 魔法未来
   - 初音未来
+image: "https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/river-of-dotonnbori.webp"
 date: 2023-09-06 17:29:22
 lastmod: 2024-01-02 22:19:00
 ---
@@ -829,7 +830,7 @@ animate 足足有 5 层，第一层是一个小电梯上去，门口还放了一
 
 之后从出口处出来，后面便是各年的大旗子摆在一次，准备照一张，无奈可能是因为挡路了被 STAFF 驱离了，因此只留下了这一张图。
 
-![展示的法批](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/magical-mirai-flags.webp)
+![小旗子](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/magical-mirai-flags.webp)
 
 旁边则是 DIGITAL STAR 的 STAGE，11:00-11:30是有活动的，不过之前记得 DIGITAL STAR 是要买票的，这里看他也没围起来，岂不是能在外面蹭？（x
 
