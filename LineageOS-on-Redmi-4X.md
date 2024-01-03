@@ -1,12 +1,12 @@
 ---
-title: '在红米4X上安装LineageOS'
+title: '【弃坑】在红米4X上安装LineageOS'
 author: 'Gaein nidb'
 categories:
   - 杂记
 tags:
   - Android
   - 软件教程
-date: 2021-10-4 18:43:15
+date: 2021-10-04 18:43:15
 ---
 
 > 本来就想顺便玩玩结果用了4部手机了.jpg
