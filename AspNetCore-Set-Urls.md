@@ -19,28 +19,28 @@ date: 2021-04-04 3:18:28
 
 ## 为ASP.NET Core应用程序设置URLs的5种办法
 
-默认情况下，ASP.NET Core应用程序监听以下URLs：
+默认情况下，ASP.NET Core应用程序监听以下地址：
 * http://localhost:5000
 * https://localhost:5001
 
-在这篇文章里我将给出5种不同的办法来改变你的应用程序监听的URLs。
+在这篇文章里我将给出5种不同的办法来改变你的应用程序监听的地址。
 
-在启动程序的时候改变ASP.NET Core监听的URLs有很多种办法。我有一篇[旧博客](https://andrewlock.net/configuring-urls-with-kestrel-iis-and-iis-express-with-asp-net-core/)说了在ASP.NET Core 1.0中你可以选用的几种办法，这些办法在ASP.NET Core 3.x中大致是相同的：
+在启动程序的时候改变ASP.NET Core监听地址有很多种办法。我有一篇[旧博客](https://andrewlock.net/configuring-urls-with-kestrel-iis-and-iis-express-with-asp-net-core/)说了在ASP.NET Core 1.0中你可以选用的几种办法，这些办法在ASP.NET Core 3.x中大致是相同的：
 
-* `UseUrls()` —— 在 *Program.cs* 中写死URLs；
-* 环境变量 —— 使用 `DOTNET_URLS` 或者 `ASPNETCORE_URLS` 来设置URLs；
+* `UseUrls()` —— 在 *Program.cs* 中写死；
+* 环境变量 —— 使用 `DOTNET_URLS` 或者 `ASPNETCORE_URLS` 来设置；
 * 命令行参数 —— 从命令行启动时使用 `--urls` 参数来设置；
 * 使用 `launchSettings.json` —— 在 `applicationUrl` 这个节点中设置；
-* `KestrelServerOptions.Listen()` —— 手动使用 `Listen()` 为Kestrel服务器设置地址。
+* `KestrelServerOptions.Listen()` —— 手动使用 `Listen()` 为 Kestrel 服务器设置地址。
 
 在下面我们来看各个办法的详细说明。
 
 ### 你能用什么样的URLs
 
-在这篇文章里我说了你可以监听的"URLs"，但是你不可能只用URL。这有3类URL可以用来监听的URLs。
+在这篇文章里我说了你可以监听的"URLs"，但是你不可能去使用任何一个随意的URL。这有3类URL可以用来监听。
 
-* IPv4和IPv6的“回路网络接口”（例如 `http://localhost:5000`）。它的格式为:`{协议}://{回路网络接口地址}:{端口}`；
-* 在你机器上可用的特殊IP地址（例如 `http://192.168.8.31:5005`）。它的格式为:`{协议}://{IP地址}:{端口}`；
+* IPv4和IPv6的“本机换回”（例如 `http://localhost:5000`）。它的格式为:`{协议}://{回路网络接口地址}:{端口}`；
+* 你机器上的某个特定IP地址（例如 `http://192.168.8.31:5005`）。它的格式为:`{协议}://{IP地址}:{端口}`；
 * 指定端口的 “任意” IP地址（例如 `http://*:6264`）。它的格式为:`{协议}://*:{端口}`。
 
 `port` 在上述模式中也是可选的 —— 如果你省略了它，将会使用方案的默认端口（`https` 端口是 `80`，`https` 的端口是 `443`）。
