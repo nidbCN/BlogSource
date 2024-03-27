@@ -283,7 +283,7 @@ A、B、C 三个登机口是三个不同方向的巨大连廊，可能有数公�
 
 之后就到了机场的大厅，因为关西机场是填海造陆成本较高，所以也很小，感觉比中国好多机场都要小。之后我们找关西游客中心想着兑一下之前买的大阪地铁两日券。
 
-![国际航班到达](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/22.webp)
+![国际航班到达](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/international-arrivals.webp)
 
 > 大厅里面的国际航班到达牌子。
 
@@ -409,7 +409,7 @@ A、B、C 三个登机口是三个不同方向的巨大连廊，可能有数公�
 
 无奈，只能去旁边随便转转咯。周围是阪急的商店街，不过有很多店铺也没有开业。大路上则是梅田的高楼大厦。
 
-![早上的阪急商店街](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/shop-street.wbep)
+![早上的阪急商店街](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/shop-street.webp)
 
 > 早上的阪急商店街。
 
@@ -636,6 +636,14 @@ animate 足足有 5 层，第一层是一个小电梯上去，门口还放了一
 
 不过嘛，咱也没拍什么（已经快透支了）
 
+![真寻的书](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/animate-onimai.webp)
+
+> 小寻子的全套书，我和朋友各买了一本
+
+![小学生的手办](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/animate-akatsuki.webp)
+
+> 舰队COLLECTION中的晓
+
 朋友买了应援棒，当时时间已经5点多了，肚子也开始叫了，没办法，先吃饭咯，再不吃是真挺不住了。
 
 至于晚饭记不清是食其家还是吉野家了，惠美须町地铁站附近都有。吃了份最大份，吃完大概也饱了。
@@ -659,6 +667,8 @@ animate 足足有 5 层，第一层是一个小电梯上去，门口还放了一
 下次旅行不能安排这么紧张了。
 
 到了通天阁下，得知上去需要排队40分钟，于是两个懒狗就放弃治疗了，也算是草草参观了一次了。
+
+然后远远的让朋友给我拍了张合影，然后完美的眼镜反光挡住了眼睛。
 
 ![从通天阁南处拍摄](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/shinnseikai-south.webp)
 
@@ -844,7 +854,7 @@ animate 足足有 5 层，第一层是一个小电梯上去，门口还放了一
 
 ESP 倒是有一些吧唧和立牌之类的，不过当时实在是没舍得买，而且排队人好多啊QAQ
 
-当然啦，这附近也都是音乐相关的，除了雅马哈外还有 ESP 和 SONICWIRE。
+当然啦，这附近也都是音乐相关的，除了雅马哈外还有 ESP。
 
 ~~都没有钱就是了。~~
 
@@ -862,27 +872,72 @@ ESP 倒是有一些吧唧和立牌之类的，不过当时实在是没舍得买�
 
 朋友倒是照着手机上的图画了一幅不错的出来。好羡慕会画画的人啊呜呜。
 
+![化作马赛克的好朋友在画画](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/miku-draw.webp)
+
+> 化作马赛克的好朋友在画画
+
+当然啦，作品有点丑就不贴了（x
+
 画完画之后附近是贴贴纸的地方，可以给巨幅初音贴上不同颜色的贴纸，我抽到了一根有点紫的贴到了マジカルミライ这几个字上。
 
 旁边是一个很有意思的照相墙，上面写着 FLASH。只要启动闪光灯拍照的时候就可以照到V家全家福。不过当时心里顾虑着台风并没有什么心情玩，就错过了。
 
 走到最前面是 16th 的展台，还有各种周边。不过 fufu 和其它一些东西都在预定中，16th 其实在东京场（9.1）才算是鼎盛。
 
-看到了几个很可爱的手办，有个拿着小笼包的。
+![16th标题](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/mm-miku-16th-title.webp)
+
+> 16周年主题的摊位
+
+![16th主图](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/mm-miku-16th-main-pic.webp)
+
+> 16周年主图的原画
+
+看到了几个很可爱的手办，有个拿着小笼包的。还有本次活动的fufu和16th的fufu，不过我没注意到，很是可惜。
 
 中心区域就是关于本次魔法未来和主办方的东西啦！中间照例放着等身的巨大手办。上次见这么大的还是在 EXPO 2016 上。
 
+![魔法未来2023主视觉手办](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/miku-main-model.webp)
+
+> 主视图大手办
+
 > **企划展内容待补充** 必须继续写了，咕了快半年，再不写就要忘了。- 24/3/26
+
+边上有角色的介绍、各种活动的介绍，还有一面墙是中国的未来有你系列。
+
+还有一面巨大的地图墙，可以领取贴纸贴一下从哪里来，
+
+![大地图](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/mm-location-map.webp)
+
+> 指示你从哪里来的地图，可以看到台湾、韩国、上海的密度很高，其次算是北京，我俩在山西摁了俩小绿/黄点。
+
+走过来有一面 SONOCA
+的墙壁。
+
+![SONOCA](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/mm-sonicwire.webp)
+
+> ~~虽然我也不知道 SONOCA 是什么就是了~~
+
+边上是个可爱的小MP3相框，用来拍照片的，给朋友拍了一张qwq
+
+另一边有面墙是画师现场作画的大图，旁边的牌子提示不要把画师拍进去。
+
+![画师现场作画的大图](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/mm-big-picture.webp)
+
+> 画师现场作画的大图
 
 隔壁的小场馆是卖P主签售的，大阪今天比较有名气的P主大概就匹老板，然后场馆内90%的人都是排匹老板的专辑，大概转了一圈，好多P主愁眉苦脸，看起来像是emo了，~~感觉他们这和大学坐场差不多了。~~
 
 匹老板的签售我哥们是真想要，不过再三纠结，因为中午还要回市中心本町那快拿忘在那的衣服，就回去了。
 
+![中午的INTEX大阪](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/INTEX-noon.webp)
+
+> 中午的 INTEX 大阪
+
 回去是从岛北面的车站坐的电车，中间还走错了一次路，大阪中央线。时间大概也是20分钟到30分钟，可以说这个岛、我住的地方和市中心是个等边三角形。
 
 然后哥们穿着法批像个nt一样上了电车一直坐到人家餐厅，感谢过后拿到了丢在那里的衣服，然后店员又追出来冲着我们鞠躬然后阿里嘎多，我是真担心俩人能在这对鞠一下午，再次谢过后就跑路了。
 
-路上就困得不行了，本来路上的时候还想着回去再逛逛展子，万一匹老板那边人少了还能排一排，结构一上闹钟直接犹豫了，一觉昏睡到下午4点，爬起来头疼的不行，不过马上就要去看live辣！还是起床罢！
+路上就困得不行了，本来出展子的时候还想着回去再逛逛展子，万一匹老板那边人少了还能排一排，结果一上闹钟直接犹豫了，一觉昏睡到下午4点，爬起来头疼的不行，不过马上就要去看live辣！还是起床罢！
 
 中午还有一点担心，明天台风就到了，总不会因为台风演一半取消或者出什么事吧，不过看情况好像问题也不算大。确认在三票没有丢掉，还在朋友手里，就出发了。
 
@@ -890,9 +945,17 @@ ESP 倒是有一些吧唧和立牌之类的，不过当时实在是没舍得买�
 
 到了 INTEX 大阪基本已经开始进场了，激动的排队，然后就是进场了！
 
+![场馆内部](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/mm-before-live.webp)
+
+> 演唱会场内部
+
 场馆其实说小也不算小，但是也不大。很令人失望的是我这个排数基本已经在中间的位置了，再往后一些就是S席的座位。到了座位之后，因为岛上比较潮湿，看前面甚至还有一些朦胧的雾气。
 
 很快人就多了起来，左面是两个妹子，后面一个，旁边还有个哥们，在那扯着一圈都是群友。渐渐的开始有人拿着应援棒喊着玩，跟着热场曲，喊着喊着灯就关了，热场曲的声音调大，大家便跟着热场曲打call，居然在我还没做好准备的时候不知不觉开场了！
+
+![开场前几分钟](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/mm-before-live-open.webp)
+
+> 开场前几分钟
 
 今年的主题是 ~~黑咯~~ HERO，所以不像是 10th 那种温馨的动画，而是~~日本人认为~~很帅的动画，之后第一首歌是《	カルチャ》，今年的 OFFICAL ALBUM 中也有收录。我还顺便仔细盯了下模型，是C社新出的模，比之前那个~~很尖的下巴模~~好多了，之前的模还有个问题是大锯齿，不过作为中间排观众也看不出来就是了。
 
@@ -964,6 +1027,10 @@ ESP 倒是有一些吧唧和立牌之类的，不过当时实在是没舍得买�
 
 结束后是在SEE YOU AGAIN，乐队的鞠躬和退场，之后大家又意犹未尽地跟着音乐应援了很长一段时间。
 
+![LIVE结束](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/mm-live-over.webp)
+
+> LIVE结束的时候
+
 人走了小一班才依依不舍的离去。门口的STAFF给我们每个人都发了一份BD的传单。
 
 休息了一下，顺便买了饮料喝。
@@ -987,6 +1054,10 @@ ESP 倒是有一些吧唧和立牌之类的，不过当时实在是没舍得买�
 ### 8.14 Day4 再逛日本桥
 
 一觉睡醒终于休息过来一些了，按照原定计划来说，这天应该去奈良的，无奈明天台风登陆，看着地图上一点点接近的圈圈还是挺害怕的。在住处摆烂到了小中午，看着外面大太阳也不像台风快来了啊？
+
+![814的早起](https://img.cdn.gaein.cn/website_used/blog/Travel-of-OSAKA/814-morning.webp)
+
+> 早起的天气
 
 干脆再去趟日本桥好了，顺便买我的手办！
 
