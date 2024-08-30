@@ -7,6 +7,7 @@ tags:
   - CSharp
   - dotNET
   - 开源工具
+image: "https://img.cdn.gaein.cn/website_used/blog/Auto-Deploy-Cert-to-AliCdn/banner.webp"
 date: 2024-07-02 19:54:27
 lastmod: 2024-08-30 11:32:27
 ---
