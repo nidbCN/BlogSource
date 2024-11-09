@@ -67,77 +67,167 @@ AUTO 的最后一代为改进了镀膜后的镜头，被称为 “K版”，而�
 
 ### 超广角
 
-ニコン Auto Nikkor 7.5mm F5.6 フィッシュアイ
-ニコン Auto Nikkor 8mm F2.8 フィッシュアイ
-ニコン Auto Nikkor T10.5cm F4
-ニコン Auto Nikkor 15mm F5.6 C
-ニコン Auto Nikkor 16mm F3.5 フィッシュアイ
+#### 小于 14mm
+
+* Nikon Auto Nikkor 7.5mm F5.6 鱼眼
+
+* Nikon Auto Nikkor 8mm F2.8 鱼眼
+
+* Nikon Auto Nikkor T10.5cm F4
+
+#### 14mm-20mm
+
+* Nikon UW-Nikkor 15mm F2.8 NEW （ファインダー付）
+
+* Nikon Auto Nikkor 15mm F5.6 C
+
+* Nikon Auto Nikkor 16mm F3.5 鱼眼
+* Nikon New Nikkor 16mm F3.5 鱼眼
+
+* Nikon New Nikkor 18mm F4
 
 ### 广角
 
-ニコン Auto Nikkor 20mm F3.5
-ニコン Auto Nikkor 24mm F2.8
-ニコン Auto Nikkor 24mm F2.8 C
-ニコン Auto Nikkor 28mm F2
-ニコン Auto Nikkor 28mm F2 C
-ニコン Auto Nikkor 28mm F3.5
-ニコン Auto Nikkor 28mm F3.5 C
-ニコン Auto Nikkor 35mm F1.4
-ニコン Auto Nikkor 35mm F1.4 C
-ニコン Auto Nikkor 35mm F2
-ニコン Auto Nikkor 35mm F2 C
-ニコン Auto Nikkor 35mm F2.8
-ニコン Auto Nikkor 35mm F2.8 C
+#### 20mm
+
+* Nikon Auto Nikkor 20mm F3.5
+
+* Nikon New Nikkor 20mm F4
+
+#### 24mm
+
+* Nikon Auto Nikkor 24mm F2.8
+* Nikon Auto Nikkor 24mm F2.8 C
+* Nikon New Nikkor 24mm F2.8
+
+#### 28mm
+
+* Nikon Auto Nikkor 28mm F2
+* Nikon Auto Nikkor 28mm F2 C
+* Nikon New Nikkor 28mm F2
+
+* Nikon New Nikkor 28mm F2.8
+
+* Nikon Auto Nikkor 28mm F3.5
+* Nikon Auto Nikkor 28mm F3.5 C
+* Nikon New Nikkor 28mm F3.5
+
+* Nikon New Nikkor 28-45mm F4.5
+
+#### 35mm
+
+* Nikon Auto Nikkor 35mm F1.4
+* Nikon Auto Nikkor 35mm F1.4 C
+* Nikon New Nikkor 35mm F1.4
+
+* Nikon Auto Nikkor 35mm F2
+* Nikon Auto Nikkor 35mm F2 C
+* Nikon New Nikkor 35mm F2
+
+* Nikon Auto Nikkor 35mm F2.8
+* Nikon Auto Nikkor 35mm F2.8 C
+* Nikon New Nikkor 35mm F2.8
 
 ### 标准
 
-ニコン Auto Nikkor 43-86mm F3.5
-ニコン Auto Nikkor 43-86mm F3.5 C
+#### 35-50mm(不含)
 
-ニコン Auto Nikkor 45mm F2.8 GN
-ニコン Auto Nikkor 45mm F2.8 GN C
+* Nikon Auto Nikkor 43-86mm F3.5
+* Nikon Auto Nikkor 43-86mm F3.5 C
+* Nikon New Nikkor 43-86mm F3.5
 
-ニコン Auto Nikkor 55mm F1.2
-ニコン Auto Nikkor 55mm F1.2 C
-ニコン Auto Nikkor 50mm F2
-ニコン Auto Nikkor 50mm F2 C
-ニコン Auto Micro Nikkor 55mm F3.5
-ニコン Auto Micro Nikkor 55mm F3.5 C
-ニコン Auto Nikkor 55mm F3.5 マイクロ （リング付）
-ニコン Auto Nikkor 55mm F3.5 マイクロ C （リング付）
-ニコン Nikkor-S Auto 5.8cm F1.4
+* Nikon Auto Nikkor 45mm F2.8 GN
+* Nikon Auto Nikkor 45mm F2.8 GN C
+
+#### 50-70mm(不含)
+
+* Nikon Auto Nikkor 50mm F1.4
+* Nikon Auto Nikkor 50mm F1.4 C
+* Nikon New Nikkor 50mm F1.4
+
+* Nikon Auto Nikkor 50mm F2
+* Nikon Auto Nikkor 50mm F2 C
+* Nikon New Nikkor 50mm F2
+
+* Nikon Auto Nikkor 55mm F1.2
+* Nikon Auto Nikkor 55mm F1.2 C
+* Nikon New Nikkor 55mm F1.2
+
+* Nikon Auto Micro Nikkor 55mm F3.5
+* Nikon Auto Micro Nikkor 55mm F3.5 C
+* Nikon New Micro Nikkor 55mm F3.5
+
+* Nikon Nikkor-S Auto 5.8cm F1.4
 
 ### 长焦
 
-ニコン Auto Nikkor 50-300mm F4.5
-ニコン Auto Nikkor 80-200mm F4.5
-ニコン Auto Nikkor 80-200mm F4.5 C
-ニコン Auto Nikkor 85-250mm F4-4.5
+#### 70mm-105mm(不含)
 
-ニコン Auto Nikkor 85mm F1.8
-ニコン Auto Nikkor 85mm F1.8 C
+* Nikon Auto Nikkor 85mm F1.8
+* Nikon Auto Nikkor 85mm F1.8 C
+* Nikon New Nikkor 85mm F1.8
 
-ニコン Auto Nikkor 105mm F2.5
-ニコン Auto Nikkor 105mm F2.5 C
+#### 105mm
 
-ニコン Auto Nikkor 135mm F2.8
-ニコン Auto Nikkor 135mm F2.8 C
-ニコン Auto Nikkor 135mm F3.5
-ニコン Auto Nikkor 135mm F3.5 C
+* Nikon Auto Nikkor 105mm F2.5
+* Nikon Auto Nikkor 105mm F2.5 C
+* Nikon New Nikkor 105mm F2.5
+
+* Nikon New Nikkor 105mm F4 Micro
+
+#### 135mm
+
+* Nikon New Nikkor 135mm F2
+
+* Nikon Auto Nikkor 135mm F2.8
+* Nikon Auto Nikkor 135mm F2.8 C
+* Nikon New Nikkor 135mm F2.8
+
+* Nikon Auto Nikkor 135mm F3.5
+* Nikon Auto Nikkor 135mm F3.5 C
+* Nikon New Nikkor 135mm F3.5
 
 ### 超长焦
 
-ニコン Auto Nikkor 180mm F2.8
+#### 180mm
 
-ニコン Auto Nikkor 200mm F4
-ニコン Auto Nikkor 200mm F4 C
+* Nikon Auto Nikkor 180mm F2.8
 
-ニコン Auto Nikkor 200-600mm F9.5
-ニコン Auto Nikkor 200-600mm F9.5-10.5
+#### 200mm-300mm(不含) (变焦最大值)
 
-ニコン Auto Nikkor 300mm F4.5
-ニコン Auto Nikkor 400mm F4.5 フォーカシングユニット付
+* Nikon Auto Nikkor 200mm F4
+* Nikon Auto Nikkor 200mm F4 C
+* Nikon New Nikkor 200mm F4
 
-ニコン Auto Nikkor 800mm F8 C
+* Nikon Auto Nikkor 80-200mm F4.5
+* Nikon Auto Nikkor 80-200mm F4.5 C
+* Nikon New Nikkor 80-200mm F4.5
+
+* Nikon Auto Nikkor 85-250mm F4-4.5
+
+#### 300mm-400mm(不含) (变焦最大值)
+
+* Nikon Auto Nikkor 50-300mm F4.5
+* Nikon New Nikkor 50-300mm F4.5
+
+* Nikon Auto Nikkor 300mm F4.5
+* Nikon New Nikkor 300mm F4.5
+* Nikon New Nikkor 300mm F4.5 ED
+
+#### 400mm-600mm(不含) (变焦最大值)
+
+* Nikon Auto Nikkor 400mm F4.5 フォーカシングユニット付
+
+#### 600mm-800mm(不含) (变焦最大值)
+
+* Nikon Auto Nikkor 200-600mm F9.5
+* Nikon Auto Nikkor 200-600mm F9.5-10.5
+* Nikon New Nikkor 200-600mm F9.5
+
+#### 800mm-1200mm(含) (变焦最大值)
+
+* Nikon Auto Nikkor 800mm F8 C
+
+* Nikon New Nikkor 360-1200mm F11 ED
 
 不行怎么尼玛尼康出了这么多镜头，那先咕咕了
