@@ -1,5 +1,5 @@
 ---
-title: '尼康手动镜头 AUTO/Ai/Ai-s 发展历程及型号解析'
+title: '尼康手动镜头 AUTO、Ai、Ai-s 发展历程及型号解析'
 author: Gaein nidb
 categories:
   - 摄影
