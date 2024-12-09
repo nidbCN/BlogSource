@@ -50,7 +50,7 @@ dotnet publish -c Release
 
 使用 `docker build -t <tag> .` 即可编译容器。
 
-或使用 `docker pull registry.cn-beijing.aliyuncs.com/nidb/alicdn-ssl-worker` 拉取编译好的镜像。
+或使用 `docker pull registry.cn-beijing.aliyuncs.com/nidb-cr/alicdn-ssl-worker:git` 拉取编译好的镜像。
 
 按照 “配置” 章节的内容配置好选项。
 
@@ -74,9 +74,8 @@ configs:
     file: './alicdn-ssl/appsettings.json'
 
 services:
-  alicdn-ssl:
-    image: 'registry.cn-beijing.aliyuncs.com/nidb/alicdn-ssl-worker'
-    container_name: 'alicdn-ssl'
+  cdn-ssl:
+    image: 'registry.cn-beijing.aliyuncs.com/nidb-cr/alicdn-ssl-worker:git'
     environment:
       TZ: 'Asia/Shanghai'
     ports:
@@ -114,7 +113,9 @@ services:
     }
   },  // Logging 参考 https://learn.microsoft.com/zh-cn/dotnet/core/extensions/logging?tabs=command-line#configure-logging-without-code
   "CertConfig": {
-    "CertSerchPath": "/data/ssl/live",  // 证书文件的目录（挂载在docker里面的目录）
+    "CertFileName": "fullchain.pem",      // 证书公钥文件
+    "PrivateKeyFileName": "privkey.pem",  // 证书私钥文件
+    "CertSerchPath": "/data/ssl/live",  // 证书文件的目录（挂载在docker里面的目录），程序会扫描该目录所有子目录中的文件，查找在以上两个选项中配置的证书文件名
     "IntervalHour": "12",               // 每次检查的间隔，每隔{IntervalHour}执行一次检查，若当前HTTPS证书在{IntervalHour}内过期则会更新（小时）
     "CacheTimeoutMin": "30",            // 文件缓存间隔，若上次读取证书文件超过{CacheTimeoutMin}则重新读取（分钟）
     "DomainList": [                     // 交给程序管理的域名列表
@@ -171,3 +172,11 @@ sudo docker exec alicdn-ssl dotnet AliCdnSSLWorker.dll -r
 该命令会从之前的配置中读取 HTTP API 监听的 IP 地址和端口，并向该端口发送请求。
 
 如刷新成功你将会获得一个 `HTTP 200 OK` 的响应。
+
+
+export Ali_Key="<key>"
+export Ali_Secret="<secret>"
+
+./acme.sh --issue --dns dns_ali -d gaein.cn -d www.gaein.cn -d v4-cn-bjs3.gaein.cn -d api.gaein.cn -d img.cdn.gaein.cn -d static.cdn.gaein.cn
+
+./acme.sh
