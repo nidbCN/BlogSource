@@ -11,23 +11,24 @@ tags:
   - 笔记
   - 后端
 date: 2021-01-26 22:35:31
+lastmod: 2025-01-13 21:50:00
 ---
 
 ## 前言
 
-> 不知不觉新的一年来了，大学半年生活也落下帷幕。经过这半年和各位大佬们的摸鱼，深感自身技能不足，趁着寒假没什么事情，学习一下 web 框架——ASP.NET Core（主要是后端部分）。选择 ASP.NET Core 是因为 ASP.NET Core 是高效的web 框架，同时自己用了挺长时间的 CSharp ，转战其它语言也挺不习惯。另外，算是半个软粉了。  
+> 不知不觉新的一年来了，大学半年生活也落下帷幕。经过这半年和各位大佬们的摸鱼，深感自身技能不足，趁着寒假没什么事情，学习一下 web 框架——ASP.NET Core（主要是后端部分）。选择 ASP.NET Core 是因为 ASP.NET Core 是高效的 web 框架，同时自己用了挺长时间的 C# ，转战其它语言也挺不习惯。另外，算是半个软粉了。  
 > ~~不过有一个缺点是，ASP.NET 这玩意老是自动蓝成链接。~~
 
-> 这是学习ASP.NET Core的笔记，主要是根据微软MVP杨旭的课程来走的，当然也有自己的偏向。关于这些内容的笔记和代码以及更多的简介在[Github](https://github.com/nidbCN/ASP.NET-Core-Note)上。
+> 这是学习 ASP.NET Core的笔记，主要是根据微软 MVP 杨旭的课程来走的，当然也有自己的偏向。关于这些内容的笔记和代码以及更多的简介在[Github](https://github.com/nidbCN/ASP.NET-Core-Note)上。
 
 > 这一篇主要是看 ASP.NET Core 项目的结构、配置以及一些基础的内容。
 
 ## ASP.NET Core
 
-ASP.NET Core 和 ASP.NET 不是一回事，ASP.NET Core 基于.NET Core（或者.NET 5），它的效率远高于基于 Framework 的 ASP.NET。  
-ASP.NET Core 项目本质上仍然是.NET Core 控制台应用。
+ASP.NET Core 和 ASP.NET 不是一回事，ASP.NET Core 基于.NET Core（或者 .NET 5 以及更新的版本），它的效率远高于基于 .NET Framework 的 ASP.NET。  
+ASP.NET Core 项目本质上仍然是 .NET Core 控制台应用。
 
-## 项目基本结构
+## 项目基本结构（旧模板）
 
 ### Main 方法
 
@@ -134,9 +135,9 @@ services.AddControllers();              // 添加控制器
    ```
 5. 使用服务：
 
-   1. 建立文件夹"Controllers"，ASP.NET Core 一般都有一个文件夹叫做这个名字，里面放着所有的控制器；
-   2. 新建类"xxxxController.cs"，按照约定，应该以 Controller 结尾;
-   3. 首先让新建的这个类（比如 `HomeController` ）继承 Controller（在命名空间 `Microsoft.AspNetCore.Mvc` 下）这个父类；
+   1. 建立文件夹 `Controllers` ，ASP.NET Core 一般都有一个文件夹叫做这个名字，里面放着所有的控制器；
+   2. 新建类 `xxxxController.cs` ，按照约定，应该以 `"Controller"` 结尾;
+   3. 首先让新建的这个类（比如 `HomeController` ）~~继承 Controller~~（在命名空间 `Microsoft.AspNetCore.Mvc` 下，疑似已经更改为 `ControllerBase`）这个父类；
    4. 写构造函数，参数类型为前面定义的接口；
 
       ```cs
@@ -179,13 +180,13 @@ if (env.IsDevelopment())
 }
 ```
 
-通过设置环境变量来启用或关闭开发模式（？）
+可以通过设置环境变量来启用或关闭开发模式。开发模式时 `env.IsDevelopment()` 即返回 `true` 。
 
 环境变量名称为： `ASPNETCORE_ENVIRONMENT`
 值为：
 
 1. 开发环境——"Development"
-2. 生成环境——"Production"
+2. 生产环境——"Production"
 3. 预发布环境——"Staging"
 4. 自定义环境——"自定义字符串"
    > 使用 `env.IsEnvironment("自定义字符串")` 来判断自定义环境变量。
@@ -254,6 +255,26 @@ app.UseHttpsRedirection();
 ##### 中间件顺序
 
 中间件的顺序就是处理的顺序，顺序很重要。比如 Auth 会放在前边，路由、端点等写在认证的后边。
+
+## 项目基本结构（新模板）
+
+新的模板使用了顶级语句来作为程序入口，详见 [Top-level statements - programs without Main methods - C# | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements)。
+
+开头即使用 `WebApplication` 的静态方法来创建 builder。
+
+```cs
+var builder = WebApplication.CreateBuilder(args);
+```
+
+之后使用 builder 的 `Services` 属性和 `Configuration` 属性来访问和添加服务，具体代码与上文相同。
+
+之后通过 
+
+```cs
+var app = builder.Build();
+```
+
+来构建主机，构建后设置中间件与上文相同。
 
 ## 运行 ASP.NET Core 应用
 

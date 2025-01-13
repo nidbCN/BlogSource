@@ -23,7 +23,7 @@ date: 2020-09-22 14:05:19
 
 ### 将字符转换为 ASCII 十进制码
 
-<link rel="stylesheet" href="https://static.cdn.gaein.cn/Layui/css/layui.css">
+<link rel="stylesheet" href="https://static.cdn.gaein.cn/libs/layui/2.9.21/layui/css/layui.css">
 
 <div class="layui-form">
     <div class="layui-form-item">
