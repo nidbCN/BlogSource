@@ -1,5 +1,5 @@
 ---
-title: 如何配置ASP.NET Core应用程序——配置文件——ASP.NET Core 入门(2)
+title: 如何配置 ASP.NET Core 应用程序——配置文件——ASP.NET Core 入门(2)
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -11,17 +11,14 @@ tags:
   - 笔记
   - 后端
 date: 2021-01-28 02:19:14
+lastmod: 2025-01-13 22:54:00
 ---
-
-ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这个文件中写了启动ASP.NET Core的一些配置，比如环境、log等级等，也支持写入自定义的JSON对象。
-
-<!--more-->
 
 ## 前言
 
-> 这是学习ASP.NET Core的笔记，主要是根据微软MVP杨旭的课程来走的，当然也有自己的偏向。关于这些内容的笔记和代码以及更多的简介在[Github](https://github.com/nidbCN/ASP.NET-Core-Note)上。
+> 这是学习ASP.NET Core的笔记，主要是根据微软MVP杨旭的课程来走的，当然也有自己的偏向。关于这些内容的笔记和代码以及更多的简介在 [Github](https://github.com/nidbCN/ASP.NET-Core-Note) 上。
 
-> ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这个文件中写了启动ASP.NET Core的一些配置，比如环境、log等级等，也支持写入自定义的JSON对象。  
+> ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这个文件中写了启动ASP.NET Core的一些配置，比如环境、log 等级等，也支持写入自定义的 JSON 对象。  
 > 这一篇主要是看 ASP.NET Core 项目的配置文件等内容。
 
 ## ASP.NET Core 中的配置信息
@@ -33,12 +30,14 @@ ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这�
 3. 配置信息与配置系统是解耦的，不是和某一部分写死的；
 4. 可以依赖注入。
 
+第 2 条即配置可以以多种形式分别存储，并不是某一个固定的文件，他们共同组成了逻辑上的“配置”。
+
 ### 信息源
 
 按照查找顺序排序
 
 1. 配置文件通常为 `appsettings.json` 和 `appsettings.{Environment}.json`
-2. Secret Manager（？）（优先级高于 `appsettings.json` ）
+2. Secret Manager（一种 .NET 命令行工具，用于管理用户机密）（优先级高于 `appsettings.json` ）
 3. 环境变量
 4. 命令行参数（优先级最高）
 
@@ -50,7 +49,6 @@ ASP.NET Core 提供了一个默认的配置文件——"appsettings.json"，这�
 #### 使用索引获取
 
 实际上这个接口对象实际上是一个存有配置信息键值对的列表，可以通过索引比如：  
-JSON
 
 ```json
 {
@@ -72,15 +70,15 @@ var myConfig = Configuration["AppConfig:port"];
 // string myConfig = "3306"
 ```
 
-#### 映射到类
+#### 映射到模型
 
-但是 CSharp作为强类型语言，比较好的做法是用强类型表示，可以避免很多错误。  
-将自定义的 JSON 对象映射到一个类中：
+但是 C# 作为强类型语言，比较好的做法是用强类型表示，可以避免很多错误。  
+将自定义的 JSON 对象映射到一个 类/结构体/记录 中：
 
 1. 创建类
 
 ```cs
-public class AppConfig
+public record AppConfig
 {
     // 字段名称和JSON文件中应该是对应的
     public int Port { get; set; }
@@ -92,7 +90,7 @@ public class AppConfig
 ```cs
     // 其中GetSection的参数是string 键
     services.Configure<AppConfig>(
-        Configuration.GetSection("AppConfig")
+        Configuration.GetSection(nameof(AppConfig))
     );
 ```
 

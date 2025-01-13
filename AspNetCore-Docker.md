@@ -156,7 +156,7 @@ CMD ./WebApplication
 
 或
 
-[ASP.NET Core 自定义Url和端口的五种办法](https://blog.gaein.cn/passages/aspnetcore-set-urls/)
+[为 ASP.NET Core 自定义监听 Url 和端口的五种办法](https://blog.gaein.cn/passages/set-urls-for-aspnetcore/)
 
 #### 创建容器
 

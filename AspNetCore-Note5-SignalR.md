@@ -1,5 +1,5 @@
 ---
-title: '在ASP.NET Core中的实时通信——SignalR 实时通信——ASP.NET Core 入门(3)'
+title: '在 ASP.NET Core 中的实时通信——SignalR 实时通信——ASP.NET Core 入门(3)'
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -11,12 +11,8 @@ tags:
   - 笔记
   - 后端
 date: 2021-01-30 13:32:57
-
+lastmod: 2025-01-13 22:54:00
 ---
-
-SignalR 是.NET Core 的实现实时通讯的开源框架，抽象于长轮询、SSE 和 WS 这三种技术之上。用于实时的 web 应用。
-
-<!--more-->
 
 ## 前言
 
@@ -28,7 +24,9 @@ SignalR 是.NET Core 的实现实时通讯的开源框架，抽象于长轮询�
 ## SignalR
 
 SignalR 是.NET Core 的开源实时框架，抽象与三种技术（见下）之上。无论使用哪种技术，使用 SignalR 是没有感觉到区别的。  
+
 用于实时的 web 应用。  
+
 传统的是浏览器发送请求、服务器处理请求、返回 payload；实时的 web 应用由 web 服务器主动通知客户端数据有变化。
 
 ### 技术
@@ -39,12 +37,12 @@ SignalR 使用了三种“底层”的技术来实现实时 Web。分别是：
 2. Server Sent Event;
 3. Websocket.
 
-Signal 采用了回落机制，有限使用 WS，如果浏览器不支持再降级为 SSE 和 Long Polling。
+Signal 采用了回落机制，优先使用 WS，如果浏览器不支持再降级为 SSE 和 Long Polling。
 
 #### 轮询
 
 Polling 是定期向服务器发送请求，有变化则更改数据，很简单，但是浪费资源。  
-长轮询：与轮询的不同之处是如果服务器上面的数据没有更改，则保持连接（不会立即返回 `HTTP 204` 并断开），直到超时。超时后再次亲求。
+长轮询：与轮询的不同之处是如果服务器上面的数据没有更改，则保持连接（不会立即返回 `HTTP 204` 并断开），直到超时。超时后再次请求。
 
 #### Server Sent Events (SSE)
 
@@ -74,7 +72,7 @@ WS 是不同于 HTTP 的另一个 TCP 协议。
 
 ##### HTTP 握手
 
-1. 每一个 WS 开始的时候都是一个简单的 HTTP Socket；
+1. 每一个 WS 开始的时候都是一个简单的 HTTP 连接；
 2. 客户端发送 GET 请求升级 Socket(HTTP 101)；
 3. 服务器同意的话（HTTP 101），升级为 WebSocket。
 
@@ -115,14 +113,14 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-自定义一个测试用的类（这里写个技术调用的）
+自定义一个测试用的类（这里写个计数调用的）
 
 ```cs
 public class CountService
 {
     private int Count;
 
-    // 获取技术
+    // 获取计数
     public int GetLatestCount() => Count++;
 }
 ```
@@ -140,30 +138,19 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace SignalRDemo
 {
-    public class CountHub: Hub
+    public class CountHub(CountService countService, ILogger<CountHub> logger): Hub
     {
-        // 定义变量存放注入的service
-        private readonly CountService CntService;
-
-        // 服务注入
-        public CountHub(CountService countService)
-        {
-            CntService = countService;
-        }
-
         // 获取总和
         public async Task GetLatestCount()
         {
-
-            var user = Context.User.Identity.Name;
-
-            Console.WriteLine(user);
+            var userName = Context.User.Identity.Name;
+            logger.LogDebug("user name: {name}", userName);
 
             int cnt;
             do
             {
-                cnt = CntService.GetLatestCount();
-                Thread.Sleep(100);
+                cnt = countService.GetLatestCount();
+                Task.Delay(100);
 
                 // 向所有客户端（正经写应该是返回给Connect的客户端？）返回新的数据
                 await Clients.All.SendAsync("ReceiveUpdate", cnt);
