@@ -150,7 +150,7 @@ DASH 的意思是 “基于 HTTP 的动态自适应流”，DASH 技术很新，
 
 ### 新技术：WebRTC与SRT
 
-除了以上几种经典方案外，今年来出现了 WebRTC 和 SRT 协议。
+除了以上几种经典方案外，近年来出现了 WebRTC 和 SRT 协议。
 
 #### WebRTC
 
