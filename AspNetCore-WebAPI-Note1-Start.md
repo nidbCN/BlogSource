@@ -1,5 +1,5 @@
 ---
-title: '如何创建ASP.NET Core Web API——准备工作——ASP.NET Core Web API(1)'
+title: '如何创建 ASP.NET Core Web API——准备工作——ASP.NET Core Web API(1)'
 author: Gaein nidb
 categories:
   - 代码如诗
@@ -12,12 +12,8 @@ tags:
   - 笔记
   - 后端
 date: 2021-01-30 18:47:49
-
+lastmod: 2025-01-14 10:01:00
 ---
-
-ASP.NET Core 构建 RESTful API 学习笔记
-
-<!--more-->
 
 ## 前言
 
@@ -40,13 +36,14 @@ ASP.NET Core 构建 RESTful API 学习笔记
 
 ### Web API
 
-API:应用程序接口
-Web API:使用 HTTP 协议并通过网络调用的 API
-Web API 就是一个 Wb 系统，通过访问 URI 可以与其进行信息交互。
+* API: 应用程序接口
+* Web API: 使用 HTTP 协议并通过网络调用的 API，当然，也可以理解为使用 HTTP 网络协议的 Web API。
+
+Web API 就是一个 Web 系统，通过访问 URI 可以与其进行信息交互。
 
 #### RESTful API
 
-RESTful API 是一套 API 约束规范或者叫架构凤风格
+RESTful API 是一套 API 约束规范或者叫架构风格。
 
 > 大多数的 Web API 并不是完全符合 RESTful API
 
@@ -70,7 +67,7 @@ RESTful API 是一套 API 约束规范或者叫架构凤风格
 
 ### 创建项目
 
-模板选择“ASP.NET Core Web 应用程序”，项目模板选择“.NET Core”、“ASP.NET Core 5.0”和“ASP.NET Core Web API”
+模板选择 “ASP.NET Core Web 应用程序”，项目模板选择 “.NET Core”、 “ASP.NET Core 5.0” 和 “ASP.NET Core Web API”
 
 #### Program.cs
 
@@ -94,12 +91,13 @@ services.AddSingleton<接口, 实现>();
 3. `Singleton` : 一旦被创建，每次请求都是这一个实例；
 
 方法 `Configure` 用来加入管道中间件：
+
 ```cs
 // 加入管道中间件路由
 app.UseRouting();
 ```
 
-管道概念是HTTP请求通过的一个“管子”，中间穿插有各种中间件进行处理，比如身份认证、路由等。
+管道概念是HTTP请求通过的一个 “管子”，中间穿插有各种中间件进行处理，比如身份认证、路由等。
 
 如果某个中间件处短路，则不会递给下一中间件而直接返回这个中间件对它处理的结果。比如身份验证未通过等。
 
@@ -111,8 +109,10 @@ app.UseRouting();
 
 #### 数据存储
 
-> 这里ORM框架使用EF（EntityFrameworkCore），数据库使用SQLite
+> 这里 ORM 框架使用 EF（EntityFrameworkCore），数据库使用 SQLite
+
 ##### 安装NuGet包
+
 1. Microsoft.EntityFrameworkCore.Sqlite
 2. Microsoft.EntityFrameworkCore.Tools
 
@@ -120,7 +120,7 @@ app.UseRouting();
 
 1. 创建文件夹 `Entities`；
 2. 创建模型类  
-   可以键入`prop`然后按两下`TAB`键使用代码片段自动补全字段
+   可以键入`prop` 然后按两下 `TAB` 键使用代码片段自动补全字段
    ```cs
     public class Company
     {
@@ -288,9 +288,10 @@ app.UseRouting();
 
             _context.Companies.Add(company);
         }
+
         public void UpdateCompany(Company company)
         {
-            // 实际上EF对实体都有追踪，不需要显示的更改它们
+            // 实际上EF对实体都有追踪，不需要显式的更改它们
 
             /*
             if (company == null)
@@ -351,6 +352,7 @@ app.UseRouting();
                 .Where(it => it.CompanyId == companyId && it.Id == employeeId)
                 .FirstOrDefaultAsync();
         }
+
         public void AddEmployee(Guid companyId, Employee employee)
         {
             if (companyId == Guid.Empty)
@@ -405,7 +407,7 @@ app.UseRouting();
 
 ##### 初始化数据库
 
-在NuGet包管理器控制台中依次输入：
+在 NuGet 包管理器控制台中依次输入：
 
 ```sh
 Add-Migration InitialCreate
@@ -429,4 +431,4 @@ dotnet ef database update
 
 有关迁移这部分的概述可以看 [迁移概述 - EF Core | Microsoft Docs](https://docs.microsoft.com/zh-cn/ef/core/managing-schemas/migrations/)
 
-> !重要：杨旭老师在这里对Program.cs进行了一些修改，以便于后期讲解，我没有进行这些更改，弹幕说是个坑，先记住，如果出了什么奇怪问题就回来看看。
+> !重要：杨旭老师在这里对 Program.cs 进行了一些修改，以便于后期讲解，我没有进行这些更改，弹幕说是个坑，先记住，如果出了什么奇怪问题就回来看看。
