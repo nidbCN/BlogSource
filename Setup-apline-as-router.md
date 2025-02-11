@@ -7,7 +7,7 @@ tags:
   - 笔记
   - Linux
 date: 2024-10-06 21:22:00
-lastmod: 2024-10-06 21:22:00
+lastmod: 2025-02-11 21:43:00
 ---
 
 ### 基础工具
@@ -25,60 +25,397 @@ lastmod: 2024-10-06 21:22:00
 
 编辑：`/etc/apk/repositories` ，开启社区仓库
 
-### 网卡 IP
+### LAN 侧配置
 
-为 LAN 口设置静态地址
+#### IP 地址
 
-为 WAN 口设置 DHCP
+编辑 `/etc/network/interfaces`，加入如下内容（以 lan 口为 `eth1` 为例）：
 
-编辑 `/etc/network/interfaces`
+```
+auto eth1
+iface eth1 inet static
+        address 172.26.0.1
+        netmask 255.255.255.0
+```
+
+#### DHCP
+
+DHCP 使用 kea。ISC DHCP 已经在 2022 年宣布停止维护，kea 为其继任者。
+
+使用 `apk add kea` 来安装。
+
+编辑 `/etc/kea/kea-dhcp4.conf`：
+
+注：以下内容中使用 `eth1` `172.26.0.1` 作为路由器的 LAN 口网卡和 IP 地址示例，使用 `172.26.0.0/24`（子网掩码 `255.255.255.0`）作为 LAN 子网，使用 `172.26.0.100-172.26.0.200` 作为 DHCP 地址池。
+
+```
+diff --git a/kea-dhcp4.conf b/kea-dhcp4.conf
+index a26ae75..e9c578a 100644
+--- a/kea-dhcp4.conf
++++ b/kea-dhcp4.conf
+@@ -31,7 +31,7 @@
+         // See section 8.2.4 for more details. You probably want to add just
+         // interface name (e.g. "eth0" or specific IPv4 address on that
+         // interface name (e.g. "eth0/192.0.2.1").
+-        "interfaces": [ ]
++        "interfaces": [ "eth1" ]
+
+         // Kea DHCPv4 server by default listens using raw sockets. This ensures
+         // all packets, including those sent by directly connected clients
+@@ -149,7 +149,7 @@
+         // but it's a lot of writing, so it's easier to do this instead:
+         {
+             "name": "domain-name-servers",
+-            "data": "192.0.2.1, 192.0.2.2"
++            "data": "119.29.29.29"
+         },
+
+         // Typically people prefer to refer to options by their names, so they
+@@ -159,7 +159,7 @@
+         // "name": "domain-name" or "code": 15.
+         {
+             "code": 15,
+-            "data": "example.org"
++            "data": "gaein.cn"
+         },
+
+         // Domain search is also a popular option. It tells the client to
+@@ -168,7 +168,7 @@
+         // foo.mydomain.example.com and if it fails, then as foo.example.com
+         {
+             "name": "domain-search",
+-            "data": "mydomain.example.com, example.com"
++            "data": "cn-tvs-alpine-homerouter"
+         },
+
+         // String options that have a comma in their values need to have
+@@ -217,31 +217,6 @@
+     // Based on the class information, you can then allow or reject clients
+     // to use certain subnets, add special options for them or change values
+     // of some fixed fields.
+-    "client-classes": [
+-        {
+-            // This specifies a name of this class. It's useful if you need to
+-            // reference this class.
+-            "name": "voip",
+-
+-            // This is a test. It is an expression that is being evaluated on
+-            // each incoming packet. It is supposed to evaluate to either
+-            // true or false. If it's true, the packet is added to specified
+-            // class. See Section 12 for a list of available expressions. There
+-            // are several dozens. Section 8.2.14 for more details for DHCPv4
+-            // classification and Section 9.2.19 for DHCPv6.
+-            "test": "substring(option[60].hex,0,6) == 'Aastra'",
+-
+-            // If a client belongs to this class, you can define extra behavior.
+-            // For example, certain fields in DHCPv4 packet will be set to
+-            // certain values.
+-            "next-server": "192.0.2.254",
+-            "server-hostname": "hal9000",
+-            "boot-file-name": "/dev/null"
+-
+-            // You can also define option values here if you want devices from
+-            // this class to receive special options.
+-        }
+-    ],
+
+     // Another thing possible here are hooks. Kea supports a powerful mechanism
+     // that allows loading external libraries that can extract information and
+@@ -294,14 +269,14 @@
+             "id": 1,
+
+             // This is mandatory parameter for each subnet.
+-            "subnet": "192.0.2.0/24",
++            "subnet": "172.26.66.0/23",
+
+             // Pools define the actual part of your subnet that is governed
+             // by Kea. Technically this is optional parameter, but it's
+             // almost always needed for DHCP to do its job. If you omit it,
+             // clients won't be able to get addresses, unless there are
+             // host reservations defined for them.
+-            "pools": [ { "pool": "192.0.2.1 - 192.0.2.200" } ],
++            "pools": [ { "pool": "172.26.67.2 - 172.26.67.100" } ],
+
+             // These are options that are subnet specific. In most cases,
+             // you need to define at least routers option, as without this
+@@ -312,7 +287,7 @@
+                     // For each IPv4 subnet you most likely need to specify at
+                     // least one router.
+                     "name": "routers",
+-                    "data": "192.0.2.1"
++                    "data": "172.26.66.1"
+                 }
+             ],
+
+@@ -335,31 +310,32 @@
+                 // It's a rather simple reservation: just an address and nothing
+                 // else.
+                 {
+-                    "hw-address": "1a:1b:1c:1d:1e:1f",
+-                    "ip-address": "192.0.2.201"
++                    "hw-address": "DC:65:55:8A:F6:27",
++                    "ip-address": "172.26.67.1",
++                   "hostname": "h3c-ap"
+                 },
+
+                 // This is a reservation for a specific client-id. It also shows
+                 // the this client will get a reserved hostname. A hostname can
+                 // be defined for any identifier type, not just client-id.
+-                {
+-                    "client-id": "01:11:22:33:44:55:66",
+-                    "ip-address": "192.0.2.202",
+-                    "hostname": "special-snowflake"
+-                },
++                // {
++                //     "client-id": "01:11:22:33:44:55:66",
++                //     "ip-address": "192.0.2.202",
++                //     "hostname": "special-snowflake"
++                // },
+
+                 // The third reservation is based on DUID. This reservation defines
+                 // a special option values for this particular client. If the
+                 // domain-name-servers option would have been defined on a global,
+                 // subnet or class level, the host specific values take preference.
+-                {
+-                    "duid": "01:02:03:04:05",
+-                    "ip-address": "192.0.2.203",
+-                    "option-data": [ {
+-                        "name": "domain-name-servers",
+-                        "data": "10.1.1.202, 10.1.1.203"
+-                    } ]
+-                },
++                // {
++                //     "duid": "01:02:03:04:05",
++                //     "ip-address": "192.0.2.203",
++                //     "option-data": [ {
++                //         "name": "domain-name-servers",
++                //         "data": "10.1.1.202, 10.1.1.203"
++                //     } ]
++                // },
+
+                 // The fourth reservation is based on circuit-id. This is an option
+                 // inserted by the relay agent that forwards the packet from client
+@@ -370,31 +346,31 @@
+                 // reservations-global, reservations-in-subnet,
+                 // reservations-out-of-pool (subnet specific parameters)
+                 // and host-reservation-identifiers (global parameter).
+-                {
+-                    "client-id": "01:12:23:34:45:56:67",
+-                    "ip-address": "192.0.2.204",
+-                    "option-data": [
+-                        {
+-                            "name": "vivso-suboptions",
+-                            "data": "4491"
+-                        },
+-                        {
+-                            "name": "tftp-servers",
+-                            "space": "vendor-4491",
+-                            "data": "10.1.1.202, 10.1.1.203"
+-                        }
+-                    ]
+-                },
++                // {
++                //     "client-id": "01:12:23:34:45:56:67",
++                //     "ip-address": "192.0.2.204",
++                //     "option-data": [
++                //         {
++                //             "name": "vivso-suboptions",
++                //             "data": "4491"
++                //         },
++                //         {
++                //             "name": "tftp-servers",
++                //             "space": "vendor-4491",
++                //             "data": "10.1.1.202, 10.1.1.203"
++                //         }
++                //     ]
++                // },
+                 // This reservation is for a client that needs specific DHCPv4
+                 // fields to be set. Three supported fields are next-server,
+                 // server-hostname and boot-file-name
+-                {
+-                    "client-id": "01:0a:0b:0c:0d:0e:0f",
+-                    "ip-address": "192.0.2.205",
+-                    "next-server": "192.0.2.1",
+-                    "server-hostname": "hal9000",
+-                    "boot-file-name": "/dev/null"
+-                },
++                // {
++                //     "client-id": "01:0a:0b:0c:0d:0e:0f",
++                //     "ip-address": "192.0.2.205",
++                //     "next-server": "192.0.2.1",
++                //     "server-hostname": "hal9000",
++                //     "boot-file-name": "/dev/null"
++                // },
+                 // This reservation is using flexible identifier. Instead of
+                 // relying on specific field, sysadmin can define an expression
+                 // similar to what is used for client classification,
+@@ -405,10 +381,10 @@
+                 //
+                 // Note: flexible identifier requires flex_id hook library to be
+                 // loaded to work.
+-                {
+-                    "flex-id": "'s0mEVaLue'",
+-                    "ip-address": "192.0.2.206"
+-                }
++                // {
++                //     "flex-id": "'s0mEVaLue'",
++                //     "ip-address": "192.0.2.206"
++                // }
+                 // You can add more reservations here.
+             ]
+             // You can add more subnets there.
+```
+
+#### DNS
+
+待补充
+
+### WAN 侧配置
+
+#### IP 地址以及上网方式
+
+##### 使用 DHCP
+
+编辑 `/etc/network/interfaces`，加入如下内容（以 wan 口为 `eth0` 为例）：
 
 ```
 auto eth0
 iface eth0 inet dhcp
-
-auto eth1
-iface eth1 inet static
-        address 172.26.129.1
-        netmask 255.255.255.0
 ```
 
-### sysctl
+##### 使用 PPPoE
+
+使用 `apk add ppp-pppoe` 安装包。
+
+编辑 `/etc/ppp/peers/isp`，写入如下内容：
+
+```
+noipdefault
+defaultroute
+replacedefaultroute
+hide-password
+#lcp-echo-interval 30
+#lcp-echo-failure 4
+noauth
+persist
+#mtu 1492
+#maxfail 0
+#holdoff 20
+plugin pppoe.so eth0 # WAN 侧网卡
+user "ip1**********" # PPPoE 用户名
+#usepeerdns          # 使用运营商 DNS
+```
+
+编辑 `/etc/ppp/chap-secrets`，写入以下内容：
+
+```
+# <PPPoE 用户名> <服务器> <PPPoE 密码>
+"ip1**********" * "********"
+```
+
+编辑完后可使用 `pon isp` 和 `poff` 来连接和断开 PPPoE。
+
+如果需要自动建立连接，使用 `apk add ifupdown-ng-ppp` 添加包，并编写 `/etc/network/interfaces` 后加入如下内容：
+
+```
+auto ppp0
+iface ppp0 inet ppp
+    provider isp
+```
+
+本小节中 `isp` 为 `/etc/ppp/peers/` 下的文件名，可以自行更改。
+
+**注意：** 由于 PPPoE 是将 PPP 协议 “抬旗” 到了 “二层之上、三层之下” 的位置，因此，原本 1500 Mtu 的 Ethernet 内又塞了 PPP，其协议占据了 8 字节，因此对于三层协议来说，Mtu 由 1500 降低到了 1492（典型情况）。此时，由 lan 传入的（Mtu 1500）的超过 PPPoE 网卡的 Mtu 包将无法正常发送，造成 “能 ping 通、能解析却不能打开部分网页” 的现象。**具体解决方案参考防火墙配置中的 PPPoE 小节。**顺便一提，这一做法在 openwrt 的界面中对应的是 “MSS 钳制”。
+
+### NAT、防护墙等中间处理配置
+
+#### sysctl
 
 开启内核相关参数
 
-#### BBR
+##### BBR
 
-`modprobe tcp_bbr`: 无输出
+输入 `modprobe tcp_bbr` ，该命令无输出
 
-编辑 `/etc/sysctl.conf`
+编辑 `/etc/sysctl.d/90-tcp-bbr.conf`，写入如下内容：
 
 ```
 net.core.default_qdisc=fq_codel
 net.ipv4.tcp_congestion_control=bbr
 ```
 
-#### IP Forward
+##### IP Forward
+
+编辑 `/etc/sysctl.d/90-IPv4-forwarding.conf`，写入如下内容：
 
 ```
-net.ipv4.ip_forward = 1
+net.ipv4.ip_forward=1
 ```
 
-#### IPv6
+完成后使用 `sysctl -p` 生效。
 
-暂时没写
+#### 防火墙&NAT
 
-### DHCP
+使用 `apk add nftables` 安装防火墙。
 
-`apk add kea`
+编辑 `/etc/nftables.d/90-nat.nft`，写入如下内容：
 
-配置暂时没写
+```nft
+#!/usr/sbin/nft -f
 
-### 分流软件
+table inet nat {
+    chain prerouting {
+        type nat hook prerouting priority dstnat; policy accept;
+    }
 
-这里使用：[daeuniverse/dae: eBPF-based Linux high-performance transparent proxy solution.](https://github.com/daeuniverse/dae)
+    chain postrouting {
+        type nat hook postrouting priority srcnat; policy accept;
+        oifname "ppp0" masquerade
+    }
+}
+```
 
-#### 系统要求
+编辑 `/etc/nftables.d/90-filter.nft`，写入如下内容：
+
+```nft
+#!/usr/sbin/nft -f
+
+table inet filter {
+    chain input {
+        iifname "eth1" accept
+    }
+
+    chain forward {
+        type filter hook forward priority filter; policy accept;
+
+        tcp flags syn tcp option maxseg size set rt mtu
+    }
+
+    chain output {
+        type filter hook output priority filter; policy accept;
+    }
+}
+```
+
+其他的如 ICMP 等内容在 `/etc/nftables.nft` 中已经默认配好，如果喜欢可以移至此文件方便管理。
+
+##### PPPoE 或两侧 Mtu 不同
+
+编辑 `/etc/nftables.d/90-filter.nft`，在 `chain forward` 中加入如下内容：
+
+```nft
+tcp flags syn tcp option maxseg size set rt mtu
+```
+
+#### 全锥形 NAT
+
+参考：[Chion82/netfilter-full-cone-nat: A kernel module to turn MASQUERADE into full cone SNAT](https://github.com/Chion82/netfilter-full-cone-nat)
+
+#### 其它软件
+
+这里使用：daeuniverse/dae
+
+##### 系统要求
 
 `uname -r` 确保大于 `5.8`
 
@@ -113,7 +450,7 @@ CONFIG_BPF_EVENTS=y
 
 `/etc/init.d/sysfs #mount_misc`
 
-#### 安装
+##### 安装
 
 `wget https://github.com/daeuniverse/dae-installer/raw/main/installer.sh`
 
