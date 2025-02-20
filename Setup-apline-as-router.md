@@ -407,6 +407,8 @@ table inet filter {
 tcp flags syn tcp option maxseg size set rt mtu
 ```
 
+当然，你可能发现了，这一条是对 tcp 协议设置的，不仅需要解协议而且不对其他协议生效。可以将两个网卡的 MTU 设置为相同值，只会在内网损失少量的利用率。
+
 #### 全锥形 NAT
 
 参考：[Chion82/netfilter-full-cone-nat: A kernel module to turn MASQUERADE into full cone SNAT](https://github.com/Chion82/netfilter-full-cone-nat)
