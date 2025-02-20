@@ -141,3 +141,8 @@ Adobe Photoshop 会读取配置文件，如果色彩空间与菜单“编辑-色
 以 ImageGlass 为例，我通常使用该软件来查看图片。
 
 打开 “设置-图像” ，在 “色彩管理” 一节，“色彩配置文件” 中选择 “当前显示器配置”。
+
+# 参考
+
+* [Manage Adobe Camera Raw settings](https://helpx.adobe.com/ca/camera-raw/using/camera-raw-settings.html)
+* [A Color Managed Raw Workflow——From Camera to Final Print](https://www.adobe.com/digitalimag/pdfs/color_managed_raw_workflow.pdf)
