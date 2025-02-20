@@ -27,11 +27,17 @@ lastmod: 2024-12-09 14:55:00
 
 ## 举个例子说明下重要性
 
-听说广色域“更好”？
+听说广色域 “更好”？
 
 当你使用一个没有任何色彩管理的笨蛋软件，在 sRGB 的显示器上打开 Adobe RGB（比 sRGB 要广）的照片之后你发现——他的饱和度甚至还降低了！
 
-于是，摄影师精心修正的图像，在一个笨蛋软件的手里，变得灰灰的。更要命的是，如果你是一个没有正确设置色彩空间的摄影师，你看到的是灰灰的，就会把他试图拉回“正常”，而换到正常的软件的情况下，刚刚那张拉回“正常”的图，饱和度已经炸眼了！
+于是，摄影师精心修正的图像，在一个笨蛋软件的手里，变得灰灰暗暗的。
+
+如下图所示，左侧是支持色彩管理的软件显示的效果（即转换到 sRGB 显示），右侧是不使用色彩管理软件显示的结果（直接将 ProPhoto 当作 sRGB 来显示）。
+
+![色彩空间出错对比图](https://img.cdn.gaein.cn/website_used/blog/Configure-Photography-Workflow-Colorspace/left_normal_right_wrong.webp)
+
+更要命的是，如果你是一个没有正确设置色彩空间的摄影师，你看到的是灰灰的，就会把他试图拉回“正常”，而换到正常的软件的情况下，刚刚那张拉回“正常”的图，饱和度已经炸眼了！
 
 例子中的原因是，软件没有读取 exif 中的色彩空间信息，将 Adobe RGB remap 到了 sRGB，对整张图的色彩范围都进行了一次“压缩”，自然在 Adobe RGB 上正常的在这里就变灰了。
 
@@ -83,11 +89,13 @@ lastmod: 2024-12-09 14:55:00
 
 ### Adobe Photoshop
 
-Adobe Photoshop 会读取配置文件，如果色彩空间与菜单“编辑-色彩设置”中的“工作空间”不一致，将询问你的处理方式：
+Adobe Photoshop 会读取配置文件，如果色彩空间与菜单“编辑-色彩设置”中的“工作空间”不一致，将询问你的处理方式（如下图）：
 
 1. 使用嵌入的配置文件（代替工作空间）：不进行转换，使用文件中的色彩空间，并且暂时修改工作空间为文件中的色彩空间； **不会有任何损失**
 2. 将文档的颜色转换到工作空间：通过配置文件将文件中的色彩空间转换到配置的工作空间；**如果工作空间比配置文件中的广，则一般不会有损失，但是如果差的过多而且色深没有增加的话会损失精度**
 3. 扔掉嵌入的配置文件（不进行色彩管理）：**不推荐**，行为与 “不支持色彩管理的软件” 的一致，容易引发颜色不匹配等问题。
+
+![PS 的处理方式询问框](https://img.cdn.gaein.cn/website_used/blog/Configure-Photography-Workflow-Colorspace/ps_alert.webp)
 
 ## Adobe Camera Raw 或相机厂商发布的 “解 RAW” 软件
 
@@ -124,17 +132,23 @@ Adobe Photoshop 会读取配置文件，如果色彩空间与菜单“编辑-色
 
 ### Windows 11
 
-打开 “设置-系统-显示”，在 “颜色配置文件” 处选择校色的配置文件。可以考虑点击配置文件后点击 “设置为系统默认”。
+打开 “设置-系统-显示”，在 “颜色配置文件” 处选择校色的配置文件。可以考虑点击配置文件后点击 “设置为系统默认”。如下图。
+
+![Windows 11 设置](https://img.cdn.gaein.cn/website_used/blog/Configure-Photography-Workflow-Colorspace/windows11_settings.webp)
 
 可以考虑 “启用自动颜色管理” ，该功能可以将完全不管颜色管理的软件输出的内容从 sRGB 转到屏幕色彩空间。
 
 ## Adobe Camera Raw
 
-打开 “首选项（右上角齿轮图标按钮）-工作流程”，色彩空间选择 “ProPhoto RGB” 或 “Rec.2020”，色彩深度选择 “16位/通道”（理由见前文关于工作空间所阐述的内容）。
+打开 “首选项（右上角齿轮图标按钮）-工作流程”，色彩空间选择 “ProPhoto RGB” 或 “Rec.2020”，色彩深度选择 “16位/通道”（理由见前文关于工作空间所阐述的内容）。如下图。
+
+![ACR 设置](https://img.cdn.gaein.cn/website_used/blog/Configure-Photography-Workflow-Colorspace/acr_settings.webp)
 
 ## Adobe Photoshop
 
-打开 “编辑-颜色设置”。选择 “北美印前2” ，修改工作空间为你在 ACR 中设置的色彩空间，同时确保 “显示器 RGB” 在列表中并且是正确的（确保正常加载）。
+打开 “编辑-颜色设置”。选择 “北美印前2” ，修改工作空间为你在 ACR 中设置的色彩空间，同时确保 “显示器 RGB” 在列表中并且是正确的（确保正常加载）。如下图。
+
+![PS 设置](https://img.cdn.gaein.cn/website_used/blog/Configure-Photography-Workflow-Colorspace/ps_settings.webp)
 
 ## 图片查看软件
 
